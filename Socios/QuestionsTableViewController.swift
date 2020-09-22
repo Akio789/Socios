@@ -8,9 +8,24 @@
 
 import UIKit
 
-class QuestionsTableViewController: UITableViewController {
+class QuestionsTableViewController: UITableViewController, UISearchResultsUpdating {
     let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/preguntas.json"
     var response: [Any]?
+    var filteredData = [Any]()
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if searchController.searchBar.text! == "" {
+            filteredData = response!
+        } else {
+            filteredData = response!.filter{
+                let questionObject = $0 as! [String:Any]
+                let s: String = questionObject["question"] as! String;
+                return(s.lowercased().contains(searchController.searchBar.text!.lowercased())) }
+        }
+        
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +40,13 @@ class QuestionsTableViewController: UITableViewController {
             //let contents = try String(contentsOf: url)
             //print contents
             let data = try? Data(contentsOf: url)
-            print(data)
             response = try! JSONSerialization.jsonObject(with: data!) as? [Any]
+            filteredData = response!
+            searchController.searchResultsUpdater = self
+            searchController.dimsBackgroundDuringPresentation = false
+            searchController.hidesNavigationBarDuringPresentation = false
+            definesPresentationContext = true
+            tableView.tableHeaderView = searchController.searchBar
             } catch {
             // contents could not be loaded
             print("contents could not be loaded")
@@ -46,14 +66,14 @@ class QuestionsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return response!.count
+        return filteredData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "question", for: indexPath)
 
         // Configure the cell...
-        let questionObject = response![indexPath.row] as! [String: Any]
+        let questionObject = filteredData[indexPath.row] as! [String: Any]
         cell.textLabel?.text = questionObject["question"] as! String
 
         return cell
@@ -102,7 +122,7 @@ class QuestionsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         let nextView = segue.destination as! QuestionDetailViewController
         let index = self.tableView.indexPathForSelectedRow?.row
-        let questionObject = response![index!] as! [String: Any]
+        let questionObject = filteredData[index!] as! [String: Any]
         nextView.answerEntry = questionObject["answer"] as! String
     }
 }

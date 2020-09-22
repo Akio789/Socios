@@ -10,7 +10,6 @@
         <!--Login View Controller-->
         <scene sceneID="Opf-No-rGs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TIW-dM-5I8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="TdH-bR-j79" customClass="LoginViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m6a-UE-nfF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -45,6 +44,7 @@
                         <outlet property="screen" destination="QFw-8Z-qpV" id="5x0-uQ-Htn"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIW-dM-5I8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3428.985507246377" y="1887.7232142857142"/>
         </scene>

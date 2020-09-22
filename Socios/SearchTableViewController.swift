@@ -8,9 +8,24 @@
 
 import UIKit
 
-class SearchTableViewController: UITableViewController {
+class SearchTableViewController: UITableViewController, UISearchResultsUpdating {
     let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/playeras.json"
     var response: [Any]?
+    var filteredData = [Any]()
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if searchController.searchBar.text! == "" {
+            filteredData = response!
+        } else {
+            filteredData = response!.filter{
+                let itemObject = $0 as! [String:Any]
+                let s: String = itemObject["name"] as! String;
+                return(s.lowercased().contains(searchController.searchBar.text!.lowercased())) }
+        }
+        
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +35,18 @@ class SearchTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
         if let url = URL(string: direccionUrl) {
             do {
             //let contents = try String(contentsOf: url)
             //print contents
             let data = try? Data(contentsOf: url)
-            print(data)
             response = try! JSONSerialization.jsonObject(with: data!) as? [Any]
+            filteredData = response!
+            searchController.searchResultsUpdater = self
+            searchController.dimsBackgroundDuringPresentation = false
+            searchController.hidesNavigationBarDuringPresentation = false
+            definesPresentationContext = true
+            tableView.tableHeaderView = searchController.searchBar
             } catch {
             // contents could not be loaded
             print("contents could not be loaded")
@@ -47,14 +66,14 @@ class SearchTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return response!.count
+        return filteredData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchTableViewCell", for: indexPath)
 
         // Configure the cell...
-        let productObject = response![indexPath.row] as! [String: Any]
+        let productObject = filteredData[indexPath.row] as! [String: Any]
         cell.textLabel?.text = productObject["name"] as! String
 
         return cell
@@ -103,7 +122,7 @@ class SearchTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         let nextView = segue.destination as! ProductDetailFromSearchViewController
         let index = self.tableView.indexPathForSelectedRow?.row
-        let productObject = response![index!] as! [String: Any]
+        let productObject = filteredData[index!] as! [String: Any]
         nextView.productDescriptionEntry = productObject["description"] as! String
     }
 }
