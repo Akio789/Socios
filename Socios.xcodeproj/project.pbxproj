@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19C9108C2519BDF000032423 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9108B2519BDF000032423 /* UserProfileViewController.swift */; };
+		19C910902519CA0600032423 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9108F2519CA0600032423 /* EditProfileViewController.swift */; };
+		19C910932519D0E300032423 /* DeleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910922519D0E300032423 /* DeleteProfileViewController.swift */; };
+		19C910962519DF4600032423 /* ProductInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910952519DF4600032423 /* ProductInformationViewController.swift */; };
+		19C910992519E37B00032423 /* AddPaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910982519E37B00032423 /* AddPaymentMethodViewController.swift */; };
+		19C9109C2519E39500032423 /* DeletePaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9109B2519E39500032423 /* DeletePaymentMethodViewController.swift */; };
+		19C9109F2519E6AC00032423 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9109E2519E6AC00032423 /* ShoppingCartViewController.swift */; };
+		19C910A22519E6B800032423 /* ShoppingCartPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */; };
+		19C910A52519E6C800032423 /* ShoppingCartDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */; };
+		19C910A82519F04900032423 /* SuccessPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */; };
 		66E100892516894200C351EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E100882516894200C351EA /* LoginViewController.swift */; };
 		66E1008B2516906900C351EA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E1008A2516906900C351EA /* HomeViewController.swift */; };
 		66E1008D25169B7400C351EA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E1008C25169B7400C351EA /* RegisterViewController.swift */; };
@@ -27,6 +37,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19C9108B2519BDF000032423 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		19C9108F2519CA0600032423 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		19C910922519D0E300032423 /* DeleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProfileViewController.swift; sourceTree = "<group>"; };
+		19C910952519DF4600032423 /* ProductInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationViewController.swift; sourceTree = "<group>"; };
+		19C910982519E37B00032423 /* AddPaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodViewController.swift; sourceTree = "<group>"; };
+		19C9109B2519E39500032423 /* DeletePaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePaymentMethodViewController.swift; sourceTree = "<group>"; };
+		19C9109E2519E6AC00032423 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartPaymentViewController.swift; sourceTree = "<group>"; };
+		19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDeleteViewController.swift; sourceTree = "<group>"; };
+		19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPurchaseViewController.swift; sourceTree = "<group>"; };
 		66E100882516894200C351EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		66E1008A2516906900C351EA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		66E1008C25169B7400C351EA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +116,16 @@
 				66FFE8432516D4FF00AA2215 /* ProductDetailFromSearchViewController.swift */,
 				66FFE8452516D86C00AA2215 /* QuestionsTableViewController.swift */,
 				66FFE8472516E85200AA2215 /* QuestionDetailViewController.swift */,
+				19C9108B2519BDF000032423 /* UserProfileViewController.swift */,
+				19C9108F2519CA0600032423 /* EditProfileViewController.swift */,
+				19C910922519D0E300032423 /* DeleteProfileViewController.swift */,
+				19C910952519DF4600032423 /* ProductInformationViewController.swift */,
+				19C910982519E37B00032423 /* AddPaymentMethodViewController.swift */,
+				19C9109B2519E39500032423 /* DeletePaymentMethodViewController.swift */,
+				19C9109E2519E6AC00032423 /* ShoppingCartViewController.swift */,
+				19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */,
+				19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */,
+				19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */,
 			);
 			path = Socios;
 			sourceTree = "<group>";
@@ -171,19 +201,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C910902519CA0600032423 /* EditProfileViewController.swift in Sources */,
+				19C910A82519F04900032423 /* SuccessPurchaseViewController.swift in Sources */,
 				66E1008D25169B7400C351EA /* RegisterViewController.swift in Sources */,
 				66FFE8382516ABBF00AA2215 /* NavBarTableViewController.swift in Sources */,
+				19C9109C2519E39500032423 /* DeletePaymentMethodViewController.swift in Sources */,
 				66E100892516894200C351EA /* LoginViewController.swift in Sources */,
 				66FFE8482516E85200AA2215 /* QuestionDetailViewController.swift in Sources */,
 				66FFE83C2516B8B300AA2215 /* PersonalizedSearchViewController.swift in Sources */,
 				66E1008B2516906900C351EA /* HomeViewController.swift in Sources */,
+				19C9109F2519E6AC00032423 /* ShoppingCartViewController.swift in Sources */,
+				19C910932519D0E300032423 /* DeleteProfileViewController.swift in Sources */,
 				8C4610F72506C3E600D93ADF /* AppDelegate.swift in Sources */,
 				66FFE83E2516BFD800AA2215 /* PersonalizedSearchResultTableViewController.swift in Sources */,
+				19C9108C2519BDF000032423 /* UserProfileViewController.swift in Sources */,
+				19C910A22519E6B800032423 /* ShoppingCartPaymentViewController.swift in Sources */,
 				66FFE8402516CF1A00AA2215 /* ProductDetailViewController.swift in Sources */,
 				66FFE8422516D46300AA2215 /* SearchTableViewController.swift in Sources */,
+				19C910A52519E6C800032423 /* ShoppingCartDeleteViewController.swift in Sources */,
+				19C910962519DF4600032423 /* ProductInformationViewController.swift in Sources */,
 				8C4610F92506C3E600D93ADF /* SceneDelegate.swift in Sources */,
 				66FFE83A2516B33400AA2215 /* NavBarViewController.swift in Sources */,
 				66FFE8462516D86C00AA2215 /* QuestionsTableViewController.swift in Sources */,
+				19C910992519E37B00032423 /* AddPaymentMethodViewController.swift in Sources */,
 				66FFE8442516D4FF00AA2215 /* ProductDetailFromSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
