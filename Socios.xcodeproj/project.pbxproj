@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19B1618D251C6338009E897F /* ZoneProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1618C251C6338009E897F /* ZoneProductTableViewController.swift */; };
+		19B16190251C6398009E897F /* ZoneProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1618F251C6398009E897F /* ZoneProductDetailViewController.swift */; };
+		19B16193251C6E05009E897F /* ShopsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B16192251C6E05009E897F /* ShopsDetailViewController.swift */; };
+		19B16196251C6E15009E897F /* ShopsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B16195251C6E15009E897F /* ShopsTableViewController.swift */; };
+		19B16199251C79B2009E897F /* PurchasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B16198251C79B2009E897F /* PurchasesTableViewController.swift */; };
+		19B1619C251C79CE009E897F /* PurchasesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1619B251C79CE009E897F /* PurchasesDetailViewController.swift */; };
+		19B1619F251C7CB5009E897F /* OrdersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1619E251C7CB5009E897F /* OrdersDetailViewController.swift */; };
+		19B161A2251C7CC4009E897F /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B161A1251C7CC4009E897F /* OrdersTableViewController.swift */; };
 		19C9108C2519BDF000032423 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9108B2519BDF000032423 /* UserProfileViewController.swift */; };
 		19C910902519CA0600032423 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9108F2519CA0600032423 /* EditProfileViewController.swift */; };
 		19C910932519D0E300032423 /* DeleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910922519D0E300032423 /* DeleteProfileViewController.swift */; };
@@ -37,6 +45,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19B1618C251C6338009E897F /* ZoneProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneProductTableViewController.swift; sourceTree = "<group>"; };
+		19B1618F251C6398009E897F /* ZoneProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneProductDetailViewController.swift; sourceTree = "<group>"; };
+		19B16192251C6E05009E897F /* ShopsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsDetailViewController.swift; sourceTree = "<group>"; };
+		19B16195251C6E15009E897F /* ShopsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsTableViewController.swift; sourceTree = "<group>"; };
+		19B16198251C79B2009E897F /* PurchasesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesTableViewController.swift; sourceTree = "<group>"; };
+		19B1619B251C79CE009E897F /* PurchasesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesDetailViewController.swift; sourceTree = "<group>"; };
+		19B1619E251C7CB5009E897F /* OrdersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersDetailViewController.swift; sourceTree = "<group>"; };
+		19B161A1251C7CC4009E897F /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		19C9108B2519BDF000032423 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		19C9108F2519CA0600032423 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		19C910922519D0E300032423 /* DeleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProfileViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +142,14 @@
 				19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */,
 				19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */,
 				19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */,
+				19B1618C251C6338009E897F /* ZoneProductTableViewController.swift */,
+				19B1618F251C6398009E897F /* ZoneProductDetailViewController.swift */,
+				19B16192251C6E05009E897F /* ShopsDetailViewController.swift */,
+				19B16195251C6E15009E897F /* ShopsTableViewController.swift */,
+				19B16198251C79B2009E897F /* PurchasesTableViewController.swift */,
+				19B1619B251C79CE009E897F /* PurchasesDetailViewController.swift */,
+				19B1619E251C7CB5009E897F /* OrdersDetailViewController.swift */,
+				19B161A1251C7CC4009E897F /* OrdersTableViewController.swift */,
 			);
 			path = Socios;
 			sourceTree = "<group>";
@@ -204,27 +228,35 @@
 				19C910902519CA0600032423 /* EditProfileViewController.swift in Sources */,
 				19C910A82519F04900032423 /* SuccessPurchaseViewController.swift in Sources */,
 				66E1008D25169B7400C351EA /* RegisterViewController.swift in Sources */,
+				19B16193251C6E05009E897F /* ShopsDetailViewController.swift in Sources */,
 				66FFE8382516ABBF00AA2215 /* NavBarTableViewController.swift in Sources */,
 				19C9109C2519E39500032423 /* DeletePaymentMethodViewController.swift in Sources */,
 				66E100892516894200C351EA /* LoginViewController.swift in Sources */,
 				66FFE8482516E85200AA2215 /* QuestionDetailViewController.swift in Sources */,
 				66FFE83C2516B8B300AA2215 /* PersonalizedSearchViewController.swift in Sources */,
+				19B16196251C6E15009E897F /* ShopsTableViewController.swift in Sources */,
 				66E1008B2516906900C351EA /* HomeViewController.swift in Sources */,
 				19C9109F2519E6AC00032423 /* ShoppingCartViewController.swift in Sources */,
 				19C910932519D0E300032423 /* DeleteProfileViewController.swift in Sources */,
+				19B16190251C6398009E897F /* ZoneProductDetailViewController.swift in Sources */,
 				8C4610F72506C3E600D93ADF /* AppDelegate.swift in Sources */,
 				66FFE83E2516BFD800AA2215 /* PersonalizedSearchResultTableViewController.swift in Sources */,
+				19B161A2251C7CC4009E897F /* OrdersTableViewController.swift in Sources */,
 				19C9108C2519BDF000032423 /* UserProfileViewController.swift in Sources */,
 				19C910A22519E6B800032423 /* ShoppingCartPaymentViewController.swift in Sources */,
 				66FFE8402516CF1A00AA2215 /* ProductDetailViewController.swift in Sources */,
 				66FFE8422516D46300AA2215 /* SearchTableViewController.swift in Sources */,
+				19B1619C251C79CE009E897F /* PurchasesDetailViewController.swift in Sources */,
 				19C910A52519E6C800032423 /* ShoppingCartDeleteViewController.swift in Sources */,
+				19B16199251C79B2009E897F /* PurchasesTableViewController.swift in Sources */,
+				19B1618D251C6338009E897F /* ZoneProductTableViewController.swift in Sources */,
 				19C910962519DF4600032423 /* ProductInformationViewController.swift in Sources */,
 				8C4610F92506C3E600D93ADF /* SceneDelegate.swift in Sources */,
 				66FFE83A2516B33400AA2215 /* NavBarViewController.swift in Sources */,
 				66FFE8462516D86C00AA2215 /* QuestionsTableViewController.swift in Sources */,
 				19C910992519E37B00032423 /* AddPaymentMethodViewController.swift in Sources */,
 				66FFE8442516D4FF00AA2215 /* ProductDetailFromSearchViewController.swift in Sources */,
+				19B1619F251C7CB5009E897F /* OrdersDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
