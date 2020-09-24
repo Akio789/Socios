@@ -95,6 +95,123 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19B161A4251C84A4009E897F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				19B161A8251C852B009E897F /* View */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		19B161A8251C852B009E897F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66E1008C25169B7400C351EA /* RegisterViewController.swift */,
+				66E100882516894200C351EA /* LoginViewController.swift */,
+				66FFE8412516D46300AA2215 /* SearchTableViewController.swift */,
+				19B161B2251C87E0009E897F /* Home */,
+				19B161B6251C88E4009E897F /* Products */,
+				19B161B1251C87CF009E897F /* NavBar */,
+				19B161B5251C889B009E897F /* PaymentMethods */,
+				19B161BC251C89CF009E897F /* Purchases */,
+				19B161BB251C89BF009E897F /* Orders */,
+				19B161B0251C8772009E897F /* Cart */,
+				19B161A9251C8532009E897F /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		19B161A9251C8532009E897F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				19C9108B2519BDF000032423 /* UserProfileViewController.swift */,
+				19C9108F2519CA0600032423 /* EditProfileViewController.swift */,
+				19C910922519D0E300032423 /* DeleteProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		19B161B0251C8772009E897F /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				19C9109E2519E6AC00032423 /* ShoppingCartViewController.swift */,
+				19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */,
+				19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		19B161B1251C87CF009E897F /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				66FFE8372516ABBF00AA2215 /* NavBarTableViewController.swift */,
+				66FFE8392516B33400AA2215 /* NavBarViewController.swift */,
+				19B161B3251C881E009E897F /* Options */,
+			);
+			path = NavBar;
+			sourceTree = "<group>";
+		};
+		19B161B2251C87E0009E897F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				66E1008A2516906900C351EA /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		19B161B3251C881E009E897F /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				19B1618C251C6338009E897F /* ZoneProductTableViewController.swift */,
+				19B1618F251C6398009E897F /* ZoneProductDetailViewController.swift */,
+				19B16192251C6E05009E897F /* ShopsDetailViewController.swift */,
+				19B16195251C6E15009E897F /* ShopsTableViewController.swift */,
+				66FFE8452516D86C00AA2215 /* QuestionsTableViewController.swift */,
+				66FFE8472516E85200AA2215 /* QuestionDetailViewController.swift */,
+				66FFE83B2516B8B300AA2215 /* PersonalizedSearchViewController.swift */,
+				66FFE83D2516BFD800AA2215 /* PersonalizedSearchResultTableViewController.swift */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		19B161B5251C889B009E897F /* PaymentMethods */ = {
+			isa = PBXGroup;
+			children = (
+				19C910982519E37B00032423 /* AddPaymentMethodViewController.swift */,
+				19C9109B2519E39500032423 /* DeletePaymentMethodViewController.swift */,
+			);
+			path = PaymentMethods;
+			sourceTree = "<group>";
+		};
+		19B161B6251C88E4009E897F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66FFE83F2516CF1A00AA2215 /* ProductDetailViewController.swift */,
+				66FFE8432516D4FF00AA2215 /* ProductDetailFromSearchViewController.swift */,
+				19C910952519DF4600032423 /* ProductInformationViewController.swift */,
+				19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		19B161BB251C89BF009E897F /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				19B1619E251C7CB5009E897F /* OrdersDetailViewController.swift */,
+				19B161A1251C7CC4009E897F /* OrdersTableViewController.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		19B161BC251C89CF009E897F /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				19B16198251C79B2009E897F /* PurchasesTableViewController.swift */,
+				19B1619B251C79CE009E897F /* PurchasesDetailViewController.swift */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
 		8C4610EA2506C3E600D93ADF = {
 			isa = PBXGroup;
 			children = (
@@ -114,42 +231,13 @@
 		8C4610F52506C3E600D93ADF /* Socios */ = {
 			isa = PBXGroup;
 			children = (
+				19B161A4251C84A4009E897F /* User */,
 				8C4610F62506C3E600D93ADF /* AppDelegate.swift */,
 				8C4610F82506C3E600D93ADF /* SceneDelegate.swift */,
 				8C4610FE2506C3E600D93ADF /* Main.storyboard */,
 				8C4611012506C3E800D93ADF /* Assets.xcassets */,
 				8C4611032506C3E800D93ADF /* LaunchScreen.storyboard */,
 				8C4611062506C3E800D93ADF /* Info.plist */,
-				66E100882516894200C351EA /* LoginViewController.swift */,
-				66E1008A2516906900C351EA /* HomeViewController.swift */,
-				66E1008C25169B7400C351EA /* RegisterViewController.swift */,
-				66FFE8372516ABBF00AA2215 /* NavBarTableViewController.swift */,
-				66FFE8392516B33400AA2215 /* NavBarViewController.swift */,
-				66FFE83B2516B8B300AA2215 /* PersonalizedSearchViewController.swift */,
-				66FFE83D2516BFD800AA2215 /* PersonalizedSearchResultTableViewController.swift */,
-				66FFE83F2516CF1A00AA2215 /* ProductDetailViewController.swift */,
-				66FFE8412516D46300AA2215 /* SearchTableViewController.swift */,
-				66FFE8432516D4FF00AA2215 /* ProductDetailFromSearchViewController.swift */,
-				66FFE8452516D86C00AA2215 /* QuestionsTableViewController.swift */,
-				66FFE8472516E85200AA2215 /* QuestionDetailViewController.swift */,
-				19C9108B2519BDF000032423 /* UserProfileViewController.swift */,
-				19C9108F2519CA0600032423 /* EditProfileViewController.swift */,
-				19C910922519D0E300032423 /* DeleteProfileViewController.swift */,
-				19C910952519DF4600032423 /* ProductInformationViewController.swift */,
-				19C910982519E37B00032423 /* AddPaymentMethodViewController.swift */,
-				19C9109B2519E39500032423 /* DeletePaymentMethodViewController.swift */,
-				19C9109E2519E6AC00032423 /* ShoppingCartViewController.swift */,
-				19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */,
-				19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */,
-				19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */,
-				19B1618C251C6338009E897F /* ZoneProductTableViewController.swift */,
-				19B1618F251C6398009E897F /* ZoneProductDetailViewController.swift */,
-				19B16192251C6E05009E897F /* ShopsDetailViewController.swift */,
-				19B16195251C6E15009E897F /* ShopsTableViewController.swift */,
-				19B16198251C79B2009E897F /* PurchasesTableViewController.swift */,
-				19B1619B251C79CE009E897F /* PurchasesDetailViewController.swift */,
-				19B1619E251C7CB5009E897F /* OrdersDetailViewController.swift */,
-				19B161A1251C7CC4009E897F /* OrdersTableViewController.swift */,
 			);
 			path = Socios;
 			sourceTree = "<group>";
