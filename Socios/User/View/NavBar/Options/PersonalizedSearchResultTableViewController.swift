@@ -35,6 +35,8 @@ class PersonalizedSearchResultTableViewController: UITableViewController, UISear
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.rowHeight = 100
+        
         if let url = URL(string: direccionUrl) {
             do {
             //let contents = try String(contentsOf: url)
@@ -70,11 +72,16 @@ class PersonalizedSearchResultTableViewController: UITableViewController, UISear
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personalizedSearchResult", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personalizedSearchResult", for: indexPath) as! PersonalizedSearchTableViewCell
 
         // Configure the cell...
         let productObject = filteredData[indexPath.row] as! [String: Any]
-        cell.textLabel?.text = productObject["name"] as! String
+        cell.productName.text = productObject["name"] as! String
+        cell.price.text = String( productObject["price"] as! Float)
+        cell.seller.text = productObject["seller"] as! String
+        let imageUrl = URL(string: "http://martinmolina.com.mx/202013/Equipo3/roberta.jpg")
+        let image = try? Data(contentsOf: imageUrl!)
+        cell.cellImage.image = UIImage(data: image!)
 
         return cell
     }

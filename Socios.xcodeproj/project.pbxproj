@@ -25,6 +25,8 @@
 		19C910A22519E6B800032423 /* ShoppingCartPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */; };
 		19C910A52519E6C800032423 /* ShoppingCartDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */; };
 		19C910A82519F04900032423 /* SuccessPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */; };
+		66CF8D2A251D96FD007E4C47 /* ContainerSpecializedSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF8D29251D96FD007E4C47 /* ContainerSpecializedSearchResultsViewController.swift */; };
+		66CF8D2D251DA926007E4C47 /* PersonalizedSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF8D2C251DA926007E4C47 /* PersonalizedSearchTableViewCell.swift */; };
 		66E100892516894200C351EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E100882516894200C351EA /* LoginViewController.swift */; };
 		66E1008B2516906900C351EA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E1008A2516906900C351EA /* HomeViewController.swift */; };
 		66E1008D25169B7400C351EA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E1008C25169B7400C351EA /* RegisterViewController.swift */; };
@@ -63,6 +65,8 @@
 		19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartPaymentViewController.swift; sourceTree = "<group>"; };
 		19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDeleteViewController.swift; sourceTree = "<group>"; };
 		19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPurchaseViewController.swift; sourceTree = "<group>"; };
+		66CF8D29251D96FD007E4C47 /* ContainerSpecializedSearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerSpecializedSearchResultsViewController.swift; sourceTree = "<group>"; };
+		66CF8D2C251DA926007E4C47 /* PersonalizedSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizedSearchTableViewCell.swift; sourceTree = "<group>"; };
 		66E100882516894200C351EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		66E1008A2516906900C351EA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		66E1008C25169B7400C351EA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 		19B161A8251C852B009E897F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				66CF8D2B251DA903007E4C47 /* Cells */,
 				66E1008C25169B7400C351EA /* RegisterViewController.swift */,
 				66E100882516894200C351EA /* LoginViewController.swift */,
 				66FFE8412516D46300AA2215 /* SearchTableViewController.swift */,
@@ -170,6 +175,7 @@
 				66FFE8472516E85200AA2215 /* QuestionDetailViewController.swift */,
 				66FFE83B2516B8B300AA2215 /* PersonalizedSearchViewController.swift */,
 				66FFE83D2516BFD800AA2215 /* PersonalizedSearchResultTableViewController.swift */,
+				66CF8D29251D96FD007E4C47 /* ContainerSpecializedSearchResultsViewController.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -210,6 +216,14 @@
 				19B1619B251C79CE009E897F /* PurchasesDetailViewController.swift */,
 			);
 			path = Purchases;
+			sourceTree = "<group>";
+		};
+		66CF8D2B251DA903007E4C47 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66CF8D2C251DA926007E4C47 /* PersonalizedSearchTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8C4610EA2506C3E600D93ADF = {
@@ -316,11 +330,13 @@
 				19C910902519CA0600032423 /* EditProfileViewController.swift in Sources */,
 				19C910A82519F04900032423 /* SuccessPurchaseViewController.swift in Sources */,
 				66E1008D25169B7400C351EA /* RegisterViewController.swift in Sources */,
+				66CF8D2D251DA926007E4C47 /* PersonalizedSearchTableViewCell.swift in Sources */,
 				19B16193251C6E05009E897F /* ShopsDetailViewController.swift in Sources */,
 				66FFE8382516ABBF00AA2215 /* NavBarTableViewController.swift in Sources */,
 				19C9109C2519E39500032423 /* DeletePaymentMethodViewController.swift in Sources */,
 				66E100892516894200C351EA /* LoginViewController.swift in Sources */,
 				66FFE8482516E85200AA2215 /* QuestionDetailViewController.swift in Sources */,
+				66CF8D2A251D96FD007E4C47 /* ContainerSpecializedSearchResultsViewController.swift in Sources */,
 				66FFE83C2516B8B300AA2215 /* PersonalizedSearchViewController.swift in Sources */,
 				19B16196251C6E15009E897F /* ShopsTableViewController.swift in Sources */,
 				66E1008B2516906900C351EA /* HomeViewController.swift in Sources */,
