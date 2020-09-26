@@ -15,7 +15,7 @@ class ContainerSpecializedSearchResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let imageUrl = URL(string: "http://martinmolina.com.mx/202013/Equipo3/roberta.jpg")
+        let imageUrl = URL(string: "http://martinmolina.com.mx/202013/Equipo3/assets/playeras/playera-polo-negro.png")
         let image = try? Data(contentsOf: imageUrl!)
         searchedImage.image = UIImage(data: image!)
         

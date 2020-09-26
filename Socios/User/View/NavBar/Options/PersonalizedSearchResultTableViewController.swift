@@ -78,8 +78,8 @@ class PersonalizedSearchResultTableViewController: UITableViewController, UISear
         let productObject = filteredData[indexPath.row] as! [String: Any]
         cell.productName.text = productObject["name"] as! String
         cell.price.text = String( productObject["price"] as! Float)
-        cell.seller.text = productObject["seller"] as! String
-        let imageUrl = URL(string: "http://martinmolina.com.mx/202013/Equipo3/roberta.jpg")
+        cell.seller.text = "Vendedor: \(productObject["seller"] as! String)"
+        let imageUrl = URL(string: productObject["imageUrl"] as! String)
         let image = try? Data(contentsOf: imageUrl!)
         cell.cellImage.image = UIImage(data: image!)
 
