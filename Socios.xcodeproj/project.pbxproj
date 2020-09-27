@@ -47,6 +47,7 @@
 		8C4611002506C3E600D93ADF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4610FE2506C3E600D93ADF /* Main.storyboard */; };
 		8C4611022506C3E800D93ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4611012506C3E800D93ADF /* Assets.xcassets */; };
 		8C4611052506C3E800D93ADF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4611032506C3E800D93ADF /* LaunchScreen.storyboard */; };
+		C8EB77FD25211F0A0051E956 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EB77FC25211F0A0051E956 /* AboutUsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		8C4611012506C3E800D93ADF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C4611042506C3E800D93ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C4611062506C3E800D93ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8EB77FC25211F0A0051E956 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				66E1008A2516906900C351EA /* HomeViewController.swift */,
+				C8EB77FC25211F0A0051E956 /* AboutUsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				19C910A82519F04900032423 /* SuccessPurchaseViewController.swift in Sources */,
 				66E1008D25169B7400C351EA /* RegisterViewController.swift in Sources */,
 				66CF8D2D251DA926007E4C47 /* PersonalizedSearchTableViewCell.swift in Sources */,
+				C8EB77FD25211F0A0051E956 /* AboutUsViewController.swift in Sources */,
 				19B16193251C6E05009E897F /* ShopsDetailViewController.swift in Sources */,
 				66FFE8382516ABBF00AA2215 /* NavBarTableViewController.swift in Sources */,
 				19C9109C2519E39500032423 /* DeletePaymentMethodViewController.swift in Sources */,
