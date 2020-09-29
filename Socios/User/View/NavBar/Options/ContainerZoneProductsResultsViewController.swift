@@ -12,10 +12,11 @@ import CoreLocation
 
 class ContainerZoneProductsResultsViewController: UIViewController, CLLocationManagerDelegate {
     let ubicacion = CLLocationManager()
-    //@IBOutlet weak var mapa: MKMapView!
     
+    
+    @IBOutlet weak var mapa: MKMapView!
     override func viewDidLoad() {
-        /*super.viewDidLoad()
+        super.viewDidLoad()
         ubicacion.delegate = self
         ubicacion.desiredAccuracy = kCLLocationAccuracyBest
         ubicacion.requestWhenInUseAuthorization()
@@ -23,7 +24,7 @@ class ContainerZoneProductsResultsViewController: UIViewController, CLLocationMa
         mapa.region = MKCoordinateRegion(center: centro, latitudinalMeters: 500, longitudinalMeters: 500)
         let marcador = MKPointAnnotation()
         marcador.coordinate = centro
-        mapa.addAnnotation(marcador)*/
+        mapa.addAnnotation(marcador)
         
         // Do any additional setup after loading the view.
     }

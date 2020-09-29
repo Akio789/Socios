@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ZHp-On-Fhg" kind="relationship" relationship="rootViewController" id="g4Z-qp-sRc"/>
+                        <segue destination="ZHp-On-Fhg" kind="relationship" relationship="rootViewController" id="kSS-MQ-8Vc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTq-Rc-XYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -33,30 +33,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oG6-R9-OsS">
-                                <rect key="frame" x="0.0" y="244" width="414" height="618"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oG6-R9-OsS">
+                                <rect key="frame" x="0.0" y="322" width="414" height="486"/>
                                 <connections>
                                     <segue destination="5eT-lp-g6h" kind="embed" id="kbG-hH-MSe"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Productos por tu zona" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK9-pu-LDj" userLabel="Productos por tu zona">
-                                <rect key="frame" x="36" y="44" width="342" height="93"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Productos por tu zona" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK9-pu-LDj" userLabel="Productos por tu zona">
+                                <rect key="frame" x="36" y="72" width="342" height="93"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuA-mE-qcL">
-                                <rect key="frame" x="221" y="246" width="173" height="34"/>
+                                <rect key="frame" x="241" y="280" width="173" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Actualiza tu dirección"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tu dirección: Kansas 18, Col. Nápoles, Alc. Benito Juárez, C.P 03810" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMx-J2-cdg" userLabel="Productos por tu zona">
-                                <rect key="frame" x="156" y="139" width="258" height="110"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CkQ-s2-JMV">
+                                <rect key="frame" x="36" y="144" width="358" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AgM-X5-9IW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,21 +72,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1jZ-Tb-pQJ"/>
+                    <connections>
+                        <outlet property="mapa" destination="CkQ-s2-JMV" id="1gY-le-r0a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCd-Rp-net" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17950.72463768116" y="1889.7321428571427"/>
+            <point key="canvasLocation" x="-18133" y="1880"/>
         </scene>
         <!--Zone Product Table View Controller-->
         <scene sceneID="QZo-af-SpZ">
             <objects>
                 <tableViewController id="5eT-lp-g6h" customClass="ZoneProductTableViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hsu-rD-mBX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="486"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personalizedSearchResult" rowHeight="100" id="PTU-f6-kin" customClass="ZoneProductsTableViewCell" customModule="Socios" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="zoneProductCell" rowHeight="100" id="PTU-f6-kin" customClass="ZoneProductsTableViewCell" customModule="Socios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PTU-f6-kin" id="EOt-Va-xNO">
@@ -168,7 +168,7 @@
             <objects>
                 <viewController id="Qgp-1w-kn1" customClass="ProductDetailViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cfz-Zu-dvL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="564"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="432"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F5f-zU-l6B">
@@ -196,7 +196,6 @@
         <!--Purchases Table View Controller-->
         <scene sceneID="k8R-JK-UY3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ffy-5N-8hF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="ZHp-On-Fhg" customClass="PurchasesTableViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dN9-XV-sL8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -219,6 +218,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="q5J-rp-NR3"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ffy-5N-8hF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-18033" y="948"/>
         </scene>

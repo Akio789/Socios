@@ -44,6 +44,10 @@
                                     <segue destination="GCW-FO-NtH" kind="show" id="SS8-YE-4fF"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIconProject" translatesAutoresizingMaskIntoConstraints="NO" id="OGs-bt-iSU">
+                                <rect key="frame" x="142" y="185" width="130" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b4H-yX-byZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +75,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AppIconProject" width="512" height="460.5"/>
         <image name="HomeIcon" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
