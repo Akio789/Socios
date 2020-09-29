@@ -140,5 +140,8 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         nextView.productimageUrl = productObject5["imageUrl"] as! String
         let productObject6 = filteredData[index!] as! [String: Any]
         nextView.productNameA = productObject6["name"] as! String
+        let productObject7 = filteredData[index!] as! [String: Any]
+        nextView.productCommentsA = productObject6["comments"] as! Array<Any>
+
     }
 }
