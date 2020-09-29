@@ -18,6 +18,7 @@ class ProductDetailFromSearchViewController: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var prodcuRating: UILabel!
     @IBOutlet weak var productComments: UITableView!
+   
     
     var productDescriptionEntry: String = ""
     var productSellerEntry: String = ""
@@ -34,7 +35,6 @@ class ProductDetailFromSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if let url = URL(string: productimageUrl) {
                    do {
                    //let contents = try String(contentsOf: url)
@@ -44,10 +44,13 @@ class ProductDetailFromSearchViewController: UIViewController {
                    // contents could not be loaded
                    print("contents could not be loaded")
                    }
+            let image = try? Data(contentsOf: url)
+            productImage.image = UIImage(data: image!)
                } else{
                    // the URL was bad!
                    print("the URL was bad!")
                }
+
         
 
         //let imageUrl = URL(string: productObject["imageUrl"] as! String)
@@ -61,7 +64,9 @@ class ProductDetailFromSearchViewController: UIViewController {
         productPrice.text = String(productPriceEntry)
         productName.text = productNameA
         prodcuRating.text = String(productRatingEntry)
-        //productImage.cellImage.image = UIImage(data: image!)
+
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
