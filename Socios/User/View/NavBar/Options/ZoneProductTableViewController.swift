@@ -10,7 +10,7 @@ import UIKit
 
 class ZoneProductTableViewController: UITableViewController, UISearchResultsUpdating {
 
-    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/zonaProductos.json"
+    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/playeras.json"
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
@@ -20,8 +20,8 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
             filteredData = response!
         } else {
             filteredData = response!.filter{
-                let questionObject = $0 as! [String:Any]
-                let s: String = questionObject["name"] as! String;
+                let productObject = $0 as! [String:Any]
+                let s: String = productObject["name"] as! String;
                 return(s.lowercased().contains(searchController.searchBar.text!.lowercased())) }
         }
         
@@ -71,11 +71,16 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "zoneProductCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "zoneProductCell", for: indexPath) as! ZoneProductsTableViewCell
 
         // Configure the cell...
         let productObject = filteredData[indexPath.row] as! [String: Any]
-        cell.textLabel?.text = productObject["name"] as! String
+        cell.productName.text = productObject["name"] as! String
+        cell.price.text = String( productObject["price"] as! Float)
+        cell.seller.text = "Vendedor: \(productObject["seller"] as! String)"
+        let imageUrl = URL(string: productObject["imageUrl"] as! String)
+        let image = try? Data(contentsOf: imageUrl!)
+        cell.cellImage.image = UIImage(data: image!)
 
         return cell
     }
@@ -121,7 +126,7 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let nextView = segue.destination as! ZoneProductDetailViewController
+        let nextView = segue.destination as! ProductDetailViewController
         let index = self.tableView.indexPathForSelectedRow?.row
         let productObject = filteredData[index!] as! [String: Any]
         nextView.productDescriptionEntry = productObject["description"] as! String

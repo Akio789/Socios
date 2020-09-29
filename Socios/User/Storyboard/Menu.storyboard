@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mqd-BW-Em9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menú-->
+        <scene sceneID="K1d-Tk-dHC">
+            <objects>
+                <navigationController id="Mqd-BW-Em9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Menú" image="MenuIcon" id="OPw-Zz-vHP"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tae-SH-3Za">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8g5-Ds-6VB" kind="relationship" relationship="rootViewController" id="c3k-d5-2gl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4lK-ae-8KH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-865" y="1756"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zCa-Kp-UGz">
+            <objects>
+                <viewController id="8g5-Ds-6VB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tSp-Kc-0Ah">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9k-pG-aWI">
+                                <rect key="frame" x="0.0" y="419" width="414" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Búsqueda por foto">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uYl-JO-U4S" kind="show" id="v7r-Gd-TDh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQz-a6-eu4">
+                                <rect key="frame" x="0.0" y="486" width="414" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Productos en tu zona">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Bth-ko-kDB" kind="show" id="T37-qz-7Ye"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4H-sn-zs4">
+                                <rect key="frame" x="0.0" y="553" width="414" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Lista de comercios">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6wO-gL-Szz" kind="show" id="Z1f-gd-8b6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYA-tQ-VkB">
+                                <rect key="frame" x="0.0" y="620" width="414" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Preguntas Frecuentes">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FHZ-Y1-MQB" kind="show" id="GbX-hT-TJ8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiK-J6-3Yl">
+                                <rect key="frame" x="0.0" y="687" width="414" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Acerca de nosotros">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yKm-FG-upJ" kind="show" id="yXn-Qc-WpI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzB-T7-jT2">
+                                <rect key="frame" x="0.0" y="754" width="414" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Salir">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.29267120089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8cu-rS-LMQ" kind="show" id="Ufx-UV-MxA"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIconProject" translatesAutoresizingMaskIntoConstraints="NO" id="pl3-AO-fjC">
+                                <rect key="frame" x="105" y="187" width="205" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yHh-zY-1Iq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5fQ-Rk-BG3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NcY-0S-zPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17.39130434782609" y="1755.8035714285713"/>
+        </scene>
+        <!--SpecialSearch-->
+        <scene sceneID="z34-vk-23g">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SpecialSearch" id="uYl-JO-U4S" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ebX-GS-poX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ryh-ro-dzO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="1723"/>
+        </scene>
+        <!--ZoneProducts-->
+        <scene sceneID="oKl-r2-72H">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ZoneProducts" id="Bth-ko-kDB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZNS-Ft-qeY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cxc-sr-sr3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="1769"/>
+        </scene>
+        <!--Shops-->
+        <scene sceneID="WxI-JC-EjA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Shops" id="6wO-gL-Szz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Uz8-ME-GmK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tet-3Q-7g7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="1817"/>
+        </scene>
+        <!--Questions-->
+        <scene sceneID="7jJ-OE-72Q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Questions" id="FHZ-Y1-MQB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2m0-Jl-TxM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vQt-3t-ASs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="1869"/>
+        </scene>
+        <!--AboutUs-->
+        <scene sceneID="Atj-bx-VCp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AboutUs" id="yKm-FG-upJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YgK-Pa-ZXC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdG-om-fwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="1906"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="m75-Jx-GLA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="8cu-rS-LMQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="b7V-lF-aPr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8VD-KK-Oz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="515" y="1965"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AppIconProject" width="512" height="460.5"/>
+        <image name="MenuIcon" width="32" height="32"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
