@@ -125,6 +125,16 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
         let index = self.tableView.indexPathForSelectedRow?.row
         let orderObject = filteredData[index!] as! [String: Any]
         nextView.orderDescriptionEntry = orderObject["description"] as! String
+        let orderObject2 = filteredData[index!] as! [String: Any]
+        nextView.orderNameEntry = orderObject2["name"] as! String
+        let orderObject3 = filteredData[index!] as! [String: Any]
+        nextView.orderPrecioEntry = orderObject3["price"] as! Double
+        let orderObject4 = filteredData[index!] as! [String: Any]
+        nextView.orderDescriptionEntry = orderObject4["seller"] as! String
+        let orderObject5 = filteredData[index!] as! [String: Any]
+        nextView.orderRatingEntry = orderObject["rating"] as! Double
+        let orderObject6 = filteredData[index!] as! [String: Any]
+        nextView.orderDateEntry = orderObject["date"] as! String
     }
 
 }
