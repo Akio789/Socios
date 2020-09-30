@@ -36,6 +36,7 @@ class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.rowHeight = 100
         if let url = URL(string: direccionUrl) {
             do {
             //let contents = try String(contentsOf: url)
@@ -71,11 +72,15 @@ class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "shopTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "shopTableViewCell", for: indexPath) as! ShopsTableViewCell
 
         // Configure the cell...
         let shopObject = filteredData[indexPath.row] as! [String: Any]
-        cell.textLabel?.text = shopObject["name"] as! String
+        cell.name.text = shopObject["name"] as! String
+        cell.direction.text = String( shopObject["direction"] as! String)
+        let imageUrl = URL(string: shopObject["imageUrl"] as! String)
+        let image = try? Data(contentsOf: imageUrl!)
+        cell.cellImage.image = UIImage(data: image!)
 
         return cell
     }
@@ -125,6 +130,7 @@ class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
         let index = self.tableView.indexPathForSelectedRow?.row
         let shopObject = filteredData[index!] as! [String: Any]
         nextView.shopDescriptionEntry = shopObject["description"] as! String
+        
     }
 
 }
