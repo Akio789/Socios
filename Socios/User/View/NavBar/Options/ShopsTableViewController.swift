@@ -130,7 +130,16 @@ class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
         let index = self.tableView.indexPathForSelectedRow?.row
         let shopObject = filteredData[index!] as! [String: Any]
         nextView.shopDescriptionEntry = shopObject["description"] as! String
-        
+        let shopObject2 = filteredData[index!] as! [String: Any]
+        nextView.shopNameEntry = shopObject2["name"] as! String
+        let shopObject3 = filteredData[index!] as! [String: Any]
+        nextView.shopImageURLEntry = shopObject3["description"] as! String
+        let shopObject4 = filteredData[index!] as! [String: Any]
+        nextView.shopDirectionEntry = shopObject4["direction"] as! String
+        let shopObject5 = filteredData[index!] as! [String: Any]
+        nextView.shopCommentsEntry = shopObject5["comments"] as! Array
     }
 
 }
+
+

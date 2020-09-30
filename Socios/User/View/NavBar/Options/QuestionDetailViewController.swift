@@ -10,15 +10,19 @@ import UIKit
 
 class QuestionDetailViewController: UIViewController {
 
-    @IBOutlet weak var answer: UITextView!
+    
+    @IBOutlet weak var preguntaLabel: UILabel!
+    @IBOutlet weak var respuestaLabel: UILabel!
     
     var answerEntry: String = ""
+    var questionEntry: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        answer.text = answerEntry
+        preguntaLabel.text = questionEntry
+        respuestaLabel.text = answerEntry
     }
     
 

@@ -12,13 +12,41 @@ class ShopsDetailViewController: UIViewController {
 
     
     
-    @IBOutlet weak var shopDescription: UITextView!
+    @IBOutlet weak var nombreLabel: UILabel!
+    @IBOutlet weak var direccionLabel: UILabel!
+    @IBOutlet weak var descrpcionLabel: UILabel!
+    @IBOutlet weak var fotoLabel: UIImageView!
+    
+    
     var shopDescriptionEntry: String = ""
+    var shopNameEntry: String = ""
+    var shopImageURLEntry: String = ""
+    var shopCommentsEntry: [Any] = []
+    var shopDirectionEntry: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let url = URL(string: shopImageURLEntry) {
+                   do {
+                   //let contents = try String(contentsOf: url)
+                   //print contents
+                   let data = try? Data(contentsOf: url)
+                   } catch {
+                   // contents could not be loaded
+                   print("contents could not be loaded")
+                   }
+            let image = try? Data(contentsOf: url)
+            fotoLabel.image = UIImage(data: image!)
+               } else{
+                   // the URL was bad!
+                   print("the URL was bad!")
+               }
 
         // Do any additional setup after loading the view.
-        shopDescription.text = shopDescriptionEntry
+        nombreLabel.text = shopNameEntry
+        direccionLabel.text = shopDirectionEntry
+        descrpcionLabel.text = shopDescriptionEntry
     }
     
     

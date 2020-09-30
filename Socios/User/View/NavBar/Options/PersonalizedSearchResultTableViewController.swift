@@ -131,5 +131,17 @@ class PersonalizedSearchResultTableViewController: UITableViewController, UISear
         let index = self.tableView.indexPathForSelectedRow?.row
         let productObject = filteredData[index!] as! [String: Any]
         nextView.productDescriptionEntry = productObject["description"] as! String
+        let productObject2 = filteredData[index!] as! [String: Any]
+        nextView.productSellerEntry = productObject2["seller"] as! String
+        let productObject3 = filteredData[index!] as! [String: Any]
+        nextView.productPriceEntry = productObject3["price"] as! Double
+         let productObject4 = filteredData[index!] as! [String: Any]
+         nextView.productRatingEntry = productObject4["rating"] as! Double
+        let productObject5 = filteredData[index!] as! [String: Any]
+        nextView.productimageUrl = productObject5["imageUrl"] as! String
+        let productObject6 = filteredData[index!] as! [String: Any]
+        nextView.productNameA = productObject6["name"] as! String
+        let productObject7 = filteredData[index!] as! [String: Any]
+        nextView.productCommentsA = productObject6["comments"] as! Array<Any>
     }
 }

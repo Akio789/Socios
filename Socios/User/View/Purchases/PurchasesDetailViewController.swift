@@ -31,6 +31,12 @@ class PurchasesDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         purchaseDescription.text = purchaseDescriptionEntry
+        purchaseNombre.text = purchaseNameEntry
+        purchasePrecio.text = "$ " + String(purchasePriceEntry)
+        purchaseSeller.text = purchaseSellerEntry
+        purchaseRating.text = String(purchaseRatingEntry)
+        purchaseDate.text = purchaseDateEntry
+        
     }
     
 

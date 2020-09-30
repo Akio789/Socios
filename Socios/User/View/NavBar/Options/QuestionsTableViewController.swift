@@ -124,5 +124,7 @@ class QuestionsTableViewController: UITableViewController, UISearchResultsUpdati
         let index = self.tableView.indexPathForSelectedRow?.row
         let questionObject = filteredData[index!] as! [String: Any]
         nextView.answerEntry = questionObject["answer"] as! String
+        let questionObject2 = filteredData[index!] as! [String: Any]
+        nextView.questionEntry = questionObject2["question"] as! String
     }
 }
