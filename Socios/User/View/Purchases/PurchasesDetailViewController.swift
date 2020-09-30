@@ -13,7 +13,19 @@ class PurchasesDetailViewController: UIViewController {
     
     
     @IBOutlet weak var purchaseDescription: UITextView!
+    @IBOutlet weak var purchaseNombre: UILabel!
+    @IBOutlet weak var purchasePrecio: UILabel!
+    @IBOutlet weak var purchaseSeller: UILabel!
+    @IBOutlet weak var purchaseRating: UILabel!
+    @IBOutlet weak var purchaseDate: UILabel!
+    
     var purchaseDescriptionEntry: String = ""
+    var purchaseNameEntry : String = ""
+    var purchaseSellerEntry: String = ""
+    var purchaseRatingEntry: Double = 0
+    var purchaseDateEntry: String = ""
+    var purchasePriceEntry : Double = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -125,5 +125,17 @@ class PurchasesTableViewController: UITableViewController, UISearchResultsUpdati
         let index = self.tableView.indexPathForSelectedRow?.row
         let purchaseObject = filteredData[index!] as! [String: Any]
         nextView.purchaseDescriptionEntry = purchaseObject["description"] as! String
+        let purchaseObject2 = filteredData[index!] as! [String: Any]
+        nextView.purchaseNameEntry = purchaseObject2["name"] as! String
+        let purchaseObject3 = filteredData[index!] as! [String: Any]
+        nextView.purchaseSellerEntry = purchaseObject3["seller"] as! String
+        let purchaseObject4 = filteredData[index!] as! [String: Any]
+        nextView.purchaseRatingEntry = purchaseObject4["rating"] as! Double
+        let purchaseObject5 = filteredData[index!] as! [String: Any]
+        nextView.purchaseDateEntry = purchaseObject5["date"] as! String
+        let purchaseObject6 = filteredData[index!] as! [String: Any]
+        nextView.purchasePriceEntry = purchaseObject5["price"] as! Double
     }
 }
+
+
