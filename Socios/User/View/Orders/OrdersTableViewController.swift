@@ -36,6 +36,7 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.rowHeight = 100
         if let url = URL(string: direccionUrl) {
             do {
             //let contents = try String(contentsOf: url)
@@ -71,11 +72,16 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "orderTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "orderTableViewCell", for: indexPath) as! OrderTableViewCell
 
         // Configure the cell...
         let orderObject = filteredData[indexPath.row] as! [String: Any]
-        cell.textLabel?.text = orderObject["name"] as! String
+        cell.productName.text = orderObject["name"] as! String
+        cell.price.text = String( orderObject["price"] as! Float)
+        cell.seller.text = "Vendedor: \(orderObject["seller"] as! String)"
+        let imageUrl = URL(string: orderObject["imageUrl"] as! String)
+        let image = try? Data(contentsOf: imageUrl!)
+        cell.cellImage.image = UIImage(data: image!)
 
         return cell
     }

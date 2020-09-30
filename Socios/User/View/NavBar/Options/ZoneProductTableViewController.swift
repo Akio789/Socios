@@ -36,6 +36,7 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.rowHeight = 100
         if let url = URL(string: direccionUrl) {
             do {
             //let contents = try String(contentsOf: url)
@@ -126,7 +127,7 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let nextView = segue.destination as! ProductDetailViewController
+        let nextView = segue.destination as! ProductDetailFromSearchViewController
         let index = self.tableView.indexPathForSelectedRow?.row
         let productObject = filteredData[index!] as! [String: Any]
         nextView.productDescriptionEntry = productObject["description"] as! String

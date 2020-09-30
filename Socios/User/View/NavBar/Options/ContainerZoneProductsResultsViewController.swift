@@ -14,6 +14,8 @@ class ContainerZoneProductsResultsViewController: UIViewController, CLLocationMa
     let ubicacion = CLLocationManager()
     
     
+    
+    
     @IBOutlet weak var mapa: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()

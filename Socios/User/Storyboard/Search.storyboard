@@ -12,7 +12,6 @@
         <!--Search Table View Controller-->
         <scene sceneID="9cE-jQ-gwX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IvZ-hw-fKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="whA-Ue-TMI" customClass="SearchTableViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vgd-ta-e7Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
@@ -88,12 +87,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="c15-M4-OLj"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IvZ-hw-fKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2984.057971014493" y="1185.6026785714284"/>
         </scene>
         <!--Product Detail From Search View Controller-->
         <scene sceneID="wDn-DZ-lxh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHh-KF-AaI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="F9b-XU-rhr" customClass="ProductDetailFromSearchViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fd6-fK-UUD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="663"/>
@@ -218,7 +219,6 @@
                         <outlet property="productSeller" destination="mfq-LC-M9G" id="6SC-F2-a6J"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fHh-KF-AaI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2100" y="1186.9419642857142"/>
         </scene>

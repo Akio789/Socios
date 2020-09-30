@@ -33,6 +33,8 @@
 		19B1619C251C79CE009E897F /* PurchasesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1619B251C79CE009E897F /* PurchasesDetailViewController.swift */; };
 		19B1619F251C7CB5009E897F /* OrdersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1619E251C7CB5009E897F /* OrdersDetailViewController.swift */; };
 		19B161A2251C7CC4009E897F /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B161A1251C7CC4009E897F /* OrdersTableViewController.swift */; };
+		19C35E32252462C1005A3CE1 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C35E31252462C1005A3CE1 /* OrderTableViewCell.swift */; };
+		19C35E35252462CD005A3CE1 /* PurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C35E34252462CD005A3CE1 /* PurchaseTableViewCell.swift */; };
 		19C9108C2519BDF000032423 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9108B2519BDF000032423 /* UserProfileViewController.swift */; };
 		19C910902519CA0600032423 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9108F2519CA0600032423 /* EditProfileViewController.swift */; };
 		19C910932519D0E300032423 /* DeleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910922519D0E300032423 /* DeleteProfileViewController.swift */; };
@@ -95,6 +97,8 @@
 		19B1619B251C79CE009E897F /* PurchasesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesDetailViewController.swift; sourceTree = "<group>"; };
 		19B1619E251C7CB5009E897F /* OrdersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersDetailViewController.swift; sourceTree = "<group>"; };
 		19B161A1251C7CC4009E897F /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		19C35E31252462C1005A3CE1 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		19C35E34252462CD005A3CE1 /* PurchaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTableViewCell.swift; sourceTree = "<group>"; };
 		19C9108B2519BDF000032423 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		19C9108F2519CA0600032423 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		19C910922519D0E300032423 /* DeleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProfileViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 				6660B4CB251EC4A5004D3882 /* SearchTableViewCell.swift */,
 				196DEA6C25232A1E001B5E95 /* ZoneProductsTableViewCell.swift */,
 				190E4713252434A600EA2543 /* ShopsTableViewCell.swift */,
+				19C35E31252462C1005A3CE1 /* OrderTableViewCell.swift */,
+				19C35E34252462CD005A3CE1 /* PurchaseTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -448,10 +454,12 @@
 				19B1619C251C79CE009E897F /* PurchasesDetailViewController.swift in Sources */,
 				19C910A52519E6C800032423 /* ShoppingCartDeleteViewController.swift in Sources */,
 				19B16199251C79B2009E897F /* PurchasesTableViewController.swift in Sources */,
+				19C35E35252462CD005A3CE1 /* PurchaseTableViewCell.swift in Sources */,
 				196DEA6A252326E7001B5E95 /* ContainerZoneProductsResultsViewController.swift in Sources */,
 				19B1618D251C6338009E897F /* ZoneProductTableViewController.swift in Sources */,
 				19C910962519DF4600032423 /* ProductInformationViewController.swift in Sources */,
 				8C4610F92506C3E600D93ADF /* SceneDelegate.swift in Sources */,
+				19C35E32252462C1005A3CE1 /* OrderTableViewCell.swift in Sources */,
 				66FFE83A2516B33400AA2215 /* NavBarViewController.swift in Sources */,
 				66FFE8462516D86C00AA2215 /* QuestionsTableViewController.swift in Sources */,
 				19C910992519E37B00032423 /* AddPaymentMethodViewController.swift in Sources */,
