@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3AE-tB-nGf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3AE-tB-nGf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,13 +32,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Buscando lo mejor para ti" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMv-K4-erZ">
-                                <rect key="frame" x="41.5" y="430" width="331" height="36"/>
+                                <rect key="frame" x="42" y="430" width="330.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tecnologico de monterrey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnU-Tn-2D6">
-                                <rect key="frame" x="41" y="610" width="332" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tecnológico de Monterrey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnU-Tn-2D6">
+                                <rect key="frame" x="40.5" y="610" width="333" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,21 +55,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnO-7S-4Y9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versión 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnO-7S-4Y9">
                                 <rect key="frame" x="136" y="580" width="142" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIconProject" translatesAutoresizingMaskIntoConstraints="NO" id="VwF-gS-YvP">
-                                <rect key="frame" x="50" y="142" width="290" height="159"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconProject" translatesAutoresizingMaskIntoConstraints="NO" id="VwF-gS-YvP">
+                                <rect key="frame" x="42" y="128" width="302" height="161"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="9ZE-Xa-96e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="9ZE-Xa-96e" firstAttribute="bottom" secondItem="VwF-gS-YvP" secondAttribute="bottom" constant="573" id="1cH-HM-aKq"/>
                             <constraint firstItem="EMv-K4-erZ" firstAttribute="centerY" secondItem="she-tT-X5z" secondAttribute="centerY" id="3mm-G4-eyp"/>
+                            <constraint firstItem="9ZE-Xa-96e" firstAttribute="trailing" secondItem="VwF-gS-YvP" secondAttribute="trailing" constant="70" id="4iX-6w-JXx"/>
+                            <constraint firstItem="VwF-gS-YvP" firstAttribute="leading" secondItem="9ZE-Xa-96e" secondAttribute="leading" constant="42" id="CLb-aj-gGo"/>
+                            <constraint firstItem="VwF-gS-YvP" firstAttribute="top" secondItem="9ZE-Xa-96e" secondAttribute="top" constant="40" id="IdZ-Oe-nBU"/>
                             <constraint firstItem="cnO-7S-4Y9" firstAttribute="centerY" secondItem="she-tT-X5z" secondAttribute="centerY" constant="150" id="JfG-5L-G5c"/>
                             <constraint firstItem="BnU-Tn-2D6" firstAttribute="centerX" secondItem="she-tT-X5z" secondAttribute="centerX" id="KV9-qV-MGr"/>
                             <constraint firstItem="BnU-Tn-2D6" firstAttribute="centerY" secondItem="she-tT-X5z" secondAttribute="centerY" constant="180" id="LSq-BB-xWL"/>
@@ -82,6 +82,7 @@
                             <constraint firstItem="2eU-jb-kg7" firstAttribute="centerY" secondItem="she-tT-X5z" secondAttribute="centerY" constant="210" id="lvr-K2-qif"/>
                             <constraint firstItem="K74-7l-Xpz" firstAttribute="centerY" secondItem="she-tT-X5z" secondAttribute="centerY" constant="250" id="nWc-Qi-9ZN"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="9ZE-Xa-96e"/>
                     </view>
                     <navigationItem key="navigationItem" id="2CI-0T-611"/>
                 </viewController>
@@ -92,8 +93,5 @@
     </scenes>
     <resources>
         <image name="AppIconProject" width="512" height="460.5"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -61,7 +61,7 @@ class ProductDetailFromSearchViewController: UIViewController {
         
         productDescription.text = productDescriptionEntry
         productSeller.text = productSellerEntry
-        productPrice.text = String(productPriceEntry)
+        productPrice.text = "$" + String(productPriceEntry)
         productName.text = productNameA
         prodcuRating.text = String(productRatingEntry)
 

@@ -35,7 +35,7 @@ class OrdersDetailViewController: UIViewController {
         descripcionLabel.text = orderDescriptionEntry
         ratingLabel.text = String(orderRatingEntry)
         fechaLabel.text = orderDateEntry
-        priceLabel.text = String(orderPrecioEntry)
+        priceLabel.text = "$" + String(orderPrecioEntry)
     }
     
 
