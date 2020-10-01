@@ -45,6 +45,9 @@
 		19C910A22519E6B800032423 /* ShoppingCartPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */; };
 		19C910A52519E6C800032423 /* ShoppingCartDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */; };
 		19C910A82519F04900032423 /* SuccessPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */; };
+		19D1A6DF2525BC1C00FFFACE /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D1A6DE2525BC1C00FFFACE /* CartTableViewController.swift */; };
+		19D1A6E22525BC3000FFFACE /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D1A6E12525BC3000FFFACE /* CartTableViewCell.swift */; };
+		19D1A6E52525BE6500FFFACE /* ContainerCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D1A6E42525BE6500FFFACE /* ContainerCartViewController.swift */; };
 		6660B4CA251EC2BB004D3882 /* ContainerSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660B4C9251EC2BB004D3882 /* ContainerSearchTableViewController.swift */; };
 		6660B4CC251EC4A5004D3882 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660B4CB251EC4A5004D3882 /* SearchTableViewCell.swift */; };
 		6660B4D1251ECBAF004D3882 /* ContactInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660B4D0251ECBAF004D3882 /* ContactInfoTableViewController.swift */; };
@@ -115,6 +118,9 @@
 		19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartPaymentViewController.swift; sourceTree = "<group>"; };
 		19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDeleteViewController.swift; sourceTree = "<group>"; };
 		19C910A72519F04900032423 /* SuccessPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPurchaseViewController.swift; sourceTree = "<group>"; };
+		19D1A6DE2525BC1C00FFFACE /* CartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		19D1A6E12525BC3000FFFACE /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		19D1A6E42525BE6500FFFACE /* ContainerCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCartViewController.swift; sourceTree = "<group>"; };
 		6660B4C9251EC2BB004D3882 /* ContainerSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerSearchTableViewController.swift; sourceTree = "<group>"; };
 		6660B4CB251EC4A5004D3882 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		6660B4D0251ECBAF004D3882 /* ContactInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +232,8 @@
 				19C9109E2519E6AC00032423 /* ShoppingCartViewController.swift */,
 				19C910A12519E6B800032423 /* ShoppingCartPaymentViewController.swift */,
 				19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */,
+				19D1A6DE2525BC1C00FFFACE /* CartTableViewController.swift */,
+				19D1A6E42525BE6500FFFACE /* ContainerCartViewController.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -321,6 +329,7 @@
 				19C35E34252462CD005A3CE1 /* PurchaseTableViewCell.swift */,
 				66F0CA0325259A3900924F21 /* CommentsTableViewCell.swift */,
 				66F0CA072525A50D00924F21 /* CommentFromSpecializedSearchTableViewCell.swift */,
+				19D1A6E12525BC3000FFFACE /* CartTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -443,6 +452,7 @@
 				19C910902519CA0600032423 /* EditProfileViewController.swift in Sources */,
 				19C910A82519F04900032423 /* SuccessPurchaseViewController.swift in Sources */,
 				66E1008D25169B7400C351EA /* RegisterViewController.swift in Sources */,
+				19D1A6DF2525BC1C00FFFACE /* CartTableViewController.swift in Sources */,
 				66F0CA0425259A3900924F21 /* CommentsTableViewCell.swift in Sources */,
 				66CF8D2D251DA926007E4C47 /* PersonalizedSearchTableViewCell.swift in Sources */,
 				C8EB77FD25211F0A0051E956 /* AboutUsViewController.swift in Sources */,
@@ -467,6 +477,7 @@
 				8C4610F72506C3E600D93ADF /* AppDelegate.swift in Sources */,
 				6660B4CA251EC2BB004D3882 /* ContainerSearchTableViewController.swift in Sources */,
 				190E4711252430E600EA2543 /* ContainerShopsViewController.swift in Sources */,
+				19D1A6E52525BE6500FFFACE /* ContainerCartViewController.swift in Sources */,
 				66FFE83E2516BFD800AA2215 /* PersonalizedSearchResultTableViewController.swift in Sources */,
 				19B161A2251C7CC4009E897F /* OrdersTableViewController.swift in Sources */,
 				19C9108C2519BDF000032423 /* UserProfileViewController.swift in Sources */,
@@ -481,6 +492,7 @@
 				66F0CA062525A28100924F21 /* CommentsFromSpecializedSearchTableViewController.swift in Sources */,
 				196DEA6A252326E7001B5E95 /* ContainerZoneProductsResultsViewController.swift in Sources */,
 				19B1618D251C6338009E897F /* ZoneProductTableViewController.swift in Sources */,
+				19D1A6E22525BC3000FFFACE /* CartTableViewCell.swift in Sources */,
 				19C910962519DF4600032423 /* ProductInformationViewController.swift in Sources */,
 				8C4610F92506C3E600D93ADF /* SceneDelegate.swift in Sources */,
 				19C35E32252462C1005A3CE1 /* OrderTableViewCell.swift in Sources */,
