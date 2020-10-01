@@ -23,7 +23,7 @@ class ProductDetailViewController: UIViewController {
     var productPriceEntry: Double = 0
     var productRatingEntry: Double = 0
     var productimageUrl: String = ""
-    var productCommentsA: [Any] = []
+    var productCommentsA: Array<[String: Any]> = []
     var productNameA : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,16 +53,15 @@ class ProductDetailViewController: UIViewController {
         nombreLabel.text = productNameA
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let nextView = segue.destination as! CommentsTableViewController
+        nextView.commentsEntry = productCommentsA
     }
-    */
 
 }
 

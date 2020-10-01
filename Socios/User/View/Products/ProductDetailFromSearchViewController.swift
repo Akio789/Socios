@@ -26,7 +26,7 @@ class ProductDetailFromSearchViewController: UIViewController {
     var productRatingEntry: Double = 0
     var productimageUrl: String = ""
     var productNameA: String = ""
-    var productCommentsA: [Any] = []
+    var productCommentsA: Array<[String: Any]> = []
     
     struct Comment: Decodable {
         let user : String
@@ -64,9 +64,6 @@ class ProductDetailFromSearchViewController: UIViewController {
         productPrice.text = "$" + String(productPriceEntry)
         productName.text = productNameA
         prodcuRating.text = String(productRatingEntry)
-
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,14 +83,13 @@ class ProductDetailFromSearchViewController: UIViewController {
       //  }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let nextView = segue.destination as! CommentsTableViewController
+        nextView.commentsEntry = productCommentsA
     }
-    */
-
 }

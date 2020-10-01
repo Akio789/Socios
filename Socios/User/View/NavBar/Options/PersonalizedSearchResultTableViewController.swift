@@ -127,7 +127,7 @@ class PersonalizedSearchResultTableViewController: UITableViewController, UISear
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let nextView = segue.destination as! ProductDetailViewController
+        let nextView = segue.destination as! ProductDetailFromSearchViewController
         let index = self.tableView.indexPathForSelectedRow?.row
         let productObject = filteredData[index!] as! [String: Any]
         nextView.productDescriptionEntry = productObject["description"] as! String
@@ -142,6 +142,6 @@ class PersonalizedSearchResultTableViewController: UITableViewController, UISear
         let productObject6 = filteredData[index!] as! [String: Any]
         nextView.productNameA = productObject6["name"] as! String
         let productObject7 = filteredData[index!] as! [String: Any]
-        nextView.productCommentsA = productObject6["comments"] as! Array<Any>
+        nextView.productCommentsA = productObject6["comments"] as! Array<[String: Any]>
     }
 }

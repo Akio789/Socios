@@ -53,6 +53,12 @@
 		66E100892516894200C351EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E100882516894200C351EA /* LoginViewController.swift */; };
 		66E1008B2516906900C351EA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E1008A2516906900C351EA /* HomeViewController.swift */; };
 		66E1008D25169B7400C351EA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E1008C25169B7400C351EA /* RegisterViewController.swift */; };
+		66F0CA022525963500924F21 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F0CA012525963500924F21 /* CommentsTableViewController.swift */; };
+		66F0CA0425259A3900924F21 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F0CA0325259A3900924F21 /* CommentsTableViewCell.swift */; };
+		66F0CA062525A28100924F21 /* CommentsFromSpecializedSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F0CA052525A28100924F21 /* CommentsFromSpecializedSearchTableViewController.swift */; };
+		66F0CA082525A50D00924F21 /* CommentFromSpecializedSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F0CA072525A50D00924F21 /* CommentFromSpecializedSearchTableViewCell.swift */; };
+		66F0CA0A2525A87100924F21 /* Comments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F0CA092525A87100924F21 /* Comments.storyboard */; };
+		66F0CA0C2525ABCF00924F21 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F0CA0B2525ABCF00924F21 /* ProductDetail.storyboard */; };
 		66FFE8382516ABBF00AA2215 /* NavBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFE8372516ABBF00AA2215 /* NavBarTableViewController.swift */; };
 		66FFE83A2516B33400AA2215 /* NavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFE8392516B33400AA2215 /* NavBarViewController.swift */; };
 		66FFE83C2516B8B300AA2215 /* PersonalizedSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFE83B2516B8B300AA2215 /* PersonalizedSearchViewController.swift */; };
@@ -117,6 +123,12 @@
 		66E100882516894200C351EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		66E1008A2516906900C351EA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		66E1008C25169B7400C351EA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		66F0CA012525963500924F21 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
+		66F0CA0325259A3900924F21 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		66F0CA052525A28100924F21 /* CommentsFromSpecializedSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsFromSpecializedSearchTableViewController.swift; sourceTree = "<group>"; };
+		66F0CA072525A50D00924F21 /* CommentFromSpecializedSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentFromSpecializedSearchTableViewCell.swift; sourceTree = "<group>"; };
+		66F0CA092525A87100924F21 /* Comments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comments.storyboard; sourceTree = "<group>"; };
+		66F0CA0B2525ABCF00924F21 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
 		66FFE8372516ABBF00AA2215 /* NavBarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarTableViewController.swift; sourceTree = "<group>"; };
 		66FFE8392516B33400AA2215 /* NavBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarViewController.swift; sourceTree = "<group>"; };
 		66FFE83B2516B8B300AA2215 /* PersonalizedSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizedSearchViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +176,8 @@
 				196DEA6025231C9C001B5E95 /* ZoneProducts.storyboard */,
 				196DEA6325231D25001B5E95 /* SpecialSearch.storyboard */,
 				196DEA6625231D9B001B5E95 /* AboutUs.storyboard */,
+				66F0CA092525A87100924F21 /* Comments.storyboard */,
+				66F0CA0B2525ABCF00924F21 /* ProductDetail.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -252,6 +266,8 @@
 				6660B4D0251ECBAF004D3882 /* ContactInfoTableViewController.swift */,
 				196DEA69252326E7001B5E95 /* ContainerZoneProductsResultsViewController.swift */,
 				190E4710252430E600EA2543 /* ContainerShopsViewController.swift */,
+				66F0CA012525963500924F21 /* CommentsTableViewController.swift */,
+				66F0CA052525A28100924F21 /* CommentsFromSpecializedSearchTableViewController.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -303,6 +319,8 @@
 				190E4713252434A600EA2543 /* ShopsTableViewCell.swift */,
 				19C35E31252462C1005A3CE1 /* OrderTableViewCell.swift */,
 				19C35E34252462CD005A3CE1 /* PurchaseTableViewCell.swift */,
+				66F0CA0325259A3900924F21 /* CommentsTableViewCell.swift */,
+				66F0CA072525A50D00924F21 /* CommentFromSpecializedSearchTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -398,12 +416,14 @@
 				19839F172523055200AFC3FF /* Home.storyboard in Resources */,
 				196DEA5B25231B00001B5E95 /* Questions.storyboard in Resources */,
 				8C4611052506C3E800D93ADF /* LaunchScreen.storyboard in Resources */,
+				66F0CA0A2525A87100924F21 /* Comments.storyboard in Resources */,
 				19839F142523053A00AFC3FF /* Menu.storyboard in Resources */,
 				19839F0B252304FE00AFC3FF /* Orders.storyboard in Resources */,
 				8C4611022506C3E800D93ADF /* Assets.xcassets in Resources */,
 				19839F05252304D400AFC3FF /* Profile.storyboard in Resources */,
 				19839F08252304F000AFC3FF /* Cart.storyboard in Resources */,
 				196DEA6425231D25001B5E95 /* SpecialSearch.storyboard in Resources */,
+				66F0CA0C2525ABCF00924F21 /* ProductDetail.storyboard in Resources */,
 				8C4611002506C3E600D93ADF /* Main.storyboard in Resources */,
 				196DEA6125231C9C001B5E95 /* ZoneProducts.storyboard in Resources */,
 				196DEA6725231D9B001B5E95 /* AboutUs.storyboard in Resources */,
@@ -423,16 +443,19 @@
 				19C910902519CA0600032423 /* EditProfileViewController.swift in Sources */,
 				19C910A82519F04900032423 /* SuccessPurchaseViewController.swift in Sources */,
 				66E1008D25169B7400C351EA /* RegisterViewController.swift in Sources */,
+				66F0CA0425259A3900924F21 /* CommentsTableViewCell.swift in Sources */,
 				66CF8D2D251DA926007E4C47 /* PersonalizedSearchTableViewCell.swift in Sources */,
 				C8EB77FD25211F0A0051E956 /* AboutUsViewController.swift in Sources */,
 				19B16193251C6E05009E897F /* ShopsDetailViewController.swift in Sources */,
 				66FFE8382516ABBF00AA2215 /* NavBarTableViewController.swift in Sources */,
 				19C9109C2519E39500032423 /* DeletePaymentMethodViewController.swift in Sources */,
 				66E100892516894200C351EA /* LoginViewController.swift in Sources */,
+				66F0CA082525A50D00924F21 /* CommentFromSpecializedSearchTableViewCell.swift in Sources */,
 				66FFE8482516E85200AA2215 /* QuestionDetailViewController.swift in Sources */,
 				196DEA582523148F001B5E95 /* TabBarViewController.swift in Sources */,
 				6660B4CC251EC4A5004D3882 /* SearchTableViewCell.swift in Sources */,
 				66CF8D2A251D96FD007E4C47 /* ContainerSpecializedSearchResultsViewController.swift in Sources */,
+				66F0CA022525963500924F21 /* CommentsTableViewController.swift in Sources */,
 				196DEA6D25232A1E001B5E95 /* ZoneProductsTableViewCell.swift in Sources */,
 				66FFE83C2516B8B300AA2215 /* PersonalizedSearchViewController.swift in Sources */,
 				19B16196251C6E15009E897F /* ShopsTableViewController.swift in Sources */,
@@ -455,6 +478,7 @@
 				19C910A52519E6C800032423 /* ShoppingCartDeleteViewController.swift in Sources */,
 				19B16199251C79B2009E897F /* PurchasesTableViewController.swift in Sources */,
 				19C35E35252462CD005A3CE1 /* PurchaseTableViewCell.swift in Sources */,
+				66F0CA062525A28100924F21 /* CommentsFromSpecializedSearchTableViewController.swift in Sources */,
 				196DEA6A252326E7001B5E95 /* ContainerZoneProductsResultsViewController.swift in Sources */,
 				19B1618D251C6338009E897F /* ZoneProductTableViewController.swift in Sources */,
 				19C910962519DF4600032423 /* ProductInformationViewController.swift in Sources */,

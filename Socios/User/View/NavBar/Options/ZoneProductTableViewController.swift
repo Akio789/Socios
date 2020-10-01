@@ -131,5 +131,6 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
         let index = self.tableView.indexPathForSelectedRow?.row
         let productObject = filteredData[index!] as! [String: Any]
         nextView.productDescriptionEntry = productObject["description"] as! String
+        nextView.productCommentsA = productObject["comments"] as! Array<[String: Any]>
     }
 }
