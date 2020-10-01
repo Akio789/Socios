@@ -55,7 +55,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="respuesta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84J-f1-Tjl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="respuesta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84J-f1-Tjl">
                                 <rect key="frame" x="44" y="145" width="295" height="165"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -65,14 +65,11 @@
                         <viewLayoutGuide key="safeArea" id="ZJ6-ti-9Qs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="bottom" secondItem="EQv-85-5CJ" secondAttribute="bottom" constant="284" id="5M3-ER-ZWd"/>
-                            <constraint firstItem="84J-f1-Tjl" firstAttribute="leading" secondItem="ZJ6-ti-9Qs" secondAttribute="leading" constant="44" id="BPd-zv-waE"/>
-                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="trailing" secondItem="EQv-85-5CJ" secondAttribute="trailing" constant="63" id="WGV-bI-rVD"/>
-                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="bottom" secondItem="84J-f1-Tjl" secondAttribute="bottom" constant="57" id="aMV-Tr-0ek"/>
-                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="trailing" secondItem="84J-f1-Tjl" secondAttribute="trailing" constant="75" id="fwI-uR-xBR"/>
-                            <constraint firstItem="EQv-85-5CJ" firstAttribute="leading" secondItem="ZJ6-ti-9Qs" secondAttribute="leading" constant="44" id="kgO-t6-HcL"/>
-                            <constraint firstItem="84J-f1-Tjl" firstAttribute="top" secondItem="ZJ6-ti-9Qs" secondAttribute="top" constant="101" id="pDj-E4-tV1"/>
-                            <constraint firstItem="EQv-85-5CJ" firstAttribute="top" secondItem="ZJ6-ti-9Qs" secondAttribute="top" constant="9" id="u2c-zm-Q8O"/>
+                            <constraint firstItem="84J-f1-Tjl" firstAttribute="top" secondItem="EQv-85-5CJ" secondAttribute="bottom" constant="62" id="cuz-Nh-jlu"/>
+                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="trailing" secondItem="EQv-85-5CJ" secondAttribute="trailing" constant="63" id="heO-s8-MVV"/>
+                            <constraint firstItem="EQv-85-5CJ" firstAttribute="leading" secondItem="ZJ6-ti-9Qs" secondAttribute="leading" constant="44" id="k06-Tx-1FI"/>
+                            <constraint firstItem="EQv-85-5CJ" firstAttribute="leading" secondItem="84J-f1-Tjl" secondAttribute="leading" id="v4C-XV-A2Q"/>
+                            <constraint firstItem="EQv-85-5CJ" firstAttribute="top" secondItem="ZJ6-ti-9Qs" secondAttribute="top" constant="9" id="vyg-TY-u2p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DQE-S0-kCu"/>
