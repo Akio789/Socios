@@ -21,7 +21,7 @@ class ShopsDetailViewController: UIViewController {
     var shopDescriptionEntry: String = ""
     var shopNameEntry: String = ""
     var shopImageURLEntry: String = ""
-    var shopCommentsEntry: [Any] = []
+    var shopCommentsEntry: Array<[String: Any]> = []
     var shopDirectionEntry: String = ""
     
     override func viewDidLoad() {
@@ -50,14 +50,14 @@ class ShopsDetailViewController: UIViewController {
     }
     
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let nextView = segue.destination as! CommentsTableViewController
+        nextView.commentsEntry = shopCommentsEntry
     }
-    */
 
 }

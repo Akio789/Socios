@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qXE-DS-w3S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qXE-DS-w3S">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -84,15 +84,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comentarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-FK-yMn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Comentarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-FK-yMn">
                                 <rect key="frame" x="26" y="476" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uE2-h0-0q6">
+                                <rect key="frame" x="0.0" y="505" width="414" height="128"/>
+                                <connections>
+                                    <segue destination="KLX-f1-xYd" kind="embed" id="eWl-Ob-5zg"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uE2-h0-0q6" firstAttribute="leading" secondItem="pol-0c-fc9" secondAttribute="leading" id="Hu8-sz-vz7"/>
+                            <constraint firstItem="uE2-h0-0q6" firstAttribute="centerX" secondItem="mpH-1e-w9D" secondAttribute="centerX" id="oPY-QF-RVV"/>
+                            <constraint firstItem="uE2-h0-0q6" firstAttribute="top" secondItem="mpH-1e-w9D" secondAttribute="top" constant="505" id="sg9-Se-6Kt"/>
+                            <constraint firstItem="uE2-h0-0q6" firstAttribute="top" secondItem="kTK-FK-yMn" secondAttribute="bottom" constant="8" id="tHy-jy-GgR"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="uE2-h0-0q6" secondAttribute="bottom" constant="-18" id="wH0-5P-p51"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pol-0c-fc9"/>
                     </view>
                     <navigationItem key="navigationItem" id="WPr-Xc-0J9"/>
@@ -106,6 +118,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1g-Wy-SFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-426.08695652173918" y="2834.9330357142858"/>
+        </scene>
+        <!--Comments-->
+        <scene sceneID="CFa-b1-EtZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Comments" id="KLX-f1-xYd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ei2-EB-bB7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426" y="3183"/>
         </scene>
         <!--Shops Table View Controller-->
         <scene sceneID="WQs-ZI-pYZ">

@@ -137,7 +137,7 @@ class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
         let shopObject4 = filteredData[index!] as! [String: Any]
         nextView.shopDirectionEntry = shopObject4["direction"] as! String
         let shopObject5 = filteredData[index!] as! [String: Any]
-        nextView.shopCommentsEntry = shopObject5["comments"] as! Array
+        nextView.shopCommentsEntry = shopObject5["comments"] as! Array<[String: Any]>
     }
 
 }
