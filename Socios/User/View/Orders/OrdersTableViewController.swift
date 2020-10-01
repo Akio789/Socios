@@ -141,6 +141,8 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
         nextView.orderRatingEntry = orderObject["rating"] as! Double
         let orderObject6 = filteredData[index!] as! [String: Any]
         nextView.orderDateEntry = orderObject["date"] as! String
+        let orderObject7 = filteredData[index!] as! [String: Any]
+        nextView.orderImageEntry = orderObject7["imageURL"] as! String
     }
 
 }

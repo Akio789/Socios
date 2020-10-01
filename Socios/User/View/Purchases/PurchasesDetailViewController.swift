@@ -14,10 +14,12 @@ class PurchasesDetailViewController: UIViewController {
     
     @IBOutlet weak var purchaseDescription: UITextView!
     @IBOutlet weak var purchaseNombre: UILabel!
-    @IBOutlet weak var purchasePrecio: UILabel!
-    @IBOutlet weak var purchaseSeller: UILabel!
-    @IBOutlet weak var purchaseRating: UILabel!
-    @IBOutlet weak var purchaseDate: UILabel!
+    @IBOutlet weak var imageLabel: UIImageView!
+    @IBOutlet weak var precioLabel: UILabel!
+    @IBOutlet weak var vendedorLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var fechaLabel: UILabel!
+    
     
     var purchaseDescriptionEntry: String = ""
     var purchaseNameEntry : String = ""
@@ -25,17 +27,34 @@ class PurchasesDetailViewController: UIViewController {
     var purchaseRatingEntry: Double = 0
     var purchaseDateEntry: String = ""
     var purchasePriceEntry : Double = 0
+    var purchaseImageEntry : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let url = URL(string: purchaseImageEntry) {
+                   do {
+                   //let contents = try String(contentsOf: url)
+                   //print contents
+                   let data = try? Data(contentsOf: url)
+                   } catch {
+                   // contents could not be loaded
+                   print("contents could not be loaded")
+                   }
+            let image = try? Data(contentsOf: url)
+            imageLabel.image = UIImage(data: image!)
+               } else{
+                   // the URL was bad!
+                   print("the URL was bad!")
+               }
 
         // Do any additional setup after loading the view.
         purchaseDescription.text = purchaseDescriptionEntry
         purchaseNombre.text = purchaseNameEntry
-        purchasePrecio.text = "$ " + String(purchasePriceEntry)
-        purchaseSeller.text = purchaseSellerEntry
-        purchaseRating.text = String(purchaseRatingEntry)
-        purchaseDate.text = purchaseDateEntry
+        precioLabel.text =  String(purchasePriceEntry)
+        vendedorLabel.text = purchaseSellerEntry
+        ratingLabel.text = String(purchaseRatingEntry)
+        fechaLabel.text = purchaseDateEntry
         
     }
     

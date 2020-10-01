@@ -141,6 +141,9 @@ class PurchasesTableViewController: UITableViewController, UISearchResultsUpdati
         nextView.purchaseDateEntry = purchaseObject5["date"] as! String
         let purchaseObject6 = filteredData[index!] as! [String: Any]
         nextView.purchasePriceEntry = purchaseObject5["price"] as! Double
+        let purchaseObject7 = filteredData[index!] as! [String: Any]
+        nextView.purchaseImageEntry = purchaseObject7["imageURL"] as! String
+
     }
 }
 

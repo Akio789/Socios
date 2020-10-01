@@ -169,8 +169,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SchoolLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1XO-pK-BQh">
-                                <rect key="frame" x="81" y="85" width="240" height="114"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SchoolLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1XO-pK-BQh">
+                                <rect key="frame" x="81" y="85" width="241" height="114"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTV-lV-JRq">
                                 <rect key="frame" x="130" y="207" width="143" height="30"/>
@@ -327,6 +327,7 @@
                     <connections>
                         <outlet property="descripcionLabel" destination="b9Q-aN-Xa5" id="yqP-ey-bZ1"/>
                         <outlet property="fechaLabel" destination="ijm-Wd-qLC" id="8bd-Gr-tOr"/>
+                        <outlet property="imageLabel" destination="1XO-pK-BQh" id="daB-qJ-ZbK"/>
                         <outlet property="nameLabel" destination="FIe-Vn-XwX" id="Iqc-M8-4F6"/>
                         <outlet property="priceLabel" destination="jTV-lV-JRq" id="0AK-yt-8qI"/>
                         <outlet property="ratingLabel" destination="FDf-F0-fho" id="Al0-KJ-Gws"/>
