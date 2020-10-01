@@ -138,11 +138,11 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
         let orderObject4 = filteredData[index!] as! [String: Any]
         nextView.orderDescriptionEntry = orderObject4["seller"] as! String
         let orderObject5 = filteredData[index!] as! [String: Any]
-        nextView.orderRatingEntry = orderObject["rating"] as! Double
+        nextView.orderRatingEntry = orderObject5["rating"] as! Double
         let orderObject6 = filteredData[index!] as! [String: Any]
-        nextView.orderDateEntry = orderObject["date"] as! String
+        nextView.orderDateEntry = orderObject6["date"] as! String
         let orderObject7 = filteredData[index!] as! [String: Any]
-        nextView.orderImageEntry = orderObject7["imageURL"] as! String
+        nextView.orderImageEntry = orderObject7["imageUrl"] as! String
     }
 
 }
