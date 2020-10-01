@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hI1-uJ-XQh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hI1-uJ-XQh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bBn-ws-XDn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="question" id="gwF-rG-pyI">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -55,22 +53,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="respuesta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84J-f1-Tjl">
-                                <rect key="frame" x="44" y="145" width="295" height="165"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="respuesta" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84J-f1-Tjl">
+                                <rect key="frame" x="44" y="145" width="295" height="159"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="ZJ6-ti-9Qs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="trailing" secondItem="84J-f1-Tjl" secondAttribute="trailing" constant="75" id="Db6-KY-DT4"/>
+                            <constraint firstItem="84J-f1-Tjl" firstAttribute="leading" secondItem="ZJ6-ti-9Qs" secondAttribute="leading" constant="44" id="M33-sg-f8g"/>
                             <constraint firstItem="84J-f1-Tjl" firstAttribute="top" secondItem="EQv-85-5CJ" secondAttribute="bottom" constant="62" id="cuz-Nh-jlu"/>
                             <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="trailing" secondItem="EQv-85-5CJ" secondAttribute="trailing" constant="63" id="heO-s8-MVV"/>
                             <constraint firstItem="EQv-85-5CJ" firstAttribute="leading" secondItem="ZJ6-ti-9Qs" secondAttribute="leading" constant="44" id="k06-Tx-1FI"/>
                             <constraint firstItem="EQv-85-5CJ" firstAttribute="leading" secondItem="84J-f1-Tjl" secondAttribute="leading" id="v4C-XV-A2Q"/>
                             <constraint firstItem="EQv-85-5CJ" firstAttribute="top" secondItem="ZJ6-ti-9Qs" secondAttribute="top" constant="9" id="vyg-TY-u2p"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZJ6-ti-9Qs"/>
                     </view>
                     <navigationItem key="navigationItem" id="DQE-S0-kCu"/>
                     <connections>
@@ -89,7 +89,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4xk-ES-We2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contact" id="CGt-jb-2aM">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -146,8 +146,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="0hV-iB-28e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4WN-TV-zFq" firstAttribute="trailing" secondItem="eR1-zZ-qca" secondAttribute="trailing" id="4so-q2-81S"/>
                             <constraint firstItem="eR1-zZ-qca" firstAttribute="centerX" secondItem="MFV-Bs-7jc" secondAttribute="centerX" id="Fpy-ot-hCL"/>
@@ -165,6 +164,7 @@
                             <constraint firstItem="MFV-Bs-7jc" firstAttribute="leading" secondItem="8pl-2Y-HbG" secondAttribute="leading" id="wxg-rz-ahB"/>
                             <constraint firstItem="4WN-TV-zFq" firstAttribute="top" secondItem="MFV-Bs-7jc" secondAttribute="bottom" constant="28" id="z6w-vW-Coh"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="0hV-iB-28e"/>
                     </view>
                     <navigationItem key="navigationItem" id="PgI-C6-Dgv"/>
                 </viewController>
@@ -173,9 +173,4 @@
             <point key="canvasLocation" x="-981.304347826087" y="1983.4375"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
