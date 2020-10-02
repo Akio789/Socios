@@ -9,7 +9,7 @@
 import UIKit
 
 class PersonalizedSearchResultTableViewController: UITableViewController, UISearchResultsUpdating {
-    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/playeras.json"
+    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/busquedaEspecial.json"
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)

@@ -9,40 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="9cg-SB-o24">
-            <objects>
-                <viewController id="i8u-BP-uVN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Bc-lG-sr5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siH-1Q-wI9">
-                                <rect key="frame" x="0.0" y="119" width="414" height="743"/>
-                            </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis pedidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OO-TA-dw0">
-                                <rect key="frame" x="55" y="79" width="147" height="32"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="R41-sC-pHT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="5OO-TA-dw0" firstAttribute="top" secondItem="R41-sC-pHT" secondAttribute="top" constant="35" id="7Ek-oc-io2"/>
-                            <constraint firstItem="5OO-TA-dw0" firstAttribute="leading" secondItem="R41-sC-pHT" secondAttribute="leading" constant="55" id="GuB-RV-6sf"/>
-                            <constraint firstItem="siH-1Q-wI9" firstAttribute="centerX" secondItem="7Bc-lG-sr5" secondAttribute="centerX" id="HDc-Rs-Xob"/>
-                            <constraint firstItem="siH-1Q-wI9" firstAttribute="top" secondItem="5OO-TA-dw0" secondAttribute="bottom" constant="8" id="Nq9-Fk-sIT"/>
-                            <constraint firstItem="siH-1Q-wI9" firstAttribute="leading" secondItem="R41-sC-pHT" secondAttribute="leading" id="kGg-Ce-Eay"/>
-                            <constraint firstItem="siH-1Q-wI9" firstAttribute="bottom" secondItem="R41-sC-pHT" secondAttribute="bottom" id="taG-JM-20s"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W2j-5f-Ht6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1965.217391304348" y="-1263.6160714285713"/>
-        </scene>
         <!--Orders Table View Controller-->
         <scene sceneID="DGA-za-kSn">
             <objects>
@@ -88,12 +54,6 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJz-TM-QRy">
-                                            <rect key="frame" x="255" y="34" width="129" height="33"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="Agregar a carrito"/>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="STI-Bk-rlT" firstAttribute="leading" secondItem="XSQ-gy-Kes" secondAttribute="trailing" constant="21" id="2Df-8X-Jvy"/>

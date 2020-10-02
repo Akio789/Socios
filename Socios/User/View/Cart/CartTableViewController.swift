@@ -10,7 +10,7 @@ import UIKit
 
 class CartTableViewController: UITableViewController, UISearchResultsUpdating {
 
-    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/playeras.json"
+    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/carrito.json"
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
