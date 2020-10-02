@@ -48,6 +48,41 @@
                                 <rect key="frame" x="142" y="185" width="130" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOQ-Fs-cOL">
+                                <rect key="frame" x="83" y="574" width="93" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="EOt-Gm-315" kind="show" id="QHQ-Qx-qrn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-AR-FrQ">
+                                <rect key="frame" x="83" y="686" width="93" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="EOt-Gm-315" kind="show" id="oBx-ZQ-6Nd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcb-yX-pjN">
+                                <rect key="frame" x="249" y="686" width="93" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="EOt-Gm-315" kind="show" id="LTd-b0-YeN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stw-MT-NtI">
+                                <rect key="frame" x="249" y="574" width="93" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="EOt-Gm-315" kind="show" id="ste-T0-VJo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1G-G1-Gv6">
+                                <rect key="frame" x="162" y="408" width="93" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="EOt-Gm-315" kind="show" id="jvZ-xl-vIm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b4H-yX-byZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,7 +108,20 @@
             </objects>
             <point key="canvasLocation" x="-3091" y="1880"/>
         </scene>
+        <!--ProductDetail-->
+        <scene sceneID="Zvt-5L-P7P">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProductDetail" id="EOt-Gm-315" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Rcf-nk-mOh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uHr-Ww-Ai4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3122" y="2071"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QHQ-Qx-qrn"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="AppIconProject" width="512" height="460.5"/>
         <image name="HomeIcon" width="32" height="32"/>

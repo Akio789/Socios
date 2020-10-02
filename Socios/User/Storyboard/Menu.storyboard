@@ -104,7 +104,7 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.29267120089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8cu-rS-LMQ" kind="show" id="Ufx-UV-MxA"/>
+                                    <segue destination="zrF-80-l9H" kind="show" id="pfn-0G-tXw"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIconProject" translatesAutoresizingMaskIntoConstraints="NO" id="pl3-AO-fjC">
@@ -116,8 +116,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="5fQ-Rk-BG3"/>
+                    <connections>
+                        <segue destination="liS-W1-NTB" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="iwg-qF-GCc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NcY-0S-zPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="liS-W1-NTB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-17.39130434782609" y="1755.8035714285713"/>
         </scene>
@@ -172,14 +176,14 @@
             <point key="canvasLocation" x="551" y="1906"/>
         </scene>
         <!--Login-->
-        <scene sceneID="m75-Jx-GLA">
+        <scene sceneID="nsl-VX-rlQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="8cu-rS-LMQ" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="b7V-lF-aPr"/>
+                <viewControllerPlaceholder storyboardName="Login" id="zrF-80-l9H" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="UdG-V5-fi7"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8VD-KK-Oz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eiI-yr-RTv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="515" y="1965"/>
+            <point key="canvasLocation" x="511" y="1989"/>
         </scene>
     </scenes>
     <resources>

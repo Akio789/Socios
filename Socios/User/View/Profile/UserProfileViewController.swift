@@ -11,13 +11,13 @@ import UIKit
 class UserProfileViewController: UIViewController {
 
    
-    @IBOutlet weak var profile: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        profile.image = UIImage(named: "UserProfile")
+        
     }
 
     /*

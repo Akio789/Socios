@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r9Z-VA-V92">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X2p-6U-AnI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="JTg-WB-gWJ" customClass="PurchasesDetailViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w0F-wx-bGA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="689"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Producto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4md-eS-sNR">
@@ -46,34 +46,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcs-ye-tlS">
                                 <rect key="frame" x="35" y="356" width="144" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUO-Vy-OUC">
-                                <rect key="frame" x="149" y="686" width="190" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sV-NP-A9T">
-                                <rect key="frame" x="149" y="728" width="190" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGD-Ib-EgO">
-                                <rect key="frame" x="149" y="777" width="190" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/09/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEY-oH-j4Q">
-                                <rect key="frame" x="149" y="828" width="190" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -204,11 +176,9 @@
                         <outlet property="fechaLabel" destination="I0l-w1-ZCR" id="3cg-C6-J8D"/>
                         <outlet property="imageLabel" destination="fN4-Bw-v9t" id="01L-lO-Rj0"/>
                         <outlet property="precioLabel" destination="kQE-N3-DGB" id="qSU-V7-BXC"/>
-                        <outlet property="purchaseDate" destination="TEY-oH-j4Q" id="IQ5-vm-MwM"/>
                         <outlet property="purchaseDescription" destination="33E-nl-lq1" id="7p1-Kh-mD3"/>
                         <outlet property="purchaseNombre" destination="4md-eS-sNR" id="l5N-C8-ZGu"/>
                         <outlet property="purchasePrecio" destination="kQE-N3-DGB" id="fRX-0r-aey"/>
-                        <outlet property="purchaseRating" destination="9sV-NP-A9T" id="PKP-W0-88d"/>
                         <outlet property="purchaseSeller" destination="8Mt-jr-Fdj" id="V5A-Py-RqP"/>
                         <outlet property="ratingLabel" destination="nVF-jR-VfF" id="82d-c0-Ztq"/>
                         <outlet property="vendedorLabel" destination="8Mt-jr-Fdj" id="5oz-kU-wDN"/>
@@ -216,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YV-k7-1sI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-449.27536231884062" y="-1051.6741071428571"/>
+            <point key="canvasLocation" x="-225" y="-931"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="izf-Bw-528">
@@ -228,9 +198,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIP-Zm-v41">
                                 <rect key="frame" x="0.0" y="119" width="414" height="743"/>
-                                <connections>
-                                    <segue destination="X2p-6U-AnI" kind="embed" id="HYE-Zb-T90"/>
-                                </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis compras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7g-dN-upz">
                                 <rect key="frame" x="55" y="79" width="155" height="32"/>
@@ -260,7 +227,7 @@
             <objects>
                 <tableViewController id="X2p-6U-AnI" customClass="PurchasesTableViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cdp-ML-4nI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -322,7 +289,7 @@
                                     <outlet property="price" destination="zdR-ta-xax" id="7i2-ng-zm6"/>
                                     <outlet property="productName" destination="SBx-vn-tF4" id="LHM-us-Ywl"/>
                                     <outlet property="seller" destination="KDG-f0-Z1D" id="Zhk-QB-wUD"/>
-                                    <segue destination="JTg-WB-gWJ" kind="show" id="gGX-hY-wCd"/>
+                                    <segue destination="JTg-WB-gWJ" kind="show" id="dtL-Od-yCq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

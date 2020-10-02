@@ -20,6 +20,10 @@ class LoginViewController: UIViewController {
         screen.image = UIImage(named: "Login")
     }
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+
+    }
+    
     /*
     // MARK: - Navigation
 
