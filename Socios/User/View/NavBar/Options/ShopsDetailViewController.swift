@@ -23,11 +23,12 @@ class ShopsDetailViewController: UIViewController {
     var shopImageURLEntry: String = ""
     var shopCommentsEntry: Array<[String: Any]> = []
     var shopDirectionEntry: String = ""
+    var shopPictureUrl: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = URL(string: shopImageURLEntry) {
+        if let url = URL(string: shopPictureUrl) {
                    do {
                    //let contents = try String(contentsOf: url)
                    //print contents

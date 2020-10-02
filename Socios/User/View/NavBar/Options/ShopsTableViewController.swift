@@ -138,8 +138,12 @@ class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
         nextView.shopDirectionEntry = shopObject4["direction"] as! String
         let shopObject5 = filteredData[index!] as! [String: Any]
         nextView.shopCommentsEntry = shopObject5["comments"] as! Array<[String: Any]>
+        let shopObject6 = filteredData[index!] as! [String: Any]
+        nextView.shopPictureUrl = shopObject6["imageUrl"] as! String
     }
 
 }
+
+
 
 
