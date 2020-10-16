@@ -7,17 +7,33 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var screen: UIImageView!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
-        screen.image = UIImage(named: "Login")
+    }
+    
+    @IBAction func login(_ sender: Any) {
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!){
+                (user, error) in
+                if error != nil {
+                    let alert = UIAlertController(title: "Error", message: "Credenciales incorrectas.", preferredStyle: .alert)
+                       
+                    alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+                       
+                    self.present(alert, animated: true)
+                   }else{
+                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+            }
+        }
     }
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {

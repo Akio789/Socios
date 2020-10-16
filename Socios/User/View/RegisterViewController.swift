@@ -7,19 +7,77 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
-
-    @IBOutlet weak var screen: UIImageView!
+    
+    @IBOutlet weak var names: UITextField!
+    @IBOutlet weak var lastNames: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var birthday: UIDatePicker!
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        screen.image = UIImage(named: "Register")
+        names.text = ""
+        lastNames.text = ""
+        phone.text = ""
     }
     
-
+    @IBAction func register(_ sender: Any) {
+        if names.text == "" || lastNames.text == "" || phone.text == "" {
+            alertUser("Favor de llevar todos los campos.")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email.text!, password: password.text!){(user, error) in
+            if error != nil{
+                if let code = AuthErrorCode(rawValue: error!._code) {
+                    var message = ""
+                    switch code {
+                    case .weakPassword:
+                        message = "Tu contraseña es muy débil"
+                    case .missingEmail:
+                        message = "Ingresa tu email"
+                    case .invalidEmail:
+                        message = "Ingresa un email válido"
+                    default:
+                        message = error.debugDescription
+                    }
+                    self.alertUser(message)
+                }
+            }
+            else{
+                var ref: DocumentReference? = nil
+                ref = self.db.collection("users").addDocument(data: [
+                    "id": user?.user.uid,
+                    "names": self.names.text,
+                    "lastNames": self.lastNames.text,
+                    "phone": self.phone.text,
+                    "dob": self.birthday.date
+                ]) { err in
+                    if let err = err {
+                        self.alertUser("Hubo un error, por favor intenta de nuevo.")
+                    } else {
+                        self.performSegue(withIdentifier: "registerSegue", sender: self)
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    func alertUser(_ message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+       alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+       self.present(alert, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
