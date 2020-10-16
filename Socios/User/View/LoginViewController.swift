@@ -31,6 +31,11 @@ class LoginViewController: UIViewController {
                        
                     self.present(alert, animated: true)
                    }else{
+                    
+                    self.email.text = ""
+                    
+                    self.password.text = ""
+                    
                     self.performSegue(withIdentifier: "loginSegue", sender: self)
             }
         }

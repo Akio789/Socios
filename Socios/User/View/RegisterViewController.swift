@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var names: UITextField!
     @IBOutlet weak var lastNames: UITextField!
@@ -17,8 +17,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var birthday: UIDatePicker!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     let db = Firestore.firestore()
+    private let miPicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,23 @@ class RegisterViewController: UIViewController {
         names.text = ""
         lastNames.text = ""
         phone.text = ""
+        miPicker.delegate = self
+        profilePicture.image = UIImage(named: "ImagePlaceholder")
+    }
+    
+    @IBAction func selectProfilePicture(_ sender: Any) {
+        miPicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        present(miPicker, animated: true, completion: nil)
+    }
+    
+     func imagePickerController(_ picker: UIImagePickerController,
+     didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        profilePicture.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func register(_ sender: Any) {
@@ -59,7 +78,7 @@ class RegisterViewController: UIViewController {
                     "names": self.names.text,
                     "lastNames": self.lastNames.text,
                     "phone": self.phone.text,
-                    "dob": self.birthday.date
+                    "dob": self.birthday.date as! Date
                 ]) { err in
                     if let err = err {
                         self.alertUser("Hubo un error, por favor intenta de nuevo.")
