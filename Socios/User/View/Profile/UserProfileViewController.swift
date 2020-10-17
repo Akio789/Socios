@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class UserProfileViewController: UIViewController {
 
-   
-    
+    var user = Auth.auth().currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,29 @@ class UserProfileViewController: UIViewController {
         
     }
 
+    @IBAction func deleteAccount(_ sender: Any) {
+        var alert = UIAlertController(title: "¿Eliminar Perfil?", message: "Esta acción no se puede deshacer.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Eliminar", style: .default, handler: { (action: UIAlertAction!) in
+            self.user?.delete { error in
+          if let error = error {
+            self.alertUser("Hubo un error al eliminar la cuenta, por favor intenta hacer logout y login de nuevo.")
+          } else {
+            self.performSegue(withIdentifier: "logout2", sender: self)
+          }
+        }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+        // No hacer nada
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func alertUser(_ message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+       alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+       self.present(alert, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
