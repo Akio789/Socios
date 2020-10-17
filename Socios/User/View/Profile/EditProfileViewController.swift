@@ -59,7 +59,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             "names": self.names.text,
             "lastNames": self.lastNames.text,
             "phone": self.phone.text,
-            "date": self.birthday.date
+            "dob": self.birthday.date
         ])
         performSegue(withIdentifier: "editedProfileSegue", sender: self)
     }
