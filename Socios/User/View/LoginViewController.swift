@@ -22,6 +22,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
+        // Para no tener que estar metiendo crendenciales
+        // QUITAR DESPUES
+        self.performSegue(withIdentifier: "loginSegue", sender: self)
+        
         Auth.auth().signIn(withEmail: email.text!, password: password.text!){
                 (user, error) in
                 if error != nil {

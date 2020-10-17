@@ -316,6 +316,7 @@
         <image name="CameraIcon" width="28.5" height="28.5"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="x1W-a3-RkT"/>
         <segue reference="cy3-6Y-4wJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,18 +8,38 @@
 
 import UIKit
 
-class PersonalizedSearchViewController: UIViewController {
+class PersonalizedSearchViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var screen: UIImageView!
+    @IBOutlet weak var image: UIImageView!
+    
+    private let miPicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        screen.image = UIImage(named: "PersonalizedSearch")
+        miPicker.delegate = self
+        image.image = UIImage(named: "ImagePlaceholder")
     }
     
+    @IBAction func selectPicture(_ sender: Any) {
+        miPicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        present(miPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+           image.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+           picker.dismiss(animated: true, completion: nil)
+    }
+       
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+           picker.dismiss(animated: true, completion: nil)
+    }
 
+    @IBAction func goBack(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

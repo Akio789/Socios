@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -183,11 +183,11 @@
 				19839F132523053A00AFC3FF /* Menu.storyboard */,
 				19839F162523055200AFC3FF /* Home.storyboard */,
 				19839F1F25230A7C00AFC3FF /* Login.storyboard */,
+				196DEA6325231D25001B5E95 /* SpecialSearch.storyboard */,
 				19839F2225230C3A00AFC3FF /* Search.storyboard */,
 				196DEA5A25231B00001B5E95 /* Questions.storyboard */,
 				196DEA5D25231B62001B5E95 /* Shops.storyboard */,
 				196DEA6025231C9C001B5E95 /* ZoneProducts.storyboard */,
-				196DEA6325231D25001B5E95 /* SpecialSearch.storyboard */,
 				196DEA6625231D9B001B5E95 /* AboutUs.storyboard */,
 				66F0CA092525A87100924F21 /* Comments.storyboard */,
 				66F0CA0B2525ABCF00924F21 /* ProductDetail.storyboard */,
@@ -331,7 +331,6 @@
 				52D70950F876E641E14C1446 /* Pods-Socios.debug.xcconfig */,
 				48B39F7EAE0953AD4772FD80 /* Pods-Socios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
