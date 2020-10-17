@@ -72,8 +72,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
             }
             else{
-                var ref: DocumentReference? = nil
-                ref = self.db.collection("users").addDocument(data: [
+                self.db.collection("users").document((user?.user.uid)!).setData([
                     "id": user?.user.uid,
                     "names": self.names.text,
                     "lastNames": self.lastNames.text,
