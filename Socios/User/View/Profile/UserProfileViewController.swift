@@ -12,11 +12,24 @@ import Firebase
 class UserProfileViewController: UIViewController {
 
     var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var profilePicRef: StorageReference = StorageReference()
+    @IBOutlet weak var profilePicture: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        storageRef = storage.reference()
+        profilePicRef = storageRef.child("\(user?.uid ?? "")/profilePic.jpg")
+        profilePicRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            self.profilePicture.image = UIImage(data: data!)
+          }
+        }
         
     }
 

@@ -82,7 +82,16 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
                     if let err = err {
                         self.alertUser("Hubo un error, por favor intenta de nuevo.")
                     } else {
-                        self.performSegue(withIdentifier: "registerSegue", sender: self)
+                        let storage = Storage.storage()
+                        let storageRef = storage.reference()
+                        let profilePicRef = storageRef.child("\(user?.user.uid ?? "")/profilePic.jpg")
+                        let uploadTask = profilePicRef.putData((self.profilePicture?.image?.pngData())!, metadata: nil) { (metadata, error) in
+                          guard let metadata = metadata else {
+                            self.alertUser("Hubo un error, por favor intenta de nuevo.")
+                            return
+                          }
+                         self.performSegue(withIdentifier: "registerSegue", sender: self)
+                        }
                     }
                 }
             }

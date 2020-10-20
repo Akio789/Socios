@@ -19,13 +19,24 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     let db = Firestore.firestore()
     private let miPicker = UIImagePickerController()
     var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var profilePicRef: StorageReference = StorageReference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         miPicker.delegate = self
-        profilePicture.image = UIImage(named: "ImagePlaceholder")
+        storageRef = storage.reference()
+        profilePicRef = storageRef.child("\(user?.uid ?? "")/profilePic.jpg")
+        profilePicRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            self.profilePicture.image = UIImage(data: data!)
+          }
+        }
         db.collection("users").whereField("id", isEqualTo: user?.uid).getDocuments() { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")
@@ -61,8 +72,21 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             "phone": self.phone.text,
             "dob": self.birthday.date
         ])
+        let uploadTask = profilePicRef.putData((self.profilePicture?.image?.pngData())!, metadata: nil) { (metadata, error) in
+          guard let metadata = metadata else {
+            self.alertUser("Hubo un error, por favor intenta de nuevo.")
+            return
+          }
+        }
+        
         performSegue(withIdentifier: "editedProfileSegue", sender: self)
     }
+    
+    func alertUser(_ message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+         self.present(alert, animated: true)
+      }
     
     /*
     // MARK: - Navigation

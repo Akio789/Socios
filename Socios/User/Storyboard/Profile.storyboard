@@ -148,6 +148,7 @@
                     <navigationItem key="navigationItem" id="ynZ-sq-aHV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="profilePicture" destination="oIl-gz-GGS" id="7Gy-iR-g7a"/>
                         <segue destination="eMB-M7-T9R" kind="unwind" identifier="logout2" unwindAction="prepareForUnwindWithSegue:" id="go9-4y-EdY"/>
                     </connections>
                 </viewController>
