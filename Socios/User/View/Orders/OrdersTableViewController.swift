@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class OrdersTableViewController: UITableViewController, UISearchResultsUpdating {
 
@@ -14,6 +15,7 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
+    let db = Firestore.firestore()
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text! == "" {

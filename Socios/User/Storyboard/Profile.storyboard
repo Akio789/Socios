@@ -496,7 +496,6 @@
         <image name="UserIcon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u7J-DI-T5f"/>
         <segue reference="jML-DY-3vS"/>
     </inferredMetricsTieBreakers>
 </document>

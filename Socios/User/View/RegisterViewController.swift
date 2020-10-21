@@ -84,7 +84,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
                     } else {
                         let storage = Storage.storage()
                         let storageRef = storage.reference()
-                        let profilePicRef = storageRef.child("\(user?.user.uid ?? "")/profilePic.jpg")
+                        let profilePicRef = storageRef.child("ProfilePics/\(user?.user.uid ?? "").jpg")
                         let uploadTask = profilePicRef.putData((self.profilePicture?.image?.pngData())!, metadata: nil) { (metadata, error) in
                           guard let metadata = metadata else {
                             self.alertUser("Hubo un error, por favor intenta de nuevo.")

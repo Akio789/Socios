@@ -21,16 +21,25 @@ class UserProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        storageRef = storage.reference()
-        profilePicRef = storageRef.child("\(user?.uid ?? "")/profilePic.jpg")
-        profilePicRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-          if let error = error {
-            print("Error al bajar la foto: \(error)")
-          } else {
-            self.profilePicture.image = UIImage(data: data!)
-          }
-        }
-        
+        viewLoadSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+       viewLoadSetup()
+
+    }
+    
+    func viewLoadSetup(){
+     storageRef = storage.reference()
+     profilePicRef = storageRef.child("ProfilePics/\(user?.uid ?? "").jpg")
+     profilePicRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+       if let error = error {
+         print("Error al bajar la foto: \(error)")
+       } else {
+         self.profilePicture.image = UIImage(data: data!)
+       }
+     }
     }
 
     @IBAction func deleteAccount(_ sender: Any) {

@@ -29,7 +29,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         // Do any additional setup after loading the view.
         miPicker.delegate = self
         storageRef = storage.reference()
-        profilePicRef = storageRef.child("\(user?.uid ?? "")/profilePic.jpg")
+        profilePicRef = storageRef.child("ProfilePics/\(user?.uid ?? "").jpg")
         profilePicRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
           if let error = error {
             print("Error al bajar la foto: \(error)")

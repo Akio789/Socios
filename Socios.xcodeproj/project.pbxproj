@@ -178,9 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				8C4610FE2506C3E600D93ADF /* Main.storyboard */,
+				19839F07252304F000AFC3FF /* Cart.storyboard */,
 				19839F1F25230A7C00AFC3FF /* Login.storyboard */,
 				19839F04252304D400AFC3FF /* Profile.storyboard */,
-				19839F07252304F000AFC3FF /* Cart.storyboard */,
 				19839F0A252304FE00AFC3FF /* Orders.storyboard */,
 				19839F0D2523051F00AFC3FF /* Purchases.storyboard */,
 				19839F132523053A00AFC3FF /* Menu.storyboard */,
