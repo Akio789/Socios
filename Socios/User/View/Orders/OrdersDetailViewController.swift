@@ -24,7 +24,7 @@ class OrdersDetailViewController: UIViewController {
     var orderNameEntry: String = ""
     var orderSellerEntry: String = ""
     var orderRatingEntry: Double = 0
-    var orderDateEntry: String = ""
+    var orderDateEntry: Date = Date()
     var orderPrecioEntry : Double = 0
     var orderImageEntry : String = ""
     
@@ -52,7 +52,9 @@ class OrdersDetailViewController: UIViewController {
         vendedorLable.text = orderSellerEntry
         descripcionLabel.text = orderDescriptionEntry
         ratingLabel.text = String(orderRatingEntry)
-        fechaLabel.text = orderDateEntry
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        fechaLabel.text = formatter.string(from: orderDateEntry)
         priceLabel.text = "$" + String(orderPrecioEntry)
     }
     

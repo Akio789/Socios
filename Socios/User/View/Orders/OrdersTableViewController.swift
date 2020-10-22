@@ -11,11 +11,14 @@ import Firebase
 
 class OrdersTableViewController: UITableViewController, UISearchResultsUpdating {
 
-    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/pedidos.json"
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
     let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var orderRef: StorageReference = StorageReference()
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text! == "" {
@@ -32,32 +35,24 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
         self.tableView.rowHeight = 100
-        if let url = URL(string: direccionUrl) {
-            do {
-            //let contents = try String(contentsOf: url)
-            //print contents
-            let data = try? Data(contentsOf: url)
-            response = try! JSONSerialization.jsonObject(with: data!) as? [Any]
-            filteredData = response!
-            searchController.searchResultsUpdater = self
-            searchController.dimsBackgroundDuringPresentation = false
-            searchController.hidesNavigationBarDuringPresentation = false
-            definesPresentationContext = true
-            tableView.tableHeaderView = searchController.searchBar
-            } catch {
-            // contents could not be loaded
-            print("contents could not be loaded")
+        db.collection("pedidos").getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            self.response = []
+            for document in querySnapshot!.documents {
+                self.response?.append(document.data())
             }
-        } else{
-            // the URL was bad!
-            print("the URL was bad!")
+            self.filteredData = self.response!
+            self.tableView.reloadData()
+            self.searchController.searchResultsUpdater = self
+            self.searchController.dimsBackgroundDuringPresentation = false
+            self.searchController.hidesNavigationBarDuringPresentation = false
+            self.definesPresentationContext = true
+            self.tableView.tableHeaderView = self.searchController.searchBar
+            }
         }
     }
 
@@ -81,9 +76,14 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
         cell.productName.text = orderObject["name"] as! String
         cell.price.text = String( orderObject["price"] as! Float)
         cell.seller.text = "Vendedor: \(orderObject["seller"] as! String)"
-        let imageUrl = URL(string: orderObject["imageUrl"] as! String)
-        let image = try? Data(contentsOf: imageUrl!)
-        cell.cellImage.image = UIImage(data: image!)
+        self.orderRef = self.storageRef.child(orderObject["imageUrl"] as! String)
+        self.orderRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            cell.cellImage.image = UIImage(data: data!)
+          }
+        }
 
         return cell
     }
@@ -142,7 +142,8 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
         let orderObject5 = filteredData[index!] as! [String: Any]
         nextView.orderRatingEntry = orderObject5["rating"] as! Double
         let orderObject6 = filteredData[index!] as! [String: Any]
-        nextView.orderDateEntry = orderObject6["date"] as! String
+        let ts = orderObject6["date"] as! Timestamp
+        nextView.orderDateEntry = ts.dateValue()
         let orderObject7 = filteredData[index!] as! [String: Any]
         nextView.orderImageEntry = orderObject7["imageUrl"] as! String
     }
