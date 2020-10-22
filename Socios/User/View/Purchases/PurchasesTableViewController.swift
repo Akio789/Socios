@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class PurchasesTableViewController: UITableViewController, UISearchResultsUpdating {
 
-    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/compras.json"
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
+    let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var purchaseRef: StorageReference = StorageReference()
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text! == "" {
@@ -30,32 +35,23 @@ class PurchasesTableViewController: UITableViewController, UISearchResultsUpdati
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.rowHeight = 100
-        if let url = URL(string: direccionUrl) {
-            do {
-            //let contents = try String(contentsOf: url)
-            //print contents
-            let data = try? Data(contentsOf: url)
-            response = try! JSONSerialization.jsonObject(with: data!) as? [Any]
-            filteredData = response!
-            searchController.searchResultsUpdater = self
-            searchController.dimsBackgroundDuringPresentation = false
-            searchController.hidesNavigationBarDuringPresentation = false
-            definesPresentationContext = true
-            tableView.tableHeaderView = searchController.searchBar
-            } catch {
-            // contents could not be loaded
-            print("contents could not be loaded")
+        db.collection("compras").getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            self.response = []
+            for document in querySnapshot!.documents {
+                self.response?.append(document.data())
             }
-        } else{
-            // the URL was bad!
-            print("the URL was bad!")
+            self.filteredData = self.response!
+            self.tableView.reloadData()
+            self.searchController.searchResultsUpdater = self
+            self.searchController.dimsBackgroundDuringPresentation = false
+            self.searchController.hidesNavigationBarDuringPresentation = false
+            self.definesPresentationContext = true
+            self.tableView.tableHeaderView = self.searchController.searchBar
+            }
         }
     }
 
@@ -79,9 +75,14 @@ class PurchasesTableViewController: UITableViewController, UISearchResultsUpdati
         cell.productName.text = purchaseObject["name"] as! String
         cell.price.text = String( purchaseObject["price"] as! Float)
         cell.seller.text = "Vendedor: \(purchaseObject["seller"] as! String)"
-        let imageUrl = URL(string: purchaseObject["imageUrl"] as! String)
-        let image = try? Data(contentsOf: imageUrl!)
-        cell.cellImage.image = UIImage(data: image!)
+        self.purchaseRef = self.purchaseRef.child(purchaseObject["imageUrl"] as! String)
+        self.purchaseRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            cell.cellImage.image = UIImage(data: data!)
+          }
+        }
 
         return cell
     }
@@ -142,7 +143,8 @@ class PurchasesTableViewController: UITableViewController, UISearchResultsUpdati
         let purchaseObject7 = filteredData[index!] as! [String: Any]
         nextView.purchaseImageEntry = purchaseObject7["imageUrl"] as! String
         let purchaseObject9 = filteredData[index!] as! [String: Any]
-        nextView.purchaseFechaEntry = purchaseObject9["date"] as! String
+        let ts = purchaseObject9["date"] as! Timestamp
+        nextView.purchaseFechaEntry = ts.dateValue()
 
     }
 }

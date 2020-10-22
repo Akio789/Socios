@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PurchasesDetailViewController: UIViewController {
     
@@ -24,33 +25,32 @@ class PurchasesDetailViewController: UIViewController {
     var purchaseRatingEntry: Double = 0
     var purchasePriceEntry: Double = 0
     var purchaseImageEntry: String = ""
-    var purchaseFechaEntry: String = ""
+    var purchaseFechaEntry: Date = Date()
+    
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var orderRef: StorageReference = StorageReference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = URL(string: purchaseImageEntry) {
-                   do {
-                   //let contents = try String(contentsOf: url)
-                   //print contents
-                   let data = try? Data(contentsOf: url)
-                   } catch {
-                   // contents could not be loaded
-                   print("contents could not be loaded")
-                   }
-            let image = try? Data(contentsOf: url)
-            labelFoto.image = UIImage(data: image!)
-               } else{
-                   // the URL was bad!
-                   print("the URL was bad!")
-               }
+        self.orderRef = self.storageRef.child(purchaseImageEntry)
+        self.orderRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            self.labelFoto.image = UIImage(data: data!)
+          }
+        }
         
         nombreLabel.text = purchaseNameEntry
         precioLabel.text = "$ " + String(purchasePriceEntry)
         vendedorLabel.text = purchaseSellerEntry
         descripcionLabel.text = purchaseDescriptionEntry
         ratingLable.text = String(purchaseRatingEntry)
-        fechaLabel.text = purchaseFechaEntry
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        fechaLabel.text = formatter.string(from: purchaseFechaEntry)
     }
     
 
