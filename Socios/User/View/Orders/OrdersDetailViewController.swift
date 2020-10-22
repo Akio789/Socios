@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class OrdersDetailViewController: UIViewController {
 
@@ -28,24 +29,21 @@ class OrdersDetailViewController: UIViewController {
     var orderPrecioEntry : Double = 0
     var orderImageEntry : String = ""
     
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var orderRef: StorageReference = StorageReference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = URL(string: orderImageEntry) {
-                   do {
-                   //let contents = try String(contentsOf: url)
-                   //print contents
-                   let data = try? Data(contentsOf: url)
-                   } catch {
-                   // contents could not be loaded
-                   print("contents could not be loaded")
-                   }
-            let image = try? Data(contentsOf: url)
-            imageLabel.image = UIImage(data: image!)
-               } else{
-                   // the URL was bad!
-                   print("the URL was bad!")
-               }
+        self.orderRef = self.storageRef.child(orderImageEntry)
+        self.orderRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            self.imageLabel.image = UIImage(data: data!)
+          }
+        }
 
         // Do any additional setup after loading the view.
         nameLabel.text = orderNameEntry
