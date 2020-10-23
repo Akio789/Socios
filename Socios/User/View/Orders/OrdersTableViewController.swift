@@ -37,13 +37,14 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
         super.viewDidLoad()
         
         self.tableView.rowHeight = 100
-        db.collection("pedidos").getDocuments() { (querySnapshot, err) in
+        db.collection("pedidos").whereField("user", isEqualTo: user!.uid).getDocuments() { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")
         } else {
+            let orders = querySnapshot!.documents.first!.data()["orders"] as! Array<[String: Any]>
             self.response = []
-            for document in querySnapshot!.documents {
-                self.response?.append(document.data())
+            for order in orders {
+                self.response?.append(order)
             }
             self.filteredData = self.response!
             self.tableView.reloadData()

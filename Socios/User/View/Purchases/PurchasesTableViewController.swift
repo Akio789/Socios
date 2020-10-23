@@ -35,14 +35,16 @@ class PurchasesTableViewController: UITableViewController, UISearchResultsUpdati
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.rowHeight = 100
-        db.collection("compras").getDocuments() { (querySnapshot, err) in
+        db.collection("compras").whereField("user", isEqualTo: user!.uid).getDocuments() { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")
         } else {
+            let compras = querySnapshot!.documents.first!.data()["compras"] as! Array<[String: Any]>
             self.response = []
-            for document in querySnapshot!.documents {
-                self.response?.append(document.data())
+            for compra in compras {
+                self.response?.append(compra)
             }
             self.filteredData = self.response!
             self.tableView.reloadData()
