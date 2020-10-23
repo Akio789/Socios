@@ -299,7 +299,6 @@
         <image name="CheckBoxIcon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bmD-Zp-LsD"/>
         <segue reference="qUq-eE-Gwg"/>
     </inferredMetricsTieBreakers>
 </document>

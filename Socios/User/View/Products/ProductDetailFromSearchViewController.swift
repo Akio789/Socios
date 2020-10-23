@@ -18,7 +18,6 @@ class ProductDetailFromSearchViewController: UIViewController {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var prodcuRating: UILabel!
-    @IBOutlet weak var productComments: UITableView!
     
     let db = Firestore.firestore()
     var user = Auth.auth().currentUser
@@ -33,27 +32,10 @@ class ProductDetailFromSearchViewController: UIViewController {
     var productRatingEntry: Double = 0
     var productimageUrl: String = ""
     var productNameA: String = ""
-    var productCommentsA: Array<[String: Any]> = []
     var productId: String = ""
-    
-    struct Comment: Decodable {
-        let user : String
-        let text : String
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        db.collection("comments").whereField("productId", isEqualTo: productId).getDocuments() { (querySnapshot, err) in
-        if let err = err {
-            print("Error getting documents: \(err)")
-        } else {
-            var comments: Array<[String: Any]> = []
-            if !querySnapshot!.isEmpty {
-                comments = querySnapshot!.documents.first!.data()["comments"] as! Array<[String : Any]>
-            }
-            self.productCommentsA = comments
-            }
-        }
         
         self.orderRef = self.storageRef.child(productimageUrl)
         self.orderRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
@@ -70,23 +52,6 @@ class ProductDetailFromSearchViewController: UIViewController {
         productName.text = productNameA
         prodcuRating.text = String(productRatingEntry)
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-            return productCommentsA.count
-        
-    }
-    
-   /* func tableView(_ tableView: UITableView, cellForRowAt
-                   indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: //"cell", for: indexPath)
-       if let productCommentsA? = productCommentsA{
-             cell.textLabel?.text = "\(productCommentsA[indexPath.row].user), \(productCommentsA[indexPath.row].text)"
-              cell.textLabel?.numberOfLines = 0
-           }
-           return cell
-      //  }
-    */
 
     // MARK: - Navigation
 
