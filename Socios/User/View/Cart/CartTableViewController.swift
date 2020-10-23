@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class CartTableViewController: UITableViewController, UISearchResultsUpdating {
 
-    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/carrito.json"
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
+    let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var productRef: StorageReference = StorageReference()
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text! == "" {
@@ -31,33 +36,27 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.rowHeight = 100
-        if let url = URL(string: direccionUrl) {
-            do {
-            //let contents = try String(contentsOf: url)
-            //print contents
-            let data = try? Data(contentsOf: url)
-            response = try! JSONSerialization.jsonObject(with: data!) as? [Any]
-            filteredData = response!
-            searchController.searchResultsUpdater = self
-            searchController.dimsBackgroundDuringPresentation = false
-            searchController.hidesNavigationBarDuringPresentation = false
-            definesPresentationContext = true
-            tableView.tableHeaderView = searchController.searchBar
-            } catch {
-            // contents could not be loaded
-            print("contents could not be loaded")
+        db.collection("carts").whereField("user", isEqualTo: user!.uid).getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            let cart = querySnapshot!.documents.first!.data()["products"] as! Array<[String: Any]>
+            self.response = []
+            for product in cart {
+                self.response?.append(product)
             }
-        } else{
-            // the URL was bad!
-            print("the URL was bad!")
+            self.filteredData = self.response!
+            self.tableView.reloadData()
+            self.searchController.searchResultsUpdater = self
+            self.searchController.dimsBackgroundDuringPresentation = false
+            self.searchController.hidesNavigationBarDuringPresentation = false
+            self.definesPresentationContext = true
+            self.tableView.tableHeaderView = self.searchController.searchBar
+            }
         }
     }
+
 
     // MARK: - Table view data source
 
@@ -79,9 +78,14 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
         cell.productName.text = cartObject["name"] as! String
         cell.price.text = String( cartObject["price"] as! Float)
         cell.seller.text = "Vendedor: \(cartObject["seller"] as! String)"
-        let imageUrl = URL(string: cartObject["imageUrl"] as! String)
-        let image = try? Data(contentsOf: imageUrl!)
-        cell.cellImage.image = UIImage(data: image!)
+        self.productRef = self.storageRef.child(cartObject["imageUrl"] as! String)
+        self.productRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            cell.cellImage.image = UIImage(data: data!)
+          }
+        }
 
         return cell
     }
@@ -141,7 +145,11 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
         nextView.productimageUrl = productObject5["imageUrl"] as! String
         let productObject6 = filteredData[index!] as! [String: Any]
         nextView.productNameA = productObject6["name"] as! String
+        nextView.productId = productObject["id"] as! String
+        
+        /*
         let productObject7 = filteredData[index!] as! [String: Any]
         nextView.productCommentsA = productObject6["comments"] as! Array<[String: Any]>
+ */
     }
 }

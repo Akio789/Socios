@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProductDetailFromSearchViewController: UIViewController {
 
@@ -18,6 +19,12 @@ class ProductDetailFromSearchViewController: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var prodcuRating: UILabel!
     @IBOutlet weak var productComments: UITableView!
+    
+    let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var orderRef: StorageReference = StorageReference()
    
     
     var productDescriptionEntry: String = ""
@@ -27,6 +34,7 @@ class ProductDetailFromSearchViewController: UIViewController {
     var productimageUrl: String = ""
     var productNameA: String = ""
     var productCommentsA: Array<[String: Any]> = []
+    var productId: String = ""
     
     struct Comment: Decodable {
         let user : String
@@ -35,29 +43,26 @@ class ProductDetailFromSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let url = URL(string: productimageUrl) {
-                   do {
-                   //let contents = try String(contentsOf: url)
-                   //print contents
-                   let data = try? Data(contentsOf: url)
-                   } catch {
-                   // contents could not be loaded
-                   print("contents could not be loaded")
-                   }
-            let image = try? Data(contentsOf: url)
-            productImage.image = UIImage(data: image!)
-               } else{
-                   // the URL was bad!
-                   print("the URL was bad!")
-               }
-
+        db.collection("comments").whereField("productId", isEqualTo: productId).getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            var comments: Array<[String: Any]> = []
+            if !querySnapshot!.isEmpty {
+                comments = querySnapshot!.documents.first!.data()["comments"] as! Array<[String : Any]>
+            }
+            self.productCommentsA = comments
+            }
+        }
         
-
-        //let imageUrl = URL(string: productObject["imageUrl"] as! String)
-        //let image = try? Data(contentsOf: imageUrl!)
-        
-        //productComments.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        //productComments.dataSource = self
+        self.orderRef = self.storageRef.child(productimageUrl)
+        self.orderRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            self.productImage.image = UIImage(data: data!)
+          }
+        }
         
         productDescription.text = productDescriptionEntry
         productSeller.text = productSellerEntry
@@ -90,6 +95,6 @@ class ProductDetailFromSearchViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         let nextView = segue.destination as! CommentsTableViewController
-        nextView.commentsEntry = productCommentsA
+        nextView.productIdEntry = productId
     }
 }

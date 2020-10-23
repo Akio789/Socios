@@ -7,19 +7,29 @@
 //
 
 import UIKit
+import Firebase
 
 class CommentsTableViewController: UITableViewController {
 
     var commentsEntry: Array<[String: Any]> = []
+    var productIdEntry: String = ""
+    let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
+    var comments: Array<[String : Any]> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.rowHeight = 75
+        db.collection("comments").whereField("productId", isEqualTo: productIdEntry).getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            if !querySnapshot!.isEmpty {
+                self.comments = querySnapshot!.documents.first!.data()["comments"] as! Array<[String : Any]>
+                self.tableView.reloadData()
+            }
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -31,15 +41,15 @@ class CommentsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return commentsEntry.count
+        return comments.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "comments", for: indexPath) as! CommentsTableViewCell
 
         // Configure the cell...
-        cell.comment.text = commentsEntry[indexPath.row]["text"] as! String
-        cell.user.text = commentsEntry[indexPath.row]["user"] as! String
+        cell.comment.text = comments[indexPath.row]["text"] as! String
+        cell.user.text = comments[indexPath.row]["user"] as! String
         return cell
     }
 
