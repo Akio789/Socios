@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class QuestionsTableViewController: UITableViewController, UISearchResultsUpdating {
-    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/preguntas.json"
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
+    let db = Firestore.firestore()
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text! == "" {
@@ -29,31 +30,24 @@ class QuestionsTableViewController: UITableViewController, UISearchResultsUpdati
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        if let url = URL(string: direccionUrl) {
-            do {
-            //let contents = try String(contentsOf: url)
-            //print contents
-            let data = try? Data(contentsOf: url)
-            response = try! JSONSerialization.jsonObject(with: data!) as? [Any]
-            filteredData = response!
-            searchController.searchResultsUpdater = self
-            searchController.dimsBackgroundDuringPresentation = false
-            searchController.hidesNavigationBarDuringPresentation = false
-            definesPresentationContext = true
-            tableView.tableHeaderView = searchController.searchBar
-            } catch {
-            // contents could not be loaded
-            print("contents could not be loaded")
+        
+        db.collection("faqs").getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            self.response = []
+            for document in querySnapshot!.documents {
+                self.response?.append(document.data())
             }
-        } else{
-            // the URL was bad!
-            print("the URL was bad!")
+            self.filteredData = self.response!
+            self.tableView.reloadData()
+            self.searchController.searchResultsUpdater = self
+            self.searchController.dimsBackgroundDuringPresentation = false
+            self.searchController.hidesNavigationBarDuringPresentation = false
+            self.definesPresentationContext = true
+            self.tableView.tableHeaderView = self.searchController.searchBar
+            
+            }
         }
     }
 
