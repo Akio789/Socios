@@ -10,27 +10,57 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ContainerZoneProductsResultsViewController: UIViewController, CLLocationManagerDelegate {
-    let ubicacion = CLLocationManager()
-    
-    
-    
-    
+class ContainerZoneProductsResultsViewController: UIViewController {
     @IBOutlet weak var mapa: MKMapView!
+    let locationManager = CLLocationManager()
+    let regionInMeters: Double = 3000
     override func viewDidLoad() {
         super.viewDidLoad()
-        ubicacion.delegate = self
-        ubicacion.desiredAccuracy = kCLLocationAccuracyBest
-        ubicacion.requestWhenInUseAuthorization()
-        let centro = CLLocationCoordinate2D(latitude: 19.3521753, longitude: -99.1561553)
-        mapa.region = MKCoordinateRegion(center: centro, latitudinalMeters: 500, longitudinalMeters: 500)
-        let marcador = MKPointAnnotation()
-        marcador.coordinate = centro
-        mapa.addAnnotation(marcador)
-        
-        // Do any additional setup after loading the view.
+        checkLocationServices()
     }
     
+    func setupLocationManager(){
+        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func centerViewOnUserLocation(){
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapa.setRegion(region, animated: true)
+        }
+    }
+    
+    func checkLocationServices(){
+        if CLLocationManager.locationServicesEnabled(){
+            setupLocationManager()
+            centerViewOnUserLocation()
+            locationManager.startUpdatingLocation()
+            //setup location manager
+        }else{
+            //Show alert letting the use know they have to turn this on
+        }
+    }
+    
+    
+    func checkLocationAuthorization(){
+        switch CLLocationManager.authorizationStatus(){
+        case .authorizedWhenInUse:
+            centerViewOnUserLocation()
+            break
+        case .denied:
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            break
+        case .authorizedAlways:
+            break
+        }
+    }
+
 
     /*
     // MARK: - Navigation
@@ -43,3 +73,18 @@ class ContainerZoneProductsResultsViewController: UIViewController, CLLocationMa
     */
 
 }
+
+extension ContainerZoneProductsResultsViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapa.setRegion(region, animated: true)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        //wachito rico
+    }
+}
+ 
