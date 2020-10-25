@@ -79,6 +79,7 @@
 		8C4611022506C3E800D93ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4611012506C3E800D93ADF /* Assets.xcassets */; };
 		8C4611052506C3E800D93ADF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4611032506C3E800D93ADF /* LaunchScreen.storyboard */; };
 		AFE5D0A4F6B05E891DD3A079 /* Pods_Socios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F95E4B6CA1F6EF09C6D7BF /* Pods_Socios.framework */; };
+		C89EDE0525451F690041C9F9 /* ML_Socios 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C89EDE0425451F690041C9F9 /* ML_Socios 1.mlmodel */; };
 		C8EB77FD25211F0A0051E956 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EB77FC25211F0A0051E956 /* AboutUsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		8C4611012506C3E800D93ADF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C4611042506C3E800D93ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C4611062506C3E800D93ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C89EDE0425451F690041C9F9 /* ML_Socios 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "ML_Socios 1.mlmodel"; sourceTree = "<group>"; };
 		C8EB77FC25211F0A0051E956 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -356,6 +358,7 @@
 		8C4610EA2506C3E600D93ADF = {
 			isa = PBXGroup;
 			children = (
+				C89EDE0325451F2D0041C9F9 /* Ml */,
 				8C4610F52506C3E600D93ADF /* Socios */,
 				8C4610F42506C3E600D93ADF /* Products */,
 				554755CBE26FF1DC165CB37B /* Pods */,
@@ -391,6 +394,14 @@
 				52F95E4B6CA1F6EF09C6D7BF /* Pods_Socios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C89EDE0325451F2D0041C9F9 /* Ml */ = {
+			isa = PBXGroup;
+			children = (
+				C89EDE0425451F690041C9F9 /* ML_Socios 1.mlmodel */,
+			);
+			path = Ml;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,6 +561,7 @@
 				19C910932519D0E300032423 /* DeleteProfileViewController.swift in Sources */,
 				19B16190251C6398009E897F /* ZoneProductDetailViewController.swift in Sources */,
 				8C4610F72506C3E600D93ADF /* AppDelegate.swift in Sources */,
+				C89EDE0525451F690041C9F9 /* ML_Socios 1.mlmodel in Sources */,
 				6660B4CA251EC2BB004D3882 /* ContainerSearchTableViewController.swift in Sources */,
 				190E4711252430E600EA2543 /* ContainerShopsViewController.swift in Sources */,
 				19D1A6E52525BE6500FFFACE /* ContainerCartViewController.swift in Sources */,
