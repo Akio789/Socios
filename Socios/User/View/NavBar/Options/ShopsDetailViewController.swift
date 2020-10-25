@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ShopsDetailViewController: UIViewController {
 
@@ -17,32 +18,30 @@ class ShopsDetailViewController: UIViewController {
     @IBOutlet weak var descrpcionLabel: UILabel!
     @IBOutlet weak var fotoLabel: UIImageView!
     
+    let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var orderRef: StorageReference = StorageReference()
     
     var shopDescriptionEntry: String = ""
     var shopNameEntry: String = ""
     var shopImageURLEntry: String = ""
-    var shopCommentsEntry: Array<[String: Any]> = []
     var shopDirectionEntry: String = ""
     var shopPictureUrl: String = ""
+    var shopId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = URL(string: shopPictureUrl) {
-                   do {
-                   //let contents = try String(contentsOf: url)
-                   //print contents
-                   let data = try? Data(contentsOf: url)
-                   } catch {
-                   // contents could not be loaded
-                   print("contents could not be loaded")
-                   }
-            let image = try? Data(contentsOf: url)
-            fotoLabel.image = UIImage(data: image!)
-               } else{
-                   // the URL was bad!
-                   print("the URL was bad!")
-               }
+        self.orderRef = self.storageRef.child(shopPictureUrl)
+        self.orderRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            self.fotoLabel.image = UIImage(data: data!)
+          }
+        }
 
         // Do any additional setup after loading the view.
         nombreLabel.text = shopNameEntry
@@ -58,7 +57,7 @@ class ShopsDetailViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         let nextView = segue.destination as! CommentsTableViewController
-        nextView.commentsEntry = shopCommentsEntry
+        nextView.shopIdEntry = shopId
     }
 
 }

@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
 
-    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/comercios.json"
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
+    let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var shopRef: StorageReference = StorageReference()
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text! == "" {
@@ -29,33 +34,28 @@ class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.tableView.rowHeight = 100
-        if let url = URL(string: direccionUrl) {
-            do {
-            //let contents = try String(contentsOf: url)
-            //print contents
-            let data = try? Data(contentsOf: url)
-            response = try! JSONSerialization.jsonObject(with: data!) as? [Any]
-            filteredData = response!
-            searchController.searchResultsUpdater = self
-            searchController.dimsBackgroundDuringPresentation = false
-            searchController.hidesNavigationBarDuringPresentation = false
-            definesPresentationContext = true
-            tableView.tableHeaderView = searchController.searchBar
-            } catch {
-            // contents could not be loaded
-            print("contents could not be loaded")
-            }
-        } else{
-            // the URL was bad!
-            print("the URL was bad!")
+    super.viewDidLoad()
+    
+    self.tableView.rowHeight = 100
+    db.collection("tiendas").getDocuments() { (querySnapshot, err) in
+    if let err = err {
+        print("Error getting documents: \(err)")
+    } else {
+        self.response = []
+        for document in querySnapshot!.documents {
+            var documentData = document.data()
+            documentData["id"] = document.documentID
+            self.response?.append(documentData)
+        }
+        self.filteredData = self.response!
+        self.tableView.reloadData()
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.definesPresentationContext = true
+        self.tableView.tableHeaderView = self.searchController.searchBar
+        
+        }
         }
     }
 
@@ -79,9 +79,14 @@ class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
         cell.name.text = shopObject["name"] as! String
         cell.direction.text = String( shopObject["direction"] as! String)
         let imageUrl = URL(string: shopObject["imageUrl"] as! String)
-        let image = try? Data(contentsOf: imageUrl!)
-        cell.cellImage.image = UIImage(data: image!)
-
+        self.shopRef = self.storageRef.child(shopObject["imageUrl"] as! String)
+        self.shopRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            cell.cellImage.image = UIImage(data: data!)
+          }
+        }
         return cell
     }
 
@@ -136,10 +141,9 @@ class ShopsTableViewController: UITableViewController, UISearchResultsUpdating {
         nextView.shopImageURLEntry = shopObject3["description"] as! String
         let shopObject4 = filteredData[index!] as! [String: Any]
         nextView.shopDirectionEntry = shopObject4["direction"] as! String
-        let shopObject5 = filteredData[index!] as! [String: Any]
-        nextView.shopCommentsEntry = shopObject5["comments"] as! Array<[String: Any]>
         let shopObject6 = filteredData[index!] as! [String: Any]
         nextView.shopPictureUrl = shopObject6["imageUrl"] as! String
+        nextView.shopId = shopObject["id"] as! String
     }
 
 }

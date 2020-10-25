@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class ZoneProductTableViewController: UITableViewController, UISearchResultsUpdating {
 
-    let direccionUrl = "http://martinmolina.com.mx/202013/Equipo3/data/zonaProductos.json"
     var response: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
+    
+    let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+    var storageRef: StorageReference = StorageReference()
+    var shopRef: StorageReference = StorageReference()
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text! == "" {
@@ -30,32 +36,27 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
         self.tableView.rowHeight = 100
-        if let url = URL(string: direccionUrl) {
-            do {
-            //let contents = try String(contentsOf: url)
-            //print contents
-            let data = try? Data(contentsOf: url)
-            response = try! JSONSerialization.jsonObject(with: data!) as? [Any]
-            filteredData = response!
-            searchController.searchResultsUpdater = self
-            searchController.dimsBackgroundDuringPresentation = false
-            searchController.hidesNavigationBarDuringPresentation = false
-            definesPresentationContext = true
-            tableView.tableHeaderView = searchController.searchBar
-            } catch {
-            // contents could not be loaded
-            print("contents could not be loaded")
+        db.collection("productos").getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            self.response = []
+            for document in querySnapshot!.documents {
+                var documentData = document.data()
+                documentData["id"] = document.documentID
+                self.response?.append(documentData)
             }
-        } else{
-            // the URL was bad!
-            print("the URL was bad!")
+            self.filteredData = self.response!
+            self.tableView.reloadData()
+            self.searchController.searchResultsUpdater = self
+            self.searchController.dimsBackgroundDuringPresentation = false
+            self.searchController.hidesNavigationBarDuringPresentation = false
+            self.definesPresentationContext = true
+            self.tableView.tableHeaderView = self.searchController.searchBar
+            
+            }
         }
     }
 
@@ -79,9 +80,14 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
         cell.productName.text = productObject["name"] as! String
         cell.price.text = String( productObject["price"] as! Float)
         cell.seller.text = "Vendedor: \(productObject["seller"] as! String)"
-        let imageUrl = URL(string: productObject["imageUrl"] as! String)
-        let image = try? Data(contentsOf: imageUrl!)
-        cell.cellImage.image = UIImage(data: image!)
+        self.shopRef = self.storageRef.child(productObject["imageUrl"] as! String)
+        self.shopRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("Error al bajar la foto: \(error)")
+          } else {
+            cell.cellImage.image = UIImage(data: data!)
+          }
+        }
 
         return cell
     }
@@ -142,5 +148,6 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
         let productObject6 = filteredData[index!] as! [String: Any]
         nextView.productNameA = productObject6["name"] as! String
         let productObject7 = filteredData[index!] as! [String: Any]
+        nextView.productId = productObject["id"] as! String
     }
 }

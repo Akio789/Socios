@@ -13,6 +13,7 @@ class CommentsTableViewController: UITableViewController {
 
     var commentsEntry: Array<[String: Any]> = []
     var productIdEntry: String = ""
+    var shopIdEntry: String = ""
     let db = Firestore.firestore()
     var user = Auth.auth().currentUser
     var comments: Array<[String : Any]> = []
@@ -20,7 +21,13 @@ class CommentsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 75
-        db.collection("comments").whereField("productId", isEqualTo: productIdEntry).getDocuments() { (querySnapshot, err) in
+        var searchBy = "productId"
+        var idToSearch = productIdEntry
+        if productIdEntry.isEmpty {
+            searchBy = "shopId"
+            idToSearch = shopIdEntry
+        }
+        db.collection("comments").whereField(searchBy, isEqualTo: idToSearch).getDocuments() { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")
         } else {
