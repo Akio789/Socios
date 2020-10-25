@@ -11,13 +11,12 @@ import UIKit
 class ContainerSpecializedSearchResultsViewController: UIViewController {
 
     @IBOutlet weak var searchedImage: UIImageView!
+    var typeCategoryInput: String = ""
+    var imageInput: UIImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let imageUrl = URL(string: "http://martinmolina.com.mx/202013/Equipo3/assets/playeras/playera-polo-negro.png")
-        let image = try? Data(contentsOf: imageUrl!)
-        searchedImage.image = UIImage(data: image!)
+        searchedImage.image = imageInput
         
     }
     
@@ -26,8 +25,8 @@ class ContainerSpecializedSearchResultsViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let nextView = segue.destination as! PersonalizedSearchResultTableViewController
+        nextView.typeCategoryInput = typeCategoryInput
     }
 
 }

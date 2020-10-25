@@ -32,7 +32,7 @@ class CommentsTableViewController: UITableViewController {
             print("Error getting documents: \(err)")
         } else {
             if !querySnapshot!.isEmpty {
-                self.comments = querySnapshot!.documents.first!.data()["comments"] as! Array<[String : Any]>
+                self.comments = querySnapshot!.documents.first!.data()["comments"] as? Array<[String : Any]> ?? []
                 self.tableView.reloadData()
             }
             }

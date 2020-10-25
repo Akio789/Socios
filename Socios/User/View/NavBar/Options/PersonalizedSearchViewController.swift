@@ -18,6 +18,7 @@ class PersonalizedSearchViewController: UIViewController, UIImagePickerControlle
     @IBOutlet weak var image: UIImageView!
     
     private let miPicker = UIImagePickerController()
+    var resultML: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,18 @@ class PersonalizedSearchViewController: UIViewController, UIImagePickerControlle
         image.image = UIImage(named: "ImagePlaceholder")
     }
     
+    func alertUser(_ message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+       alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+       self.present(alert, animated: true)
+    }
+    
 
     @IBAction func MlBusqueda() {
+        if image.image?.pngData() == UIImage(named: "ImagePlaceholder")?.pngData() {
+            alertUser("Favor de ingresar una imágen.")
+            return
+        }
         
         //instanciar el modelo de la red neuronal
         let modelFile = ML_Socios_1()
@@ -40,6 +51,7 @@ class PersonalizedSearchViewController: UIViewController, UIImagePickerControlle
         //Crear una solicitud al modelo para el análisis de la imagen
         let request = VNCoreMLRequest(model: model, completionHandler: resultadosModelo)
         try! handler.perform([request])
+        self.performSegue(withIdentifier: "MLSegue", sender: self)
     }
     
 
@@ -57,8 +69,7 @@ class PersonalizedSearchViewController: UIViewController, UIImagePickerControlle
             }
         }
         let resultado = bestPrediction+" "+String(bestConfidence)
-        print(resultado)
-        
+        resultML = bestPrediction
     }
     
     @IBAction func selectPicture(_ sender: Any) {
@@ -79,14 +90,11 @@ class PersonalizedSearchViewController: UIViewController, UIImagePickerControlle
     @IBAction func goBack(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }
-    /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let nextView = segue.destination as! ContainerSpecializedSearchResultsViewController
+        nextView.typeCategoryInput = resultML
+        nextView.imageInput = image.image!
     }
-    */
-
 }

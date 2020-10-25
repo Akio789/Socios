@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qaU-5i-911">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qaU-5i-911">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,11 +12,11 @@
             <objects>
                 <viewController id="qaU-5i-911" customClass="PersonalizedSearchViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Evj-OK-z1S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb2-9H-seG">
-                                <rect key="frame" x="43" y="259" width="328" height="191"/>
+                                <rect key="frame" x="43" y="313" width="328" height="191"/>
                                 <string key="text">Normalmente, al buscar, obtienes resultados esperados mediante una palabra. Nosotros te ofrecemos la opción de hacer tus búsquedas mediante imagenes, las cuales te ofreceran resultados similares a lo que deseas encontrar.
 ¡Prúebalo!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -26,13 +24,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yvf-ma-riI">
-                                <rect key="frame" x="43" y="458" width="328" height="232"/>
+                                <rect key="frame" x="43" y="512" width="328" height="232"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="232" id="M2d-bh-ix7"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THV-36-0M7">
-                                <rect key="frame" x="55" y="698" width="141" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THV-36-0M7">
+                                <rect key="frame" x="55" y="752" width="141" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="dwq-og-pYc"/>
@@ -46,22 +44,22 @@
                                     <action selector="selectPicture:" destination="qaU-5i-911" eventType="touchUpInside" id="S88-rA-MW1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBb-1f-7Yh">
-                                <rect key="frame" x="294" y="704.5" width="61" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBb-1f-7Yh">
+                                <rect key="frame" x="294" y="758.5" width="61" height="30"/>
                                 <state key="normal" title="Cancelar"/>
                                 <connections>
                                     <action selector="goBack:" destination="qaU-5i-911" eventType="touchUpInside" id="TAr-HZ-2wj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Va-6X-0Uk">
-                                <rect key="frame" x="149" y="755" width="116" height="40"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Va-6X-0Uk">
+                                <rect key="frame" x="149" y="809" width="116" height="40"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gxD-jh-O5v"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Buscar">
-                                    <color key="titleColor" systemColor="darkTextColor"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="MlBusqueda" destination="qaU-5i-911" eventType="touchUpInside" id="n9R-pY-mIU"/>
@@ -84,8 +82,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="yWv-dY-R9E"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0IP-AV-oh3" firstAttribute="leading" secondItem="gb2-9H-seG" secondAttribute="leading" id="AXT-MJ-GA3"/>
                             <constraint firstItem="7Va-6X-0Uk" firstAttribute="leading" secondItem="yWv-dY-R9E" secondAttribute="leading" constant="149" id="Kg0-bC-abZ"/>
@@ -104,54 +101,52 @@
                             <constraint firstItem="7Va-6X-0Uk" firstAttribute="centerX" secondItem="gb2-9H-seG" secondAttribute="centerX" id="qq2-gP-Ke8"/>
                             <constraint firstItem="yvf-ma-riI" firstAttribute="leading" secondItem="gb2-9H-seG" secondAttribute="leading" id="rix-ot-vBT"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="yWv-dY-R9E"/>
                     </view>
                     <navigationItem key="navigationItem" id="oJA-3z-GRY"/>
                     <connections>
                         <outlet property="image" destination="yvf-ma-riI" id="Acr-Po-Gzx"/>
+                        <segue destination="Wny-vD-ZMU" kind="show" identifier="MLSegue" id="iJa-aa-b4S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whY-JJ-yLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3055.072463768116" y="2672.5446428571427"/>
+            <point key="canvasLocation" x="-2859" y="2759"/>
         </scene>
         <!--Container Specialized Search Results View Controller-->
         <scene sceneID="Ze9-Rm-XRH">
             <objects>
                 <viewController id="Wny-vD-ZMU" customClass="ContainerSpecializedSearchResultsViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CiP-xY-rEN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ey4-oK-Rqf">
-                                <rect key="frame" x="0.0" y="244" width="414" height="618"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="608"/>
                                 <connections>
                                     <segue destination="3FV-Ls-u9b" kind="embed" id="pZ8-cf-Osp"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultados búsqueda especializada" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMN-xm-Mav">
-                                <rect key="frame" x="36" y="44" width="342" height="93"/>
+                                <rect key="frame" x="36" y="0.0" width="342" height="93"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-yQ-1UA">
-                                <rect key="frame" x="242" y="145" width="136" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-yQ-1UA">
+                                <rect key="frame" x="242" y="101" width="136" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Nueva búsqueda"/>
-                                <connections>
-                                    <segue destination="qaU-5i-911" kind="show" id="B6e-Xu-eXi"/>
-                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gy6-Tv-tvN">
-                                <rect key="frame" x="36" y="136" width="100" height="100"/>
+                                <rect key="frame" x="36" y="92" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="fiu-av-eeU"/>
                                     <constraint firstAttribute="height" constant="100" id="wEa-77-Jij"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="jyk-89-MMA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="PMN-xm-Mav" firstAttribute="centerX" secondItem="ey4-oK-Rqf" secondAttribute="centerX" id="0XS-x8-S4J"/>
                             <constraint firstAttribute="trailing" secondItem="ey4-oK-Rqf" secondAttribute="trailing" id="Ebf-d8-Pl3"/>
@@ -167,6 +162,7 @@
                             <constraint firstItem="PMN-xm-Mav" firstAttribute="top" secondItem="jyk-89-MMA" secondAttribute="top" id="wOZ-hc-MEp"/>
                             <constraint firstItem="zR2-yQ-1UA" firstAttribute="leading" secondItem="jyk-89-MMA" secondAttribute="leading" constant="242" id="wVR-6j-tIi"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="jyk-89-MMA"/>
                     </view>
                     <navigationItem key="navigationItem" id="ivq-Ea-yPX"/>
                     <connections>
@@ -182,9 +178,9 @@
             <objects>
                 <tableViewController id="3FV-Ls-u9b" customClass="PersonalizedSearchResultTableViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KVn-K6-C9g">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="608"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personalizedSearchResult" rowHeight="100" id="94E-T3-ztV" customClass="PersonalizedSearchTableViewCell" customModule="Socios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
@@ -222,7 +218,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqS-Tw-kR3">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqS-Tw-kR3">
                                             <rect key="frame" x="255" y="34" width="129" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -270,15 +266,4 @@
             <point key="canvasLocation" x="-354" y="2887"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
