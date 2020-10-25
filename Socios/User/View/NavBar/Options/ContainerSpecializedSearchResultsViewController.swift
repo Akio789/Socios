@@ -25,8 +25,10 @@ class ContainerSpecializedSearchResultsViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextView = segue.destination as! PersonalizedSearchResultTableViewController
-        nextView.typeCategoryInput = typeCategoryInput
+        if !(sender is UIButton) {
+            let nextView = segue.destination as! PersonalizedSearchResultTableViewController
+            nextView.typeCategoryInput = typeCategoryInput
+        }
     }
 
 }
