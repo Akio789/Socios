@@ -13,7 +13,7 @@ import CoreLocation
 class ContainerZoneProductsResultsViewController: UIViewController {
     @IBOutlet weak var mapa: MKMapView!
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 3000
+    let regionInMeters: Double = 1000
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
@@ -29,6 +29,10 @@ class ContainerZoneProductsResultsViewController: UIViewController {
         if let location = locationManager.location?.coordinate {
             let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
             mapa.setRegion(region, animated: true)
+//            let marker = MKPointAnnotation()
+//            marker.coordinate = location
+//            marker.title = "Yo"
+//            mapa.addAnnotation(marker)
         }
     }
     
@@ -43,25 +47,6 @@ class ContainerZoneProductsResultsViewController: UIViewController {
         }
     }
     
-    
-    func checkLocationAuthorization(){
-        switch CLLocationManager.authorizationStatus(){
-        case .authorizedWhenInUse:
-            centerViewOnUserLocation()
-            break
-        case .denied:
-            break
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            break
-        case .restricted:
-            break
-        case .authorizedAlways:
-            break
-        }
-    }
-
-
     /*
     // MARK: - Navigation
 
