@@ -10,19 +10,44 @@ import UIKit
 import MapKit
 import CoreLocation
 
+
 class ContainerZoneProductsResultsViewController: UIViewController {
     @IBOutlet weak var mapa: MKMapView!
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
+    private var search: String = ""
+    @IBOutlet weak var searchField: UITextField!
+    private func getNearByLandmarks(){
+        //Local search request
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = search
+        
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            if let response = response {
+                let mapItems = response.mapItems
+                //assign to landmarks. we want to assing it somewhere so we can display it on the map Landmark can be like a playera
+            }
+            
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkLocationServices()
+        
+        setupLocationManager()
     }
     
     func setupLocationManager(){
-        locationManager.requestAlwaysAuthorization()
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.requestWhenInUseAuthorization()
+        centerViewOnUserLocation()
+        locationManager.startUpdatingLocation()
+        
+        
     }
     
     func centerViewOnUserLocation(){
@@ -33,17 +58,6 @@ class ContainerZoneProductsResultsViewController: UIViewController {
 //            marker.coordinate = location
 //            marker.title = "Yo"
 //            mapa.addAnnotation(marker)
-        }
-    }
-    
-    func checkLocationServices(){
-        if CLLocationManager.locationServicesEnabled(){
-            setupLocationManager()
-            centerViewOnUserLocation()
-            locationManager.startUpdatingLocation()
-            //setup location manager
-        }else{
-            //Show alert letting the use know they have to turn this on
         }
     }
     
