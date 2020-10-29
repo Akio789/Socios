@@ -41,7 +41,7 @@ class PurchasesTableViewController: UITableViewController, UISearchResultsUpdati
         if let err = err {
             print("Error getting documents: \(err)")
         } else {
-            let compras = querySnapshot!.documents.first!.data()["compras"] as! Array<[String: Any]>
+            let compras = querySnapshot!.documents.first?.data()["compras"] as? Array<[String: Any]> ?? []
             self.response = []
             for compra in compras {
                 self.response?.append(compra)

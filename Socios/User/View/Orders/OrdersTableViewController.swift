@@ -41,7 +41,7 @@ class OrdersTableViewController: UITableViewController, UISearchResultsUpdating 
         if let err = err {
             print("Error getting documents: \(err)")
         } else {
-            let orders = querySnapshot!.documents.first!.data()["orders"] as! Array<[String: Any]>
+            let orders = querySnapshot!.documents.first?.data()["orders"] as? Array<[String: Any]> ?? []
             self.response = []
             for order in orders {
                 self.response?.append(order)

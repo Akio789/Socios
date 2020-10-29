@@ -41,7 +41,7 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
         if let err = err {
             print("Error getting documents: \(err)")
         } else {
-            let cart = querySnapshot!.documents.first!.data()["products"] as! Array<[String: Any]>
+            let cart = querySnapshot!.documents.first?.data()["products"] as? Array<[String: Any]> ?? []
             self.response = []
             for product in cart {
                 self.response?.append(product)
