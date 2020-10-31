@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class ShoppingCartPaymentViewController: UIViewController {
 
@@ -18,7 +19,22 @@ class ShoppingCartPaymentViewController: UIViewController {
         screen.image = UIImage(named: "ShoppingCartPayment")
     }
     
-
+    @IBAction func authenticaBiometrics(_ sender: Any) {
+        let context = LAContext()
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Mensaje", reply: {
+            (success, err) in
+                if (err != nil) {
+                    print("Error al autenticar")
+                } else {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "ConfirmedPurchase", sender: self)
+                    }
+                }
+            })
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

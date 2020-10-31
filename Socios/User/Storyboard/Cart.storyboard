@@ -187,7 +187,7 @@
                                 <rect key="frame" x="149" y="669" width="117" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="8dN-di-4AA" kind="show" id="EGc-Ie-nCP"/>
+                                    <action selector="authenticaBiometrics:" destination="ezL-sh-nN0" eventType="touchUpInside" id="KHH-yG-kG4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -197,11 +197,12 @@
                     <navigationItem key="navigationItem" id="DwQ-aH-NGN"/>
                     <connections>
                         <outlet property="screen" destination="cEa-D4-Occ" id="lRq-DW-W0J"/>
+                        <segue destination="8dN-di-4AA" kind="show" identifier="ConfirmedPurchase" id="G6J-1m-XSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glb-KU-TQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1642.0289855072465" y="-309.375"/>
+            <point key="canvasLocation" x="-1607" y="-309"/>
         </scene>
         <!--Cart Table View Controller-->
         <scene sceneID="ZFp-JH-ysl">
@@ -299,6 +300,7 @@
         <image name="CheckBoxIcon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="G6J-1m-XSD"/>
         <segue reference="qUq-eE-Gwg"/>
     </inferredMetricsTieBreakers>
 </document>
