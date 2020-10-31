@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
+        self.performSegue(withIdentifier: "loginSegue", sender: self)
     }
     
     @IBAction func login(_ sender: Any) {
