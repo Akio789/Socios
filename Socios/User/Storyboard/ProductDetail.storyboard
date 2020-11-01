@@ -113,6 +113,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Yu-d7-YU2">
+                                <rect key="frame" x="268" y="623" width="126" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Comparitr"/>
+                                <connections>
+                                    <action selector="shareSocial:" destination="ilG-8X-Vqi" eventType="touchUpInside" id="dDM-Aj-rF9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -123,12 +132,15 @@
                             <constraint firstItem="KG1-bn-8cd" firstAttribute="top" secondItem="P3s-ta-hEW" secondAttribute="bottom" constant="86" id="5al-yk-kR2"/>
                             <constraint firstItem="a14-kh-YMH" firstAttribute="bottom" secondItem="JK7-Sm-3ZX" secondAttribute="bottom" id="8AV-Ue-Q26"/>
                             <constraint firstItem="8je-o1-YMK" firstAttribute="centerY" secondItem="q9F-8m-AnD" secondAttribute="centerY" id="9vi-SQ-Wiz"/>
+                            <constraint firstItem="4Yu-d7-YU2" firstAttribute="trailing" secondItem="wTy-Es-awg" secondAttribute="trailing" id="E3D-ax-RUQ"/>
                             <constraint firstItem="wsM-o0-AbG" firstAttribute="top" secondItem="KG1-bn-8cd" secondAttribute="bottom" constant="14.5" id="H06-xl-sXF"/>
                             <constraint firstItem="mw5-ng-x0f" firstAttribute="leading" secondItem="unV-mT-m24" secondAttribute="leading" id="IK6-iu-Wjw"/>
                             <constraint firstItem="unV-mT-m24" firstAttribute="top" secondItem="mw5-ng-x0f" secondAttribute="bottom" constant="8" id="JPS-ya-77S"/>
                             <constraint firstItem="P3s-ta-hEW" firstAttribute="centerX" secondItem="QcP-48-ENr" secondAttribute="centerX" id="Jsu-jI-CCm"/>
                             <constraint firstItem="KG1-bn-8cd" firstAttribute="leading" secondItem="q9F-8m-AnD" secondAttribute="leading" id="MLg-6L-ErK"/>
+                            <constraint firstItem="4Yu-d7-YU2" firstAttribute="top" secondItem="8je-o1-YMK" secondAttribute="top" id="QEk-ji-Xkw"/>
                             <constraint firstItem="VuR-6W-RMs" firstAttribute="centerY" secondItem="QcP-48-ENr" secondAttribute="centerY" id="Qiy-iu-5Ba"/>
+                            <constraint firstItem="4Yu-d7-YU2" firstAttribute="leading" secondItem="wTy-Es-awg" secondAttribute="leading" id="SQI-Fy-Smm"/>
                             <constraint firstItem="P3s-ta-hEW" firstAttribute="centerX" secondItem="a14-kh-YMH" secondAttribute="centerX" id="SSD-6T-jVt"/>
                             <constraint firstAttribute="bottom" secondItem="wTy-Es-awg" secondAttribute="bottom" constant="200" id="T0r-FY-vPz"/>
                             <constraint firstItem="mw5-ng-x0f" firstAttribute="leading" secondItem="KG1-bn-8cd" secondAttribute="trailing" constant="9" id="T5x-vR-9iK"/>

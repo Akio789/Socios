@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Social
 
 class ProductDetailFromSearchViewController: UIViewController {
 
@@ -53,6 +54,50 @@ class ProductDetailFromSearchViewController: UIViewController {
         prodcuRating.text = String(productRatingEntry)
     }
 
+    @IBAction func shareSocial(_ sender: Any) {
+        let message = "Encuentra \(self.productNameA), solamente en \(self.productSellerEntry)."
+        let actionSheet = UIAlertController(title: "", message: "Comparte el producto", preferredStyle: UIAlertController.Style.actionSheet)
+        let tweetAction = UIAlertAction(title: "Comparte en Twitter", style: UIAlertAction.Style.default) { (action) in
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+                let twitterVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                twitterVC?.setInitialText(message)
+                twitterVC?.add(self.productImage.image)
+                self.present(twitterVC!, animated: true, completion: nil)
+            }
+            else {
+                self.alertUser("No tiene sesión en Twitter")
+            }
+        }
+        let fbAction = UIAlertAction(title: "Comparte en Facebook", style: UIAlertAction.Style.default) { (action) in
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+                let fbVC = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                fbVC?.setInitialText(message)
+                fbVC?.add(self.productImage.image)
+                self.present(fbVC!, animated: true, completion: nil)
+            }
+            else {
+                self.alertUser("No tiene sesión en Facebook")
+            }
+        }
+        let moreAction = UIAlertAction(title: "Mas opciones", style: UIAlertAction.Style.default) { (action) in
+            let activityViewController = UIActivityViewController(activityItems: [message, self.productImage.image], applicationActivities: nil)
+         
+            self.present(activityViewController, animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel)
+        actionSheet.addAction(tweetAction)
+        actionSheet.addAction(fbAction)
+        actionSheet.addAction(moreAction)
+        actionSheet.addAction(cancelAction)
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func alertUser(_ message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+       alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+       self.present(alert, animated: true)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
