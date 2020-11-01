@@ -19,13 +19,12 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
-        self.performSegue(withIdentifier: "loginSegue", sender: self)
     }
     
     @IBAction func login(_ sender: Any) {
         // Para no tener que estar metiendo crendenciales
         // QUITAR DESPUES
-        // self.performSegue(withIdentifier: "loginSegue", sender: self)
+        self.performSegue(withIdentifier: "loginSegue", sender: self)
         
         Auth.auth().signIn(withEmail: email.text!, password: password.text!){
                 (user, error) in
