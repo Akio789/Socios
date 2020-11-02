@@ -10,9 +10,11 @@ import UIKit
 import Firebase
 import Social
 
+
 class ProductDetailFromSearchViewController: UIViewController {
 
     
+    @IBOutlet weak var addToCart: UIButton!
     @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var productSeller: UILabel!
     @IBOutlet weak var productPrice: UILabel!
@@ -96,6 +98,51 @@ class ProductDetailFromSearchViewController: UIViewController {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
        alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
        self.present(alert, animated: true)
+    }
+    
+    
+    @IBAction func addProductToCart(_ sender: Any) {
+        downloadCartFromFirestore(user!.uid) { (cart) in
+
+            if cart == nil {
+                self.createNewCart()
+            } else {
+                cart!.productsId.append(self.productId)
+                self.updateCart(cart: cart!, withValues: ["productsId" : cart!.productsId])
+            }
+        }
+        
+    }
+    
+    private func createNewCart(){
+
+        let newCart = Cart()
+        newCart.id = UUID().uuidString
+        newCart.ownerId = user!.uid
+        newCart.productsId = [self.productId]
+        saveCartToFirestore(newCart)
+    }
+    
+    private func updateCart(cart: Cart, withValues: [String : Any]) {
+        updateCartInFirestore(cart, withValues: withValues) { (error) in
+           if error != nil {
+//               self.hud.textLabel.text = "Error: \(error!.localizedDescription)"
+//               self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+//               self.hud.show(in: self.view)
+//               self.hud.dismiss(afterDelay: 2.0)
+
+               print("error updating basket", error!.localizedDescription)
+           } else {
+               
+//               self.hud.textLabel.text = "Added to basket!"
+//               self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+//               self.hud.show(in: self.view)
+//               self.hud.dismiss(afterDelay: 2.0)
+                 print("Added correctly")
+           }
+       }
+
+        
     }
     
     // MARK: - Navigation

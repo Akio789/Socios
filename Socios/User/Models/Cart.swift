@@ -13,14 +13,16 @@ class Cart {
     var ownerId: String!
     var productsId: [String]!
     
+    init(){
+        
+    }
+    
     init(_dictionary: NSDictionary){
-        id = _dictionary["objectId"] as? String
+        id = _dictionary["id"] as? String
         ownerId = _dictionary["ownerId"] as? String
         productsId = _dictionary["productsId"] as? [String]
     }
-//    let storage = Storage.storage()
-//    let storageRef = storage.reference()
-    
+
 }
 
 
@@ -42,19 +44,10 @@ func downloadCartFromFirestore(_ ownerId: String, completion: @escaping (_ cart:
         }
     }
 }
-
-
-
-
-
-
-
 //MARK: Save to Firebase
-func saveBasketToFirestore(_ cart: Cart){
+func saveCartToFirestore(_ cart: Cart){
     
     FirebaseReference(.Cart).document(cart.id).setData(cartDictionaryFrom(cart) as! [String: Any])
-    
-    
     
 }
 
@@ -62,7 +55,7 @@ func saveBasketToFirestore(_ cart: Cart){
 func cartDictionaryFrom(_ cart: Cart) ->  NSDictionary {
     
     return NSDictionary(objects: [cart.id, cart.ownerId, cart.productsId],
-           forKeys: ["objectId" as NSCopying, "userId" as NSCopying, "productsId" as NSCopying])
+           forKeys: ["id" as NSCopying, "userId" as NSCopying, "productsId" as NSCopying])
 }
 
 
