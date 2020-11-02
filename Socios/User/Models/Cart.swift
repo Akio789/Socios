@@ -21,6 +21,7 @@ class Cart {
         id = _dictionary["id"] as? String
         ownerId = _dictionary["ownerId"] as? String
         productsId = _dictionary["productsId"] as? [String]
+        
     }
 
 }
@@ -31,7 +32,6 @@ func downloadCartFromFirestore(_ ownerId: String, completion: @escaping (_ cart:
     
     FirebaseReference(.Cart).whereField("userId", isEqualTo: ownerId).getDocuments { (snapshot, error) in
         guard let snapshot = snapshot else {
-            
             completion(nil)
             return
         }

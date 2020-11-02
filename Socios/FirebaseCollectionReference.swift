@@ -11,6 +11,7 @@ import FirebaseFirestore
 
 enum FCollectionReference: String {
     case User
+    case Shops
     case Products
     case Cart
     

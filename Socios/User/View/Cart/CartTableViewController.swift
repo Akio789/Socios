@@ -12,6 +12,7 @@ import Firebase
 class CartTableViewController: UITableViewController, UISearchResultsUpdating {
 
     var response: [Any]?
+    var pId: [Any]?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
     let db = Firestore.firestore()
@@ -46,6 +47,7 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
             for product in cart {
                 self.response?.append(product)
             }
+            print(self.response)
             self.filteredData = self.response!
             self.tableView.reloadData()
             self.searchController.searchResultsUpdater = self
@@ -55,7 +57,6 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
             self.tableView.tableHeaderView = self.searchController.searchBar
             }
         }
-        
         
     }
 
