@@ -102,15 +102,33 @@ class ProductDetailFromSearchViewController: UIViewController {
     
     
     @IBAction func addProductToCart(_ sender: Any) {
-        downloadCartFromFirestore(user!.uid) { (cart) in
-
-            if cart == nil {
-                self.createNewCart()
-            } else {
-                cart!.productsId.append(self.productId)
-                self.updateCart(cart: cart!, withValues: ["productsId" : cart!.productsId])
+        
+        db.collection("carts").whereField("user", isEqualTo: user!.uid).getDocuments() {
+            (querySnapshot, err)
+            in guard let querySnapshot = querySnapshot else {
+                print("error")
+                return
             }
+            
+            if !querySnapshot.isEmpty && querySnapshot.documents.count > 0 {
+                // Should add to a cart
+            }else {
+                print("Empty Cart")
+                let cartId = UUID().uuidString
+                self.db.collection("carts").document(cartId).setData(["id": cartId, "products": ["description": self.productDescriptionEntry, "id": self.productId, "imageUrl": self.productimageUrl ?? "", "name": self.productNameA, "price": self.productPriceEntry, "rating": self.productRatingEntry, "seller": self.productSellerEntry], "user": self.user!.uid])
+            }
+
         }
+        
+//        downloadCartFromFirestore(user!.uid) { (cart) in
+//
+//            if cart == nil {
+//                self.createNewCart()
+//            } else {
+//                cart!.productsId.append(self.productId)
+//                self.updateCart(cart: cart!, withValues: ["productsId" : cart!.productsId])
+//            }
+//        }
         
     }
     
@@ -122,7 +140,7 @@ class ProductDetailFromSearchViewController: UIViewController {
         newCart.productsId = [self.productId]
         saveCartToFirestore(newCart)
     }
-    
+
     private func updateCart(cart: Cart, withValues: [String : Any]) {
         updateCartInFirestore(cart, withValues: withValues) { (error) in
            if error != nil {
@@ -133,7 +151,7 @@ class ProductDetailFromSearchViewController: UIViewController {
 
                print("error updating basket", error!.localizedDescription)
            } else {
-               
+
 //               self.hud.textLabel.text = "Added to basket!"
 //               self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
 //               self.hud.show(in: self.view)

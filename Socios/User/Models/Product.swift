@@ -21,6 +21,7 @@ class Product {
     var type: String!
     
     init() {
+        
     }
     
     init(_dictionary: NSDictionary) {

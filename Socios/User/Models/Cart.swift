@@ -8,10 +8,12 @@
 
 import Foundation
 
+
 class Cart {
     var id: String!
     var ownerId: String!
     var productsId: [String]!
+    
     
     init(){
         

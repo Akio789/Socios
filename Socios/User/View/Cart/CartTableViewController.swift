@@ -13,6 +13,7 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
 
     var response: [Any]?
     var pId: [Any]?
+    var cart: Cart?
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
     let db = Firestore.firestore()
@@ -47,7 +48,6 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
             for product in cart {
                 self.response?.append(product)
             }
-            print(self.response)
             self.filteredData = self.response!
             self.tableView.reloadData()
             self.searchController.searchResultsUpdater = self
@@ -58,8 +58,56 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
             }
         }
         
+        //retrieveProductsIds()
+        
     }
-
+    
+    
+    //MARK: - Check the product id's in a cart of user
+    func retrieveProductsIds(){
+        downloadCartFromFirestore(user!.uid) { (cart) in
+            self.cart = cart
+            self.getCartProducts()
+            
+        }
+        
+    }
+    
+    
+    private func getCartProducts(){
+        if cart != nil {
+            downloadProducts(cart!.productsId)
+            
+        }
+    }
+    
+    func downloadProducts(_ withIds: [String]){
+        var count = 0
+        
+        if withIds.count > 0{
+            self.response = []
+            for productId in withIds{
+                db.collection("productos").whereField("id", isEqualTo: productId).getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    }else{
+                        let product = querySnapshot
+                        self.response?.append(product!)
+                        
+                    }
+                }
+            }
+        }
+        self.filteredData = self.response!
+        self.tableView.reloadData()
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.definesPresentationContext = true
+        self.tableView.tableHeaderView = self.searchController.searchBar
+    }
+    
+    
 
     // MARK: - Table view data source
 
