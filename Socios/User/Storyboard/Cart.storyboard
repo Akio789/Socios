@@ -182,17 +182,75 @@
                     <view key="view" contentMode="scaleToFill" id="g9P-7c-mSN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHx-f4-D1R">
+                                <rect key="frame" x="20" y="36" width="374" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAN-L6-2Br">
+                                        <rect key="frame" x="156" y="11" width="62" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hC5-Je-pLq">
+                                <rect key="frame" x="63" y="196" width="298" height="340"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrF-bU-pY0">
+                                        <rect key="frame" x="127" y="23" width="45" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="300.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-Wr-hPE">
+                                        <rect key="frame" x="8" y="141" width="282" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.72744025895038267" green="0.84863543180905476" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPn-MZ-vga">
+                                <rect key="frame" x="140" y="642" width="142" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Confirmar Pago">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmPayment:" destination="ezL-sh-nN0" eventType="touchUpInside" id="Qyp-e0-PCg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="E3D-6L-dh4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hHx-f4-D1R" firstAttribute="top" secondItem="E3D-6L-dh4" secondAttribute="top" constant="36" id="1a1-Db-0CK"/>
+                            <constraint firstItem="hC5-Je-pLq" firstAttribute="leading" secondItem="E3D-6L-dh4" secondAttribute="leading" constant="63" id="BgH-qk-WKG"/>
+                            <constraint firstItem="hC5-Je-pLq" firstAttribute="top" secondItem="g9P-7c-mSN" secondAttribute="top" constant="196" id="K1v-df-3xN"/>
+                            <constraint firstAttribute="bottom" secondItem="hHx-f4-D1R" secondAttribute="bottom" constant="751" id="Xx7-Or-pkf"/>
+                            <constraint firstItem="E3D-6L-dh4" firstAttribute="bottom" secondItem="hC5-Je-pLq" secondAttribute="bottom" constant="272" id="da2-Zk-3WZ"/>
+                            <constraint firstItem="E3D-6L-dh4" firstAttribute="trailing" secondItem="hC5-Je-pLq" secondAttribute="trailing" constant="53" id="g7h-hV-GHD"/>
+                            <constraint firstItem="hHx-f4-D1R" firstAttribute="leading" secondItem="g9P-7c-mSN" secondAttribute="leadingMargin" id="js3-b5-C9r"/>
+                            <constraint firstItem="hHx-f4-D1R" firstAttribute="trailing" secondItem="g9P-7c-mSN" secondAttribute="trailingMargin" id="juk-nZ-bFW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DwQ-aH-NGN"/>
                     <connections>
+                        <outlet property="totalLabel" destination="bdK-Wr-hPE" id="RzI-k6-lDm"/>
                         <segue destination="8dN-di-4AA" kind="show" identifier="ConfirmedPurchase" id="G6J-1m-XSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glb-KU-TQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1607" y="-309"/>
+            <point key="canvasLocation" x="-1607.2463768115942" y="-309.375"/>
         </scene>
         <!--Cart Table View Controller-->
         <scene sceneID="ZFp-JH-ysl">
@@ -300,6 +358,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

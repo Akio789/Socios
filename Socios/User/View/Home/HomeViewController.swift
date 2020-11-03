@@ -10,14 +10,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var screen: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         //self.navigationItem.setHidesBackButton(true, animated: true)
-        screen.image = UIImage(named: "Home")
+        
     }
     
 
