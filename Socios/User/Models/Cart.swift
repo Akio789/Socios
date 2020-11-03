@@ -7,12 +7,19 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import Firebase
+
 
 
 class Cart {
     var id: String!
     var ownerId: String!
     var productsId: [String]!
+    let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
+    let storage = Storage.storage()
+
     
     
     init(){
@@ -23,6 +30,13 @@ class Cart {
         id = _dictionary["id"] as? String
         ownerId = _dictionary["ownerId"] as? String
         productsId = _dictionary["productsId"] as? [String]
+        
+    }
+    
+    func createCartInFirestore(newProduct: [String: Any]) {
+
+        let cartId = UUID().uuidString
+        db.collection("carts").document(cartId).setData(["products": [newProduct], "id": cartId, "user": self.user!.uid, "total": newProduct["price"]])
         
     }
 
@@ -68,5 +82,11 @@ func updateCartInFirestore(_ cart: Cart, withValues: [String: Any], completion: 
         completion(error)
     }
 }
+
+//MARK: - Create New Cart when user is new
+
+
+
+
 
 

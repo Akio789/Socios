@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseFirestore
 import Social
-
+import Firebase
 
 class ProductDetailFromSearchViewController: UIViewController {
 
@@ -101,66 +101,33 @@ class ProductDetailFromSearchViewController: UIViewController {
     }
     
     
+    
     @IBAction func addProductToCart(_ sender: Any) {
-        
+        let newProduct: [String: Any] = ["name": self.productNameA, "id": self.productId, "seller": self.productSellerEntry, "price": self.productPriceEntry, "rating": self.productRatingEntry, "imageUrl": self.productimageUrl, "description": self.productDescriptionEntry]
         db.collection("carts").whereField("user", isEqualTo: user!.uid).getDocuments() {
             (querySnapshot, err)
             in guard let querySnapshot = querySnapshot else {
                 print("error")
                 return
             }
-            
             if !querySnapshot.isEmpty && querySnapshot.documents.count > 0 {
-                // Should add to a cart
+                //Add to user Cart
+                let cartInfo = querySnapshot.documents.first?.data()
+                let cartId = cartInfo?["id"] as! String
+                let doc = Firestore.firestore().collection("carts")
+                var products = cartInfo?["products"] as? [Any]
+                var prevTotal = cartInfo?["total"] as! Double
+                let newProduct: [String: Any] = ["name": self.productNameA, "id": self.productId, "seller": self.productSellerEntry, "price": self.productPriceEntry, "rating": self.productRatingEntry, "imageUrl": self.productimageUrl, "description": self.productDescriptionEntry]
+                products?.append(newProduct)
+                let priceToAdd = newProduct["price"] as! Double
+                let newTotal = prevTotal + priceToAdd
+                doc.document(cartId).updateData(["products": products, "total": newTotal as Double])
             }else {
-                print("Empty Cart")
-                let cartId = UUID().uuidString
-                self.db.collection("carts").document(cartId).setData(["id": cartId, "products": ["description": self.productDescriptionEntry, "id": self.productId, "imageUrl": self.productimageUrl ?? "", "name": self.productNameA, "price": self.productPriceEntry, "rating": self.productRatingEntry, "seller": self.productSellerEntry], "user": self.user!.uid])
+                let cart = Cart()
+                let newProduct: [String: Any] = ["name": self.productNameA, "id": self.productId, "seller": self.productSellerEntry, "price": self.productPriceEntry, "rating": self.productRatingEntry, "imageUrl": self.productimageUrl, "description": self.productDescriptionEntry]
+                cart.createCartInFirestore(newProduct: newProduct)
             }
-
         }
-        
-//        downloadCartFromFirestore(user!.uid) { (cart) in
-//
-//            if cart == nil {
-//                self.createNewCart()
-//            } else {
-//                cart!.productsId.append(self.productId)
-//                self.updateCart(cart: cart!, withValues: ["productsId" : cart!.productsId])
-//            }
-//        }
-        
-    }
-    
-    private func createNewCart(){
-
-        let newCart = Cart()
-        newCart.id = UUID().uuidString
-        newCart.ownerId = user!.uid
-        newCart.productsId = [self.productId]
-        saveCartToFirestore(newCart)
-    }
-
-    private func updateCart(cart: Cart, withValues: [String : Any]) {
-        updateCartInFirestore(cart, withValues: withValues) { (error) in
-           if error != nil {
-//               self.hud.textLabel.text = "Error: \(error!.localizedDescription)"
-//               self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
-//               self.hud.show(in: self.view)
-//               self.hud.dismiss(afterDelay: 2.0)
-
-               print("error updating basket", error!.localizedDescription)
-           } else {
-
-//               self.hud.textLabel.text = "Added to basket!"
-//               self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
-//               self.hud.show(in: self.view)
-//               self.hud.dismiss(afterDelay: 2.0)
-                 print("Added correctly")
-           }
-       }
-
-        
     }
     
     // MARK: - Navigation
