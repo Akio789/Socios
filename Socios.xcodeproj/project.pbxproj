@@ -14,6 +14,7 @@
 		19650679254FF3EA00D73589 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19650678254FF3EA00D73589 /* Shop.swift */; };
 		1965067C254FF52D00D73589 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1965067B254FF52D00D73589 /* Product.swift */; };
 		1965067F2550A8BB00D73589 /* Productos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1965067E2550A8BA00D73589 /* Productos.swift */; };
+		196506822550EA4900D73589 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196506812550EA4900D73589 /* CartViewController.swift */; };
 		196DEA582523148F001B5E95 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196DEA572523148F001B5E95 /* TabBarViewController.swift */; };
 		196DEA5B25231B00001B5E95 /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 196DEA5A25231B00001B5E95 /* Questions.storyboard */; };
 		196DEA5E25231B62001B5E95 /* Shops.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 196DEA5D25231B62001B5E95 /* Shops.storyboard */; };
@@ -96,6 +97,7 @@
 		19650678254FF3EA00D73589 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		1965067B254FF52D00D73589 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1965067E2550A8BA00D73589 /* Productos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productos.swift; sourceTree = "<group>"; };
+		196506812550EA4900D73589 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		196DEA572523148F001B5E95 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		196DEA5A25231B00001B5E95 /* Questions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Questions.storyboard; sourceTree = "<group>"; };
 		196DEA5D25231B62001B5E95 /* Shops.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shops.storyboard; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				19C910A42519E6C800032423 /* ShoppingCartDeleteViewController.swift */,
 				19D1A6DE2525BC1C00FFFACE /* CartTableViewController.swift */,
 				19D1A6E42525BE6500FFFACE /* ContainerCartViewController.swift */,
+				196506812550EA4900D73589 /* CartViewController.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				19B1618D251C6338009E897F /* ZoneProductTableViewController.swift in Sources */,
 				19D1A6E22525BC3000FFFACE /* CartTableViewCell.swift in Sources */,
 				19C910962519DF4600032423 /* ProductInformationViewController.swift in Sources */,
+				196506822550EA4900D73589 /* CartViewController.swift in Sources */,
 				8C4610F92506C3E600D93ADF /* SceneDelegate.swift in Sources */,
 				19C35E32252462C1005A3CE1 /* OrderTableViewCell.swift in Sources */,
 				66FFE83A2516B33400AA2215 /* NavBarViewController.swift in Sources */,
