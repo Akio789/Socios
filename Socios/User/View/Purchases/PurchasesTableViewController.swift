@@ -145,8 +145,8 @@ class PurchasesTableViewController: UITableViewController, UISearchResultsUpdati
         let purchaseObject7 = filteredData[index!] as! [String: Any]
         nextView.purchaseImageEntry = purchaseObject7["imageUrl"] as! String
         let purchaseObject9 = filteredData[index!] as! [String: Any]
-        let ts = purchaseObject9["date"] as! Timestamp
-        nextView.purchaseFechaEntry = ts.dateValue()
+        //let ts = purchaseObject9["date"] as! Timestamp ??
+        //nextView.purchaseFechaEntry = ts.dateValue()
 
     }
 }

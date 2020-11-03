@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="mDn-q1-ev8" customClass="UserProfileViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9xp-eG-DSt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXN-ct-226">
@@ -23,8 +23,8 @@
                                     <segue destination="2An-P4-u5y" kind="embed" id="nPB-o0-BJa"/>
                                 </connections>
                             </containerView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageProfile" translatesAutoresizingMaskIntoConstraints="NO" id="oIl-gz-GGS">
-                                <rect key="frame" x="20" y="20" width="107" height="126"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oIl-gz-GGS">
+                                <rect key="frame" x="20" y="21.5" width="107" height="123.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftO-5v-auO">
                                 <rect key="frame" x="148.5" y="20" width="71" height="32"/>
@@ -209,7 +209,7 @@
             <objects>
                 <viewController id="0df-4h-tUI" customClass="EditProfileViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jg2-sC-0Gd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRO-xM-BTY">
@@ -493,13 +493,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="u7J-DI-T5f"/>
         <segue reference="jML-DY-3vS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CameraIcon" width="28.5" height="28.5"/>
-        <image name="ImageProfile" width="390" height="381.5"/>
         <image name="UserIcon" width="32" height="32"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

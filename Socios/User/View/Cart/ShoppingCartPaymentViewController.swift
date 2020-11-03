@@ -103,16 +103,17 @@ class ShoppingCartPaymentViewController: UIViewController {
                 return
             }
             if !querySnapshot.isEmpty && querySnapshot.documents.count > 0 {
-                //Add to user Cart
+                //Add to user Purchases
                 let purchaseInfo = querySnapshot.documents.first?.data()
                 let purchaseId = purchaseInfo?["id"] as! String
-                let doc = Firestore.firestore().collection("carts")
+                let doc = Firestore.firestore().collection("compras")
                 var products = purchaseInfo?["products"] as? [Any]
+                print("Hola")
                 for i in 0..<productToAdd.count{
-                    let tempProduct = productToAdd[i] as! [String: Any]
-                    products!.append(tempProduct)
+//                    let tempProduct = productToAdd[i] as! [String: Any]
+                    products?.append(productToAdd[i])
                 }
-               doc.document(purchaseId).updateData(["products": products])
+                doc.document(purchaseId).updateData(["products": products])
             }else {
                 let cart = Cart()
                 cart.createPurchaseInFirestore(newProduct: productToAdd)
