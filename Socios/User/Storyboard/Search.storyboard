@@ -54,12 +54,6 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0d-pO-AhL">
-                                            <rect key="frame" x="255" y="34" width="129" height="33"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="Agregar a carrito"/>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Y7x-59-XRp" firstAttribute="leading" secondItem="B5D-TZ-5fy" secondAttribute="leadingMargin" id="Apw-ZW-hBq"/>
