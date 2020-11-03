@@ -38,7 +38,7 @@ class ContainerCartViewController: UIViewController {
                 //Add to user Cart
                 let cartInfo = querySnapshot.documents.first?.data()
                 let totalPrice = cartInfo?["total"] as! Double
-                self.totalLabel.text = "\(totalPrice)"
+                self.totalLabel.text = "$" + "\(totalPrice)"
                 return
             }else {
                 print("Error")
