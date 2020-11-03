@@ -48,6 +48,33 @@ class ContainerCartViewController: UIViewController {
         return
     }
     
+    @IBAction func emptyCart(_ sender: Any) {
+        db.collection("carts").whereField("user", isEqualTo: user!.uid).getDocuments() {
+            (querySnapshot, err)
+            in guard let querySnapshot = querySnapshot else {
+                print("error")
+                return
+            }
+            if !querySnapshot.isEmpty && querySnapshot.documents.count > 0 {
+                //Add to user Cart
+                let cartInfo = querySnapshot.documents.first?.data()
+                let cartId = cartInfo?["id"] as! String
+                let totalPrice = cartInfo?["total"] as! Double
+                let doc = Firestore.firestore().collection("carts")
+                var products = cartInfo?["products"] as? [Any]
+                products?.removeAll()
+//                for i in 0..<products!.count {
+//                   products!.remove(at: i)
+//
+//                }
+                doc.document(cartId).updateData(["products": products, "total": 0])
+            }else {
+                print("Error")
+                return
+            }
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -111,11 +111,22 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqq-oI-J4O">
+                                <rect key="frame" x="297" y="60" width="91" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.22267030739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Vaciar carrito">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="emptyCart:" destination="RvF-e7-Wjy" eventType="touchUpInside" id="cqj-eN-22j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZPL-yW-OmR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RMQ-7K-cI3" firstAttribute="centerX" secondItem="RUI-1W-kVm" secondAttribute="centerX" id="4Rp-y6-N5I"/>
+                            <constraint firstItem="Tqq-oI-J4O" firstAttribute="top" secondItem="U8t-pf-V1R" secondAttribute="top" id="5Qe-Hg-B4g"/>
                             <constraint firstItem="ZPL-yW-OmR" firstAttribute="trailing" secondItem="3G2-5y-hc4" secondAttribute="trailing" constant="78" id="9qW-2H-ozm"/>
                             <constraint firstItem="dMQ-zI-Riw" firstAttribute="centerY" secondItem="3G2-5y-hc4" secondAttribute="centerY" id="C3q-PA-9iq"/>
                             <constraint firstItem="dMQ-zI-Riw" firstAttribute="top" secondItem="RUI-1W-kVm" secondAttribute="bottom" constant="8" id="LWl-mf-ZvV"/>
@@ -124,6 +135,7 @@
                             <constraint firstItem="RUI-1W-kVm" firstAttribute="top" secondItem="RMQ-7K-cI3" secondAttribute="bottom" constant="8" id="X0A-NR-1Vz"/>
                             <constraint firstItem="dMQ-zI-Riw" firstAttribute="leading" secondItem="RUI-1W-kVm" secondAttribute="leading" id="XcE-BE-mFB"/>
                             <constraint firstItem="3G2-5y-hc4" firstAttribute="top" secondItem="RUI-1W-kVm" secondAttribute="bottom" constant="4" id="den-1u-I3V"/>
+                            <constraint firstItem="ZPL-yW-OmR" firstAttribute="trailing" secondItem="Tqq-oI-J4O" secondAttribute="trailing" constant="26" id="gNf-0e-KIN"/>
                             <constraint firstItem="U8t-pf-V1R" firstAttribute="top" secondItem="ZPL-yW-OmR" secondAttribute="top" constant="60" id="plP-am-L00"/>
                             <constraint firstItem="U8t-pf-V1R" firstAttribute="leading" secondItem="AIs-0K-xTn" secondAttribute="leadingMargin" id="qsn-PR-z4a"/>
                             <constraint firstItem="ZPL-yW-OmR" firstAttribute="bottom" secondItem="RUI-1W-kVm" secondAttribute="bottom" constant="64" id="tWB-MC-til"/>
@@ -297,14 +309,6 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8f-Sf-Irj">
-                                            <rect key="frame" x="344" y="35" width="55" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="0.0" blue="0.22267030739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <state key="normal" title="Eliminar">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="x96-fV-d8f" firstAttribute="top" secondItem="hOH-lI-iLF" secondAttribute="topMargin" constant="2" id="5P7-E1-Wq8"/>
