@@ -39,6 +39,15 @@ class Cart {
         db.collection("carts").document(cartId).setData(["products": [newProduct], "id": cartId, "user": self.user!.uid, "total": newProduct["price"]])
         
     }
+    
+    func createPurchaseInFirestore(newProduct: [Any]) {
+
+        let purchaseId = UUID().uuidString
+        db.collection("compras").document(purchaseId).setData(["products": newProduct, "id": purchaseId, "user": self.user!.uid])
+
+
+        
+    }
 
 }
 

@@ -30,7 +30,7 @@ class ShoppingCartPaymentViewController: UIViewController {
     }
     
     @IBAction func confirmPayment(_ sender: Any) {
-        db.collection("carts").whereField("user", isEqualTo: user!.uid).getDocuments() {
+        db.collection("carts").whereField("user", isEqualTo: user!.uid).getDocuments() { [self]
             (querySnapshot, err)
             in guard let querySnapshot = querySnapshot else {
                 print("error")
@@ -43,6 +43,7 @@ class ShoppingCartPaymentViewController: UIViewController {
                 let totalPrice = cartInfo?["total"] as! Double
                 let doc = Firestore.firestore().collection("carts")
                 var products = cartInfo?["products"] as? [Any]
+                addToPurchases(productToAdd: products!)
                 products?.removeAll()
 //                for i in 0..<products!.count {
 //                   products!.remove(at: i)
@@ -56,9 +57,6 @@ class ShoppingCartPaymentViewController: UIViewController {
         }
         
     }
-    
-    
-    
     
     @IBAction func authenticaBiometrics(_ sender: Any) {
         let context = LAContext()
@@ -95,6 +93,32 @@ class ShoppingCartPaymentViewController: UIViewController {
             }
         }
         return
+    }
+    
+    func addToPurchases(productToAdd: [Any]){
+        db.collection("compras").whereField("user", isEqualTo: user!.uid).getDocuments() {
+            (querySnapshot, err)
+            in guard let querySnapshot = querySnapshot else {
+                print("error")
+                return
+            }
+            if !querySnapshot.isEmpty && querySnapshot.documents.count > 0 {
+                //Add to user Cart
+                let purchaseInfo = querySnapshot.documents.first?.data()
+                let purchaseId = purchaseInfo?["id"] as! String
+                let doc = Firestore.firestore().collection("carts")
+                var products = purchaseInfo?["products"] as? [Any]
+                for i in 0..<productToAdd.count{
+                    let tempProduct = productToAdd[i] as! [String: Any]
+                    products!.append(tempProduct)
+                }
+               doc.document(purchaseId).updateData(["products": products])
+            }else {
+                let cart = Cart()
+                cart.createPurchaseInFirestore(newProduct: productToAdd)
+            }
+        
+        }
     }
     
     /*
