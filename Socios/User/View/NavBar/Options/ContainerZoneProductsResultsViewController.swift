@@ -46,6 +46,8 @@ class ContainerZoneProductsResultsViewController: UIViewController {
 
     }
     
+    
+    
     func setupLocationManager(){
         
         locationManager.delegate = self

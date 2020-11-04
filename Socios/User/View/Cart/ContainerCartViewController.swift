@@ -27,6 +27,13 @@ class ContainerCartViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_: Bool) {
+                super.viewWillAppear(true)
+
+            self.viewDidLoad()
+
+        }
+    
     func getTotalPrice(){
         db.collection("carts").whereField("user", isEqualTo: user!.uid).getDocuments() {
             (querySnapshot, err)
@@ -68,6 +75,8 @@ class ContainerCartViewController: UIViewController {
 //
 //                }
                 doc.document(cartId).updateData(["products": products, "total": 0])
+                let children = self.children[0] as! CartTableViewController
+                                children.viewDidLoad()
             }else {
                 print("Error")
                 return

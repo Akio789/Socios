@@ -66,7 +66,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func save(_ sender: Any) {
-        db.collection("users").document(user!.uid as! String).updateData([
+        db.collection("users").document(user!.uid).updateData([
             "names": self.names.text,
             "lastNames": self.lastNames.text,
             "phone": self.phone.text,

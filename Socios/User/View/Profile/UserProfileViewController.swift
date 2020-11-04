@@ -15,6 +15,8 @@ class UserProfileViewController: UIViewController {
     let storage = Storage.storage()
     var storageRef: StorageReference = StorageReference()
     var profilePicRef: StorageReference = StorageReference()
+
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     
     override func viewDidLoad() {
@@ -39,7 +41,32 @@ class UserProfileViewController: UIViewController {
        } else {
          self.profilePicture.image = UIImage(data: data!)
        }
+        let docUser = Firestore.firestore().collection("users").document(self.user!.uid)
+        docUser.getDocument(source: .cache) { [self] (document, error) in
+            if let document = document {
+                let property = document.get("names")
+                userName.text = property as? String
+            }else {
+                print("Document does not exist in cache")
+            }
+        }
+//        Firestore.firestore().collection("carts").getDocuments() { (querySnapshot, err) in
+//            guard let querySnapshot = querySnapshot else {
+//                print("error")
+//                return
+//            }
+//            if !querySnapshot.isEmpty && querySnapshot.documents.count > 0 {
+//
+//
+//            }
+//
+//
+//        }
+        
+        
+        
      }
+        
     }
 
     @IBAction func deleteAccount(_ sender: Any) {

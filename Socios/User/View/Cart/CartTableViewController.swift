@@ -62,13 +62,13 @@ class CartTableViewController: UITableViewController, UISearchResultsUpdating {
         
     }
     
-    //MARK: - Delete product from Cart
-    
+    override func viewWillAppear(_: Bool) {
+                super.viewWillAppear(true)
 
-    
+            self.viewDidLoad()
 
-    
-    
+        }
+        
 
     // MARK: - Table view data source
 

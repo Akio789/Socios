@@ -56,6 +56,13 @@ class PurchasesTableViewController: UITableViewController, UISearchResultsUpdati
             }
         }
     }
+    
+    override func viewWillAppear(_: Bool) {
+                super.viewWillAppear(true)
+
+            self.viewDidLoad()
+
+        }
 
     // MARK: - Table view data source
 

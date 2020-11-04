@@ -40,7 +40,6 @@ class ShoppingCartPaymentViewController: UIViewController {
                 //Add to user Cart
                 let cartInfo = querySnapshot.documents.first?.data()
                 let cartId = cartInfo?["id"] as! String
-                let totalPrice = cartInfo?["total"] as! Double
                 let doc = Firestore.firestore().collection("carts")
                 var products = cartInfo?["products"] as? [Any]
                 addToPurchases(productToAdd: products!)
@@ -50,6 +49,7 @@ class ShoppingCartPaymentViewController: UIViewController {
 //
 //                }
                 doc.document(cartId).updateData(["products": products, "total": 0])
+                self.totalLabel.text = "$0.0"
             }else {
                 print("Error")
                 return
@@ -85,7 +85,7 @@ class ShoppingCartPaymentViewController: UIViewController {
                 //Add to user Cart
                 let cartInfo = querySnapshot.documents.first?.data()
                 let totalPrice = cartInfo?["total"] as! Double
-                self.totalLabel.text = "\(totalPrice)"
+                self.totalLabel.text = "$"+"\(totalPrice)"
                 return
             }else {
                 print("Error")
