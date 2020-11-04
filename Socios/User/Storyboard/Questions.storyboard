@@ -50,16 +50,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pregunta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-85-5CJ">
-                                <rect key="frame" x="44" y="9" width="268" height="30"/>
+                                <rect key="frame" x="9" y="9" width="350" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="DMx-A2-gja"/>
+                                    <constraint firstAttribute="height" constant="71" id="Rxu-jc-mO7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="respuesta" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84J-f1-Tjl">
-                                <rect key="frame" x="44" y="79" width="295" height="117"/>
+                                <rect key="frame" x="44" y="94" width="295" height="102"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,13 +68,13 @@
                         <viewLayoutGuide key="safeArea" id="ZJ6-ti-9Qs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="trailing" secondItem="84J-f1-Tjl" secondAttribute="trailing" constant="36" id="6ml-C7-Oae"/>
-                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="bottom" secondItem="84J-f1-Tjl" secondAttribute="bottom" constant="20" id="by1-rP-d1x"/>
-                            <constraint firstItem="EQv-85-5CJ" firstAttribute="top" secondItem="ZJ6-ti-9Qs" secondAttribute="top" constant="9" id="frN-Yu-6ej"/>
-                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="trailing" secondItem="EQv-85-5CJ" secondAttribute="trailing" constant="63" id="kmw-np-N17"/>
-                            <constraint firstItem="84J-f1-Tjl" firstAttribute="top" secondItem="EQv-85-5CJ" secondAttribute="bottom" constant="40" id="o3d-M5-xBB"/>
-                            <constraint firstItem="EQv-85-5CJ" firstAttribute="leading" secondItem="84J-f1-Tjl" secondAttribute="leading" id="ojK-JQ-OPK"/>
-                            <constraint firstItem="EQv-85-5CJ" firstAttribute="leading" secondItem="ZJ6-ti-9Qs" secondAttribute="leading" constant="44" id="ytX-5c-YPb"/>
+                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="trailing" secondItem="84J-f1-Tjl" secondAttribute="trailing" constant="36" id="63s-MI-Z7B"/>
+                            <constraint firstItem="84J-f1-Tjl" firstAttribute="leading" secondItem="ZJ6-ti-9Qs" secondAttribute="leading" constant="44" id="JDX-wk-EgO"/>
+                            <constraint firstItem="84J-f1-Tjl" firstAttribute="top" secondItem="EQv-85-5CJ" secondAttribute="bottom" constant="14" id="KFl-RA-rR0"/>
+                            <constraint firstItem="ZJ6-ti-9Qs" firstAttribute="bottom" secondItem="84J-f1-Tjl" secondAttribute="bottom" constant="20" id="cbb-ca-8zv"/>
+                            <constraint firstItem="EQv-85-5CJ" firstAttribute="top" secondItem="ZJ6-ti-9Qs" secondAttribute="top" constant="9" id="dWo-Kl-y6O"/>
+                            <constraint firstItem="EQv-85-5CJ" firstAttribute="trailing" secondItem="Kx3-vy-cLp" secondAttribute="trailingMargin" id="l0H-Y2-89w"/>
+                            <constraint firstItem="EQv-85-5CJ" firstAttribute="leading" secondItem="ZJ6-ti-9Qs" secondAttribute="leading" constant="9" id="mCb-5H-5bQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DQE-S0-kCu"/>
