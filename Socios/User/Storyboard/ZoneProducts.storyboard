@@ -14,7 +14,7 @@
             <objects>
                 <tableViewController id="5eT-lp-g6h" customClass="ZoneProductTableViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hsu-rD-mBX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="178"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="304"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -103,26 +103,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RHd-FI-4vi">
-                                <rect key="frame" x="0.0" y="673" width="414" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHd-FI-4vi">
+                                <rect key="frame" x="0.0" y="558" width="414" height="304"/>
                                 <connections>
                                     <segue destination="5eT-lp-g6h" kind="embed" id="cvO-BH-phG"/>
                                 </connections>
                             </containerView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iix-Ny-Bl5">
-                                <rect key="frame" x="0.0" y="240" width="414" height="433"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iix-Ny-Bl5">
+                                <rect key="frame" x="0.0" y="125" width="414" height="433"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="433" id="AYw-ni-ksP"/>
+                                </constraints>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtQ-ER-JnG">
-                                <rect key="frame" x="20" y="198" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Productos cerca de ti" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6F-B4-EDy">
-                                <rect key="frame" x="36" y="134" width="342" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Productos cerca de ti" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6F-B4-EDy">
+                                <rect key="frame" x="36" y="61" width="342" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Lyi-z0-Vo6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,11 +127,22 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3bY-FD-YxS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="top" secondItem="R6F-B4-EDy" secondAttribute="bottom" constant="8" id="1RO-91-Q1f"/>
+                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="leading" secondItem="RHd-FI-4vi" secondAttribute="leading" id="Ef0-So-ywr"/>
+                            <constraint firstItem="R6F-B4-EDy" firstAttribute="leading" secondItem="3bY-FD-YxS" secondAttribute="leading" constant="36" id="FTy-J3-Tlw"/>
+                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="leading" secondItem="3bY-FD-YxS" secondAttribute="leading" id="bjY-VK-qTX"/>
+                            <constraint firstItem="R6F-B4-EDy" firstAttribute="centerX" secondItem="34Q-lT-h7T" secondAttribute="centerX" id="fEs-7d-zsb"/>
+                            <constraint firstItem="RHd-FI-4vi" firstAttribute="top" secondItem="iix-Ny-Bl5" secondAttribute="bottom" id="jNP-xc-7bD"/>
+                            <constraint firstItem="3bY-FD-YxS" firstAttribute="bottom" secondItem="RHd-FI-4vi" secondAttribute="bottom" id="pHa-xj-J3R"/>
+                            <constraint firstItem="R6F-B4-EDy" firstAttribute="centerX" secondItem="iix-Ny-Bl5" secondAttribute="centerX" id="rZM-Uz-aKm"/>
+                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="trailing" secondItem="RHd-FI-4vi" secondAttribute="trailing" id="rmI-GK-tIg"/>
+                            <constraint firstItem="R6F-B4-EDy" firstAttribute="top" secondItem="3bY-FD-YxS" secondAttribute="top" constant="17" id="vcH-1a-5pI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lfe-hL-aJp"/>
                     <connections>
                         <outlet property="mapa" destination="iix-Ny-Bl5" id="1mK-gJ-MFm"/>
-                        <outlet property="searchField" destination="mtQ-ER-JnG" id="AtF-NY-SeW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlQ-Jq-plJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
