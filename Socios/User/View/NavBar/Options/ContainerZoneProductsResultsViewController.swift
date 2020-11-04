@@ -9,14 +9,18 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
 
 
 class ContainerZoneProductsResultsViewController: UIViewController {
     @IBOutlet weak var mapa: MKMapView!
+    var allUbications: [Any] = []
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 1000
+    let regionInMeters: Double = 4000
     private var search: String = ""
     @IBOutlet weak var searchField: UITextField!
+    let db = Firestore.firestore()
+    var user = Auth.auth().currentUser
     private func getNearByLandmarks(){
         //Local search request
         let request = MKLocalSearch.Request()
@@ -26,6 +30,7 @@ class ContainerZoneProductsResultsViewController: UIViewController {
         search.start { (response, error) in
             if let response = response {
                 let mapItems = response.mapItems
+                
                 //assign to landmarks. we want to assing it somewhere so we can display it on the map Landmark can be like a playera
             }
             
@@ -36,6 +41,9 @@ class ContainerZoneProductsResultsViewController: UIViewController {
         super.viewDidLoad()
         
         setupLocationManager()
+        getShopsPointAnnotations()
+        
+
     }
     
     func setupLocationManager(){
@@ -59,6 +67,48 @@ class ContainerZoneProductsResultsViewController: UIViewController {
 //            marker.title = "Yo"
 //            mapa.addAnnotation(marker)
         }
+    }
+    
+    //MARK: - Stablish landmarks based on the sho ubications
+    func getShopsPointAnnotations(){
+//        let doc = Firestore.firestore().collection("tiendas")
+        db.collection("tiendas").getDocuments() { [self] (querySnapshot, err ) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            }else {
+                for document in querySnapshot!.documents {
+                    var title: String!
+                    var point: GeoPoint!
+                    if let names = document.get("name"){
+                        title = (names as! String)
+                    }
+                    if let coords = document.get("localization"){
+                        point = (coords as! GeoPoint)
+                        let lat = point.latitude
+                        let lon = point.longitude
+                        let newMarker = MKPointAnnotation()
+                        newMarker.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                        newMarker.title = title as String
+                        newMarker.subtitle = "."
+                        self.mapa!.addAnnotation(newMarker)
+                        
+                    }
+                    allUbications.append(["title": title as String, "latitude": point.latitude, "longitude": point.longitude])
+                    
+                }
+                
+            }
+            mapa.showAnnotations(mapa.annotations, animated: true)
+        }
+        
+//        for ubication in allUbications{
+//            let annotation = MKPointAnnotation()
+//            annotation.title = ubication["title"] as String
+//            annotation.coordinate = CLLocationCoordinate2D(latitude: ubication["latitude"], longitude: ubication["longitude"])
+//            mapa.addAnnotation(annotation)
+//
+//
+//        }
     }
     
     /*

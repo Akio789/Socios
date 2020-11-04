@@ -7,9 +7,9 @@
 	<key>NSFaceIDUsageDescription</key>
 	<string>Para autenticar</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Guapote, hermoso, bello, glorioso.</string>
+	<string>La app requiere de su ubicación.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Guapote, hermoso, bello, glorioso.</string>
+	<string>La app requiere de su ubicación.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
