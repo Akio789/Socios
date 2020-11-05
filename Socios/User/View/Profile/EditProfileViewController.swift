@@ -51,10 +51,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+    
+    
     @IBAction func selectPicture(_ sender: Any) {
         miPicker.sourceType = UIImagePickerController.SourceType.photoLibrary
         present(miPicker, animated: true, completion: nil)
     }
+    
     func imagePickerController(_ picker: UIImagePickerController,
      didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         profilePicture.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage

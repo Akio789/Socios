@@ -108,11 +108,12 @@ class ShoppingCartPaymentViewController: UIViewController {
                 let purchaseId = purchaseInfo?["id"] as! String
                 let doc = Firestore.firestore().collection("compras")
                 var products = purchaseInfo?["products"] as? [Any]
-                print("Hola")
-                for i in 0..<productToAdd.count{
-//                    let tempProduct = productToAdd[i] as! [String: Any]
-                    products?.append(productToAdd[i])
+                
+                for productsInfo in productToAdd{
+                    products?.append(productsInfo)
+                    
                 }
+                print("TODO EL ARRAY DE COMPRAS: ", products)
                 doc.document(purchaseId).updateData(["products": products])
             }else {
                 let cart = Cart()
