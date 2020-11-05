@@ -95,12 +95,12 @@ class ContainerZoneProductsResultsViewController: UIViewController {
                         self.mapa!.addAnnotation(newMarker)
                         
                     }
-                    allUbications.append(["title": title as String, "latitude": point.latitude, "longitude": point.longitude])
+                    self.allUbications.append(["title": title as String, "latitude": point.latitude, "longitude": point.longitude])
                     
                 }
                 
             }
-            mapa.showAnnotations(mapa.annotations, animated: true)
+            self.mapa.showAnnotations(self.mapa.annotations, animated: true)
         }
         
 //        for ubication in allUbications{

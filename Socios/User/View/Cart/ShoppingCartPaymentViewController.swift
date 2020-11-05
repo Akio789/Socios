@@ -29,7 +29,7 @@ class ShoppingCartPaymentViewController: UIViewController {
  
     }
     
-    @IBAction func confirmPayment(_ sender: Any) {
+    func confirmaPago() {
         db.collection("carts").whereField("user", isEqualTo: user!.uid).getDocuments() { [self]
             (querySnapshot, err)
             in guard let querySnapshot = querySnapshot else {
@@ -42,7 +42,7 @@ class ShoppingCartPaymentViewController: UIViewController {
                 let cartId = cartInfo?["id"] as! String
                 let doc = Firestore.firestore().collection("carts")
                 var products = cartInfo?["products"] as? [Any]
-                addToPurchases(productToAdd: products!)
+                self.addToPurchases(productToAdd: products!)
                 products?.removeAll()
 //                for i in 0..<products!.count {
 //                   products!.remove(at: i)
@@ -50,6 +50,7 @@ class ShoppingCartPaymentViewController: UIViewController {
 //                }
                 doc.document(cartId).updateData(["products": products, "total": 0])
                 self.totalLabel.text = "$0.0"
+                self.performSegue(withIdentifier: "ConfirmedPurchase", sender: self)
             }else {
                 print("Error")
                 return
@@ -58,7 +59,7 @@ class ShoppingCartPaymentViewController: UIViewController {
         
     }
     
-    @IBAction func authenticaBiometrics(_ sender: Any) {
+    @IBAction func authenticateBiometrics(_ sender: Any) {
         let context = LAContext()
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
             context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Mensaje", reply: {
@@ -67,7 +68,7 @@ class ShoppingCartPaymentViewController: UIViewController {
                     print("Error al autenticar")
                 } else {
                     DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "ConfirmedPurchase", sender: self)
+                        self.confirmaPago()
                     }
                 }
             })

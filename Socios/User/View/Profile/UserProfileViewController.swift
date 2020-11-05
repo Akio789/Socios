@@ -45,7 +45,7 @@ class UserProfileViewController: UIViewController {
         docUser.getDocument(source: .cache) { [self] (document, error) in
             if let document = document {
                 let property = document.get("names")
-                userName.text = property as? String
+                self.userName.text = property as? String
             }else {
                 print("Document does not exist in cache")
             }
