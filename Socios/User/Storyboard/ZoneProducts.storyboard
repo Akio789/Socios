@@ -14,7 +14,7 @@
             <objects>
                 <tableViewController id="5eT-lp-g6h" customClass="ZoneProductTableViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hsu-rD-mBX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="304"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="359"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -104,21 +104,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHd-FI-4vi">
-                                <rect key="frame" x="0.0" y="558" width="414" height="304"/>
+                                <rect key="frame" x="0.0" y="503" width="414" height="359"/>
                                 <connections>
                                     <segue destination="5eT-lp-g6h" kind="embed" id="cvO-BH-phG"/>
                                 </connections>
                             </containerView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iix-Ny-Bl5">
-                                <rect key="frame" x="0.0" y="125" width="414" height="433"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="433" id="5Dm-UH-C2s"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="125" width="414" height="380"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Productos cerca de ti" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6F-B4-EDy">
                                 <rect key="frame" x="36" y="61" width="342" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="Hj2-eg-19y"/>
+                                    <constraint firstAttribute="height" constant="56" id="eNd-1D-hLf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <nil key="textColor"/>
@@ -128,16 +125,17 @@
                         <viewLayoutGuide key="safeArea" id="3bY-FD-YxS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RHd-FI-4vi" firstAttribute="bottom" secondItem="3bY-FD-YxS" secondAttribute="bottom" id="0fs-Bb-loE"/>
-                            <constraint firstItem="R6F-B4-EDy" firstAttribute="centerX" secondItem="34Q-lT-h7T" secondAttribute="centerX" id="2Gd-ME-kiA"/>
-                            <constraint firstItem="R6F-B4-EDy" firstAttribute="leading" secondItem="3bY-FD-YxS" secondAttribute="leading" constant="36" id="2td-Fc-xBB"/>
-                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="top" secondItem="R6F-B4-EDy" secondAttribute="bottom" constant="8" id="J4O-qk-Q81"/>
-                            <constraint firstItem="RHd-FI-4vi" firstAttribute="top" secondItem="iix-Ny-Bl5" secondAttribute="bottom" id="JFi-qE-hZa"/>
-                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="trailing" secondItem="RHd-FI-4vi" secondAttribute="trailing" id="QiW-Kj-fI9"/>
-                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="centerX" secondItem="R6F-B4-EDy" secondAttribute="centerX" id="Swd-le-HrF"/>
-                            <constraint firstItem="R6F-B4-EDy" firstAttribute="top" secondItem="3bY-FD-YxS" secondAttribute="top" constant="17" id="d8e-rQ-MPb"/>
-                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="leading" secondItem="3bY-FD-YxS" secondAttribute="leading" id="qbQ-vo-2Ex"/>
-                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="leading" secondItem="RHd-FI-4vi" secondAttribute="leading" id="urq-WQ-O6f"/>
+                            <constraint firstItem="R6F-B4-EDy" firstAttribute="centerX" secondItem="34Q-lT-h7T" secondAttribute="centerX" id="66r-dY-fEW"/>
+                            <constraint firstItem="RHd-FI-4vi" firstAttribute="top" secondItem="34Q-lT-h7T" secondAttribute="top" constant="503" id="G2b-os-LJf"/>
+                            <constraint firstItem="RHd-FI-4vi" firstAttribute="bottom" secondItem="3bY-FD-YxS" secondAttribute="bottom" id="IKc-Fv-CNr"/>
+                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="trailing" secondItem="RHd-FI-4vi" secondAttribute="trailing" id="J4q-DG-5JO"/>
+                            <constraint firstItem="R6F-B4-EDy" firstAttribute="top" secondItem="3bY-FD-YxS" secondAttribute="top" constant="17" id="Qxs-dG-inM"/>
+                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="leading" secondItem="3bY-FD-YxS" secondAttribute="leading" id="b3d-9W-igC"/>
+                            <constraint firstItem="R6F-B4-EDy" firstAttribute="leading" secondItem="3bY-FD-YxS" secondAttribute="leading" constant="36" id="bK5-zZ-E41"/>
+                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="top" secondItem="R6F-B4-EDy" secondAttribute="bottom" constant="8" id="bZV-ey-NCW"/>
+                            <constraint firstItem="R6F-B4-EDy" firstAttribute="centerX" secondItem="iix-Ny-Bl5" secondAttribute="centerX" id="eZr-G1-FI2"/>
+                            <constraint firstItem="3bY-FD-YxS" firstAttribute="bottom" secondItem="iix-Ny-Bl5" secondAttribute="bottom" constant="357" id="tbf-ZJ-JFu"/>
+                            <constraint firstItem="iix-Ny-Bl5" firstAttribute="leading" secondItem="RHd-FI-4vi" secondAttribute="leading" id="xRw-oj-TcH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lfe-hL-aJp"/>
