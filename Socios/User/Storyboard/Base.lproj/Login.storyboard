@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hAj-17-0FQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hAj-17-0FQ">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,15 +46,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vd-66-Pfd">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vd-66-Pfd">
                                 <rect key="frame" x="73" y="552" width="269" height="49"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="zYR-re-8Ny"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Continuar">
-                                    <color key="titleColor" systemColor="darkTextColor"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="OmR-3h-LcU" eventType="touchUpInside" id="kA9-tK-ZoM"/>
@@ -80,7 +78,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rou-DB-4go">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rou-DB-4go">
                                 <rect key="frame" x="73" y="706" width="269" height="49"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -92,8 +90,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="COc-Ac-ahT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4QR-sv-FmA" firstAttribute="top" secondItem="Rjw-ZK-3Rs" secondAttribute="bottom" constant="26" id="B6v-VM-Prs"/>
                             <constraint firstItem="jFO-M8-wyE" firstAttribute="centerX" secondItem="XdK-oH-9Nf" secondAttribute="centerX" id="DBp-3A-GzG"/>
@@ -122,6 +119,7 @@
                             <constraint firstItem="jFO-M8-wyE" firstAttribute="leading" secondItem="COc-Ac-ahT" secondAttribute="leading" constant="106" id="xUb-fC-Hop"/>
                             <constraint firstItem="Rjw-ZK-3Rs" firstAttribute="leading" secondItem="COc-Ac-ahT" secondAttribute="leading" constant="53" id="xn4-re-gdT"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="COc-Ac-ahT"/>
                     </view>
                     <navigationItem key="navigationItem" id="I4f-O0-DnF"/>
                     <connections>
@@ -287,15 +285,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4J-au-a4N">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4J-au-a4N">
                                 <rect key="frame" x="56" y="731" width="303" height="49"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="SoT-Hh-un7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Unirse">
-                                    <color key="titleColor" systemColor="darkTextColor"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="OmR-3h-LcU" eventType="touchUpInside" id="fqd-5p-T64"/>
@@ -324,8 +322,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="SD2-t0-GCU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qb9-pw-uOw" firstAttribute="top" secondItem="zfp-ba-r5J" secondAttribute="bottom" constant="13" id="0mV-Pz-hGs"/>
                             <constraint firstItem="qb9-pw-uOw" firstAttribute="leading" secondItem="6lV-3E-7mg" secondAttribute="leading" id="2td-0C-jnv"/>
@@ -380,6 +377,7 @@
                             <constraint firstItem="W4J-au-a4N" firstAttribute="top" secondItem="efz-rQ-j13" secondAttribute="bottom" constant="20" id="zG7-X8-vJ6"/>
                             <constraint firstItem="F8N-i5-LsJ" firstAttribute="top" secondItem="6lV-3E-7mg" secondAttribute="bottom" constant="21" id="zvc-cA-Ftk"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="SD2-t0-GCU"/>
                     </view>
                     <navigationItem key="navigationItem" id="DH3-n2-6MF"/>
                     <connections>
@@ -398,23 +396,11 @@
             <point key="canvasLocation" x="-4924.6376811594209" y="2631.0267857142858"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="cy3-6Y-4wJ"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="AppIconProject" width="341.33334350585938" height="307"/>
         <image name="CameraIcon" width="19" height="19"/>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cy3-6Y-4wJ"/>
+    </inferredMetricsTieBreakers>
 </document>
