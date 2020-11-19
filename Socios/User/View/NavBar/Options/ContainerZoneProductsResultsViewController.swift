@@ -89,11 +89,19 @@ class ContainerZoneProductsResultsViewController: UIViewController {
                         point = (coords as! GeoPoint)
                         let lat = point.latitude
                         let lon = point.longitude
-                        let newMarker = MKPointAnnotation()
-                        newMarker.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-                        newMarker.title = title as String
-                        newMarker.subtitle = "."
-                        self.mapa!.addAnnotation(newMarker)
+//                        let userLat = locationManager.location?.coordinate.latitude
+//                        let userLong = locationManager.location?.coordinate.longitude
+                        let pointA = CLLocation(latitude: 19.435478, longitude: -99.136479)
+                        let pointB = CLLocation(latitude: lat, longitude: lon)
+                        let distanceInMeters = pointA.distance(from: pointB)
+                        if distanceInMeters <= 1500 {
+                            let newMarker = MKPointAnnotation()
+                            newMarker.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                            newMarker.title = title as String
+                            newMarker.subtitle = "."
+                            self.mapa!.addAnnotation(newMarker)
+                        }
+
                         
                     }
                     self.allUbications.append(["title": title as String, "latitude": point.latitude, "longitude": point.longitude])
