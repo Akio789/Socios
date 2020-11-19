@@ -132,10 +132,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoD-cA-V4S">
-                                <rect key="frame" x="150" y="548" width="99" height="30"/>
+                                <rect key="frame" x="141" y="548" width="108" height="30"/>
                                 <color key="backgroundColor" red="0.47440518459999997" green="0.7592359474" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Ver en iWatch">
+                                <state key="normal" title="Ruta en iWatch">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>

@@ -12,10 +12,11 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
+    @IBOutlet weak var tiendaLabel: WKInterfaceLabel!
     @IBOutlet weak var mapa: WKInterfaceMap!
     var latitud = 0.0
     var longitud = 0.0
-    
+    var tienda = ""
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
@@ -23,12 +24,14 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     func session(_ session:WCSession, didReceiveMessage mensaje: [String : Any]){
         let latitud_s = mensaje["Latitud"] as! String
         let longitud_s = mensaje["Longitud"] as! String
+        let tienda_s = mensaje["Tienda"] as! String
         latitud = Double(latitud_s)!
         longitud = Double(longitud_s)!
         let centro = CLLocationCoordinate2D(latitude: latitud, longitude: longitud)
         var region = MKCoordinateRegion(center: centro, latitudinalMeters: 500, longitudinalMeters: 500)
         self.mapa.setRegion(region)
         self.mapa.addAnnotation(centro, with: .green)
+        tiendaLabel.setText(tienda_s)
     }
     
     

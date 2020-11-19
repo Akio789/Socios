@@ -96,10 +96,11 @@ class ProductDetailFromSearchViewController: UIViewController, WCSessionDelegate
                     }
                     if !querySnapshot.isEmpty && querySnapshot.documents.count > 0 {
                         let storeInfo = querySnapshot.documents.first?.data()
+                        let tienda = storeInfo?["name"] as! String
                         let coords = storeInfo?["localization"] as! GeoPoint
                         latitud = String(coords.latitude)
                         longitud = String(coords.longitude)
-                        let mensaje = ["Latitud":latitud,"Longitud":longitud]
+                        let mensaje = ["Tienda": tienda,"Latitud":latitud,"Longitud":longitud]
                         print(mensaje)
                         self.miSesion.sendMessage(mensaje, replyHandler: nil, errorHandler: self.manejoError(err:))
                     }else{
