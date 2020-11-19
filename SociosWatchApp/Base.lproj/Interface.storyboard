@@ -11,8 +11,11 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SociosWatchApp" customModuleProvider="target">
                     <items>
-                        <map width="134" height="103" alignment="left" id="Ad3-cX-XCC"/>
+                        <map width="136" height="149" alignment="left" id="Ad3-cX-XCC"/>
                     </items>
+                    <connections>
+                        <outlet property="mapa" destination="Ad3-cX-XCC" id="fgL-SQ-4gK"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>

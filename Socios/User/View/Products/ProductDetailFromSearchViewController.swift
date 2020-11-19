@@ -74,8 +74,8 @@ class ProductDetailFromSearchViewController: UIViewController, WCSessionDelegate
     
     
     @IBAction func enviarReloj(_ sender: Any) {
-        var latitud: Double!
-        var longitud: Double!
+        var latitud: String!
+        var longitud: String!
         var storeId: String!
 //        var point: GeoPoint!
         db.collection("productos").whereField("id", isEqualTo: productId).getDocuments() {
@@ -97,8 +97,8 @@ class ProductDetailFromSearchViewController: UIViewController, WCSessionDelegate
                     if !querySnapshot.isEmpty && querySnapshot.documents.count > 0 {
                         let storeInfo = querySnapshot.documents.first?.data()
                         let coords = storeInfo?["localization"] as! GeoPoint
-                        latitud = coords.latitude
-                        longitud = coords.longitude
+                        latitud = String(coords.latitude)
+                        longitud = String(coords.longitude)
                         let mensaje = ["Latitud":latitud,"Longitud":longitud]
                         print(mensaje)
                         self.miSesion.sendMessage(mensaje, replyHandler: nil, errorHandler: self.manejoError(err:))
