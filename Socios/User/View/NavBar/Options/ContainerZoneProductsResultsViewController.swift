@@ -10,11 +10,11 @@ import UIKit
 import MapKit
 import CoreLocation
 import Firebase
-import GeoFire
+import Foundation
 
 class ContainerZoneProductsResultsViewController: UIViewController {
     @IBOutlet weak var mapa: MKMapView!
-    var geo: GeoFire!
+    static var shopsNearby: [String] = []
     var allUbications: [Any] = []
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
@@ -22,6 +22,8 @@ class ContainerZoneProductsResultsViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     let db = Firestore.firestore()
     var user = Auth.auth().currentUser
+
+    
     private func getNearByLandmarks(){
         //Local search request
         let request = MKLocalSearch.Request()
@@ -82,8 +84,13 @@ class ContainerZoneProductsResultsViewController: UIViewController {
                 for document in querySnapshot!.documents {
                     var title: String!
                     var point: GeoPoint!
+                    var id: String!
                     if let names = document.get("name"){
                         title = (names as! String)
+                    }
+                    
+                    if let ids = document.get("id"){
+                        id = (ids as! String)
                     }
                     if let coords = document.get("localization"){
                         point = (coords as! GeoPoint)
@@ -94,12 +101,14 @@ class ContainerZoneProductsResultsViewController: UIViewController {
                         let pointA = CLLocation(latitude: 19.435478, longitude: -99.136479)
                         let pointB = CLLocation(latitude: lat, longitude: lon)
                         let distanceInMeters = pointA.distance(from: pointB)
-                        if distanceInMeters <= 1500 {
+                        if distanceInMeters <= 1000 {
                             let newMarker = MKPointAnnotation()
                             newMarker.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
                             newMarker.title = title as String
                             newMarker.subtitle = "."
                             self.mapa!.addAnnotation(newMarker)
+                            ContainerZoneProductsResultsViewController.shopsNearby.append(id)
+                            
                         }
 
                         
@@ -107,6 +116,7 @@ class ContainerZoneProductsResultsViewController: UIViewController {
                     self.allUbications.append(["title": title as String, "latitude": point.latitude, "longitude": point.longitude])
                     
                 }
+                print("KAREN", ContainerZoneProductsResultsViewController.shopsNearby)
                 
             }
             self.mapa.showAnnotations(self.mapa.annotations, animated: true)

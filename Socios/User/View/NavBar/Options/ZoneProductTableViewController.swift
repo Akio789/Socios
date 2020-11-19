@@ -15,6 +15,7 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
     var filteredData = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
     
+    
     let db = Firestore.firestore()
     var user = Auth.auth().currentUser
     let storage = Storage.storage()
@@ -44,9 +45,15 @@ class ZoneProductTableViewController: UITableViewController, UISearchResultsUpda
         } else {
             self.response = []
             for document in querySnapshot!.documents {
-                var documentData = document.data()
-                documentData["id"] = document.documentID
-                self.response?.append(documentData)
+                for each in ContainerZoneProductsResultsViewController.shopsNearby{
+                    let docTemp = document.data()
+                    if docTemp["storeId"] as! String == each {
+                        var documentData = document.data()
+                        documentData["id"] = document.documentID
+                        self.response?.append(documentData)
+                    }
+                }
+
             }
             self.filteredData = self.response!
             self.tableView.reloadData()
