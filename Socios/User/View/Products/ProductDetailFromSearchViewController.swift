@@ -55,6 +55,12 @@ class ProductDetailFromSearchViewController: UIViewController {
         productName.text = productNameA
         prodcuRating.text = String(productRatingEntry)
     }
+    
+    
+    
+    @IBAction func enviarReloj(_ sender: Any) {
+    }
+    
 
     @IBAction func shareSocial(_ sender: Any) {
         let message = "Encuentra \(self.productNameA), solamente en \(self.productSellerEntry)."

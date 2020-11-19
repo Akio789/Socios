@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -131,6 +131,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoD-cA-V4S">
+                                <rect key="frame" x="150" y="548" width="99" height="30"/>
+                                <color key="backgroundColor" red="0.47440518459999997" green="0.7592359474" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Ver en iWatch">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="enviarReloj:" destination="ilG-8X-Vqi" eventType="touchUpInside" id="xTt-aH-zhd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JK7-Sm-3ZX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -150,9 +161,11 @@
                             <constraint firstItem="mw5-ng-x0f" firstAttribute="trailing" secondItem="VuR-6W-RMs" secondAttribute="trailing" id="HTR-XX-DdA"/>
                             <constraint firstItem="8je-o1-YMK" firstAttribute="baseline" secondItem="4Yu-d7-YU2" secondAttribute="baseline" id="Hfd-C2-E4H"/>
                             <constraint firstItem="JK7-Sm-3ZX" firstAttribute="trailing" secondItem="GJQ-jI-N7n" secondAttribute="trailing" constant="63" id="Kim-J9-Rgq"/>
+                            <constraint firstItem="wTy-Es-awg" firstAttribute="leading" secondItem="yoD-cA-V4S" secondAttribute="trailing" constant="8" id="Krv-vk-QFB"/>
                             <constraint firstItem="unV-mT-m24" firstAttribute="top" secondItem="mw5-ng-x0f" secondAttribute="bottom" constant="7" id="LwA-lD-Mx8"/>
                             <constraint firstItem="a14-kh-YMH" firstAttribute="leading" secondItem="JK7-Sm-3ZX" secondAttribute="leading" id="NIR-Ny-9HI"/>
                             <constraint firstItem="wTy-Es-awg" firstAttribute="top" secondItem="4Yu-d7-YU2" secondAttribute="bottom" constant="18" id="Phi-8E-dOp"/>
+                            <constraint firstItem="yoD-cA-V4S" firstAttribute="baseline" secondItem="wTy-Es-awg" secondAttribute="baseline" id="QWV-pd-H09"/>
                             <constraint firstItem="KG1-bn-8cd" firstAttribute="leading" secondItem="q9F-8m-AnD" secondAttribute="leading" id="R2T-jL-ZRK"/>
                             <constraint firstItem="P3s-ta-hEW" firstAttribute="top" secondItem="JK7-Sm-3ZX" secondAttribute="top" constant="23" id="V7R-xQ-kml"/>
                             <constraint firstItem="GJQ-jI-N7n" firstAttribute="trailing" secondItem="unV-mT-m24" secondAttribute="trailing" id="Wtt-aP-34P"/>
