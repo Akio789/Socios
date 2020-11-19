@@ -30,6 +30,15 @@
 		19839F172523055200AFC3FF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19839F162523055200AFC3FF /* Home.storyboard */; };
 		19839F1D25230A7C00AFC3FF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19839F1F25230A7C00AFC3FF /* Login.storyboard */; };
 		19839F2325230C3A00AFC3FF /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19839F2225230C3A00AFC3FF /* Search.storyboard */; };
+		1984E7CB2566181E0027BD64 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1984E7C92566181E0027BD64 /* Interface.storyboard */; };
+		1984E7CD256618210027BD64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1984E7CC256618210027BD64 /* Assets.xcassets */; };
+		1984E7D4256618210027BD64 /* SociosWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1984E7D3256618210027BD64 /* SociosWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1984E7D9256618210027BD64 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984E7D8256618210027BD64 /* InterfaceController.swift */; };
+		1984E7DB256618210027BD64 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984E7DA256618210027BD64 /* ExtensionDelegate.swift */; };
+		1984E7DD256618210027BD64 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984E7DC256618210027BD64 /* NotificationController.swift */; };
+		1984E7DF256618210027BD64 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984E7DE256618210027BD64 /* ComplicationController.swift */; };
+		1984E7E1256618230027BD64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1984E7E0256618230027BD64 /* Assets.xcassets */; };
+		1984E7E6256618240027BD64 /* SociosWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1984E7C72566181D0027BD64 /* SociosWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		19B1618D251C6338009E897F /* ZoneProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1618C251C6338009E897F /* ZoneProductTableViewController.swift */; };
 		19B16190251C6398009E897F /* ZoneProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1618F251C6398009E897F /* ZoneProductDetailViewController.swift */; };
 		19B16193251C6E05009E897F /* ShopsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B16192251C6E05009E897F /* ShopsDetailViewController.swift */; };
@@ -88,6 +97,48 @@
 		C8EB77FD25211F0A0051E956 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EB77FC25211F0A0051E956 /* AboutUsViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1984E7D5256618210027BD64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C4610EB2506C3E600D93ADF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1984E7D2256618210027BD64;
+			remoteInfo = "SociosWatch Extension";
+		};
+		1984E7E4256618240027BD64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C4610EB2506C3E600D93ADF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1984E7C62566181D0027BD64;
+			remoteInfo = SociosWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1984E7E7256618240027BD64 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1984E7E6256618240027BD64 /* SociosWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984E7EA256618240027BD64 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1984E7D4256618210027BD64 /* SociosWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		190E4710252430E600EA2543 /* ContainerShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerShopsViewController.swift; sourceTree = "<group>"; };
 		190E4713252434A600EA2543 /* ShopsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +163,18 @@
 		19839F162523055200AFC3FF /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		19839F1E25230A7C00AFC3FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		19839F2225230C3A00AFC3FF /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		1984E7C72566181D0027BD64 /* SociosWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SociosWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1984E7CA2566181E0027BD64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		1984E7CC256618210027BD64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1984E7CE256618210027BD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1984E7D3256618210027BD64 /* SociosWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SociosWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1984E7D8256618210027BD64 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		1984E7DA256618210027BD64 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		1984E7DC256618210027BD64 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		1984E7DE256618210027BD64 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		1984E7E0256618230027BD64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1984E7E2256618230027BD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1984E7E3256618240027BD64 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		19B1618C251C6338009E897F /* ZoneProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneProductTableViewController.swift; sourceTree = "<group>"; };
 		19B1618F251C6398009E897F /* ZoneProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneProductDetailViewController.swift; sourceTree = "<group>"; };
 		19B16192251C6E05009E897F /* ShopsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsDetailViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +238,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1984E7D0256618210027BD64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8C4610F02506C3E600D93ADF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +288,30 @@
 				66F0CA0B2525ABCF00924F21 /* ProductDetail.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1984E7C82566181E0027BD64 /* SociosWatch */ = {
+			isa = PBXGroup;
+			children = (
+				1984E7C92566181E0027BD64 /* Interface.storyboard */,
+				1984E7CC256618210027BD64 /* Assets.xcassets */,
+				1984E7CE256618210027BD64 /* Info.plist */,
+			);
+			path = SociosWatch;
+			sourceTree = "<group>";
+		};
+		1984E7D7256618210027BD64 /* SociosWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1984E7D8256618210027BD64 /* InterfaceController.swift */,
+				1984E7DA256618210027BD64 /* ExtensionDelegate.swift */,
+				1984E7DC256618210027BD64 /* NotificationController.swift */,
+				1984E7DE256618210027BD64 /* ComplicationController.swift */,
+				1984E7E0256618230027BD64 /* Assets.xcassets */,
+				1984E7E2256618230027BD64 /* Info.plist */,
+				1984E7E3256618240027BD64 /* PushNotificationPayload.apns */,
+			);
+			path = "SociosWatch Extension";
 			sourceTree = "<group>";
 		};
 		19B161A4251C84A4009E897F /* User */ = {
@@ -382,6 +476,8 @@
 			children = (
 				C89EDE0325451F2D0041C9F9 /* Ml */,
 				8C4610F52506C3E600D93ADF /* Socios */,
+				1984E7C82566181E0027BD64 /* SociosWatch */,
+				1984E7D7256618210027BD64 /* SociosWatch Extension */,
 				8C4610F42506C3E600D93ADF /* Products */,
 				554755CBE26FF1DC165CB37B /* Pods */,
 				A6116F2D7E028F77C66EB61F /* Frameworks */,
@@ -392,6 +488,8 @@
 			isa = PBXGroup;
 			children = (
 				8C4610F32506C3E600D93ADF /* Socios.app */,
+				1984E7C72566181D0027BD64 /* SociosWatch.app */,
+				1984E7D3256618210027BD64 /* SociosWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -430,6 +528,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1984E7C62566181D0027BD64 /* SociosWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1984E7EE256618240027BD64 /* Build configuration list for PBXNativeTarget "SociosWatch" */;
+			buildPhases = (
+				1984E7C52566181D0027BD64 /* Resources */,
+				1984E7EA256618240027BD64 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1984E7D6256618210027BD64 /* PBXTargetDependency */,
+			);
+			name = SociosWatch;
+			productName = SociosWatch;
+			productReference = 1984E7C72566181D0027BD64 /* SociosWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		1984E7D2256618210027BD64 /* SociosWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1984E7ED256618240027BD64 /* Build configuration list for PBXNativeTarget "SociosWatch Extension" */;
+			buildPhases = (
+				1984E7CF256618210027BD64 /* Sources */,
+				1984E7D0256618210027BD64 /* Frameworks */,
+				1984E7D1256618210027BD64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SociosWatch Extension";
+			productName = "SociosWatch Extension";
+			productReference = 1984E7D3256618210027BD64 /* SociosWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		8C4610F22506C3E600D93ADF /* Socios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C4611092506C3E800D93ADF /* Build configuration list for PBXNativeTarget "Socios" */;
@@ -439,10 +571,12 @@
 				8C4610F02506C3E600D93ADF /* Frameworks */,
 				8C4610F12506C3E600D93ADF /* Resources */,
 				49344CCFE2F72E4BA4FDC0A3 /* [CP] Embed Pods Frameworks */,
+				1984E7E7256618240027BD64 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1984E7E5256618240027BD64 /* PBXTargetDependency */,
 			);
 			name = Socios;
 			productName = Socios;
@@ -455,10 +589,16 @@
 		8C4610EB2506C3E600D93ADF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = A01651395;
 				TargetAttributes = {
+					1984E7C62566181D0027BD64 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					1984E7D2256618210027BD64 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
 					8C4610F22506C3E600D93ADF = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -478,11 +618,30 @@
 			projectRoot = "";
 			targets = (
 				8C4610F22506C3E600D93ADF /* Socios */,
+				1984E7C62566181D0027BD64 /* SociosWatch */,
+				1984E7D2256618210027BD64 /* SociosWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1984E7C52566181D0027BD64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1984E7CD256618210027BD64 /* Assets.xcassets in Resources */,
+				1984E7CB2566181E0027BD64 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984E7D1256618210027BD64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1984E7E1256618230027BD64 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8C4610F12506C3E600D93ADF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,6 +713,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1984E7CF256618210027BD64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1984E7DD256618210027BD64 /* NotificationController.swift in Sources */,
+				1984E7DF256618210027BD64 /* ComplicationController.swift in Sources */,
+				1984E7DB256618210027BD64 /* ExtensionDelegate.swift in Sources */,
+				1984E7D9256618210027BD64 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8C4610EF2506C3E600D93ADF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -622,6 +792,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1984E7D6256618210027BD64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1984E7D2256618210027BD64 /* SociosWatch Extension */;
+			targetProxy = 1984E7D5256618210027BD64 /* PBXContainerItemProxy */;
+		};
+		1984E7E5256618240027BD64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1984E7C62566181D0027BD64 /* SociosWatch */;
+			targetProxy = 1984E7E4256618240027BD64 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		19839F1F25230A7C00AFC3FF /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -629,6 +812,14 @@
 				19839F1E25230A7C00AFC3FF /* Base */,
 			);
 			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
+		1984E7C92566181E0027BD64 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1984E7CA2566181E0027BD64 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		8C4610FE2506C3E600D93ADF /* Main.storyboard */ = {
@@ -650,6 +841,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1984E7E8256618240027BD64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = SociosWatch_Extension;
+				INFOPLIST_FILE = SociosWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = mx.A01651395.Socios.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		1984E7E9256618240027BD64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = SociosWatch_Extension;
+				INFOPLIST_FILE = SociosWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = mx.A01651395.Socios.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		1984E7EB256618240027BD64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "SociosWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.A01651395.Socios.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		1984E7EC256618240027BD64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "SociosWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.A01651395.Socios.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
 		8C4611072506C3E800D93ADF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -805,6 +1080,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1984E7ED256618240027BD64 /* Build configuration list for PBXNativeTarget "SociosWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1984E7EB256618240027BD64 /* Debug */,
+				1984E7EC256618240027BD64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1984E7EE256618240027BD64 /* Build configuration list for PBXNativeTarget "SociosWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1984E7E8256618240027BD64 /* Debug */,
+				1984E7E9256618240027BD64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8C4610EE2506C3E600D93ADF /* Build configuration list for PBXProject "Socios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
