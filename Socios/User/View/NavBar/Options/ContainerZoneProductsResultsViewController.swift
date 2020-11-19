@@ -10,13 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 import Firebase
-
+import GeoFire
 
 class ContainerZoneProductsResultsViewController: UIViewController {
     @IBOutlet weak var mapa: MKMapView!
+    var geo: GeoFire!
     var allUbications: [Any] = []
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 4000
+    let regionInMeters: Double = 1000
     private var search: String = ""
     @IBOutlet weak var searchField: UITextField!
     let db = Firestore.firestore()

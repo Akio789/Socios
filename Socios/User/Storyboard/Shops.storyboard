@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,29 +18,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mq-9y-z8v">
-                                <rect key="frame" x="0.0" y="193" width="414" height="669"/>
+                                <rect key="frame" x="0.0" y="523" width="414" height="339"/>
                                 <connections>
                                     <segue destination="pzo-VG-j9r" kind="embed" id="YWL-mM-AXX"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lista de comercios" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAy-NE-eDd">
-                                <rect key="frame" x="20" y="123" width="342" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lista de comercios" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAy-NE-eDd">
+                                <rect key="frame" x="20" y="44" width="342" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="UPE-TD-ghw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CP9-gB-Jrj">
+                                <rect key="frame" x="20" y="147" width="374" height="334"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="334" id="Gy0-Ao-eEG"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="63x-g8-CNg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4Mq-9y-z8v" firstAttribute="leading" secondItem="63x-g8-CNg" secondAttribute="leading" id="Fxw-HP-Gsk"/>
-                            <constraint firstItem="4Mq-9y-z8v" firstAttribute="bottom" secondItem="63x-g8-CNg" secondAttribute="bottom" id="ITh-4n-GaM"/>
-                            <constraint firstItem="4Mq-9y-z8v" firstAttribute="top" secondItem="63x-g8-CNg" secondAttribute="top" constant="149" id="i7P-b0-gpv"/>
-                            <constraint firstItem="4Mq-9y-z8v" firstAttribute="centerX" secondItem="SXN-R1-bF0" secondAttribute="centerX" id="rG8-Rt-OZy"/>
+                            <constraint firstItem="4Mq-9y-z8v" firstAttribute="top" secondItem="CP9-gB-Jrj" secondAttribute="bottom" constant="42" id="3HJ-BE-8mE"/>
+                            <constraint firstItem="HAy-NE-eDd" firstAttribute="top" secondItem="63x-g8-CNg" secondAttribute="top" id="7Me-uU-mu0"/>
+                            <constraint firstItem="CP9-gB-Jrj" firstAttribute="trailing" secondItem="SXN-R1-bF0" secondAttribute="trailingMargin" id="DDA-Kr-iMS"/>
+                            <constraint firstItem="HAy-NE-eDd" firstAttribute="leading" secondItem="CP9-gB-Jrj" secondAttribute="leading" id="UJb-5d-Jib"/>
+                            <constraint firstItem="CP9-gB-Jrj" firstAttribute="centerX" secondItem="4Mq-9y-z8v" secondAttribute="centerX" id="Vwd-4A-jfF"/>
+                            <constraint firstItem="4Mq-9y-z8v" firstAttribute="bottom" secondItem="63x-g8-CNg" secondAttribute="bottom" id="YC2-vs-fZH"/>
+                            <constraint firstItem="63x-g8-CNg" firstAttribute="trailing" secondItem="HAy-NE-eDd" secondAttribute="trailing" constant="52" id="e8Z-6V-Zc6"/>
+                            <constraint firstItem="HAy-NE-eDd" firstAttribute="leading" secondItem="SXN-R1-bF0" secondAttribute="leadingMargin" id="fjk-pg-4Ia"/>
+                            <constraint firstItem="4Mq-9y-z8v" firstAttribute="leading" secondItem="63x-g8-CNg" secondAttribute="leading" id="iYT-TF-ejH"/>
+                            <constraint firstItem="CP9-gB-Jrj" firstAttribute="top" secondItem="63x-g8-CNg" secondAttribute="top" constant="103" id="ztz-Fn-jhS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pGR-R3-REb"/>
+                    <connections>
+                        <outlet property="mapa" destination="CP9-gB-Jrj" id="l1s-xu-cU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUf-On-ahG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +68,7 @@
             <objects>
                 <viewController id="E3C-vT-jSb" customClass="ShopsDetailViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mpH-1e-w9D">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="615"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="339"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comentarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-FK-yMn">
@@ -136,7 +153,7 @@
             <objects>
                 <tableViewController id="pzo-VG-j9r" customClass="ShopsTableViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZKO-if-kDt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="339"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
