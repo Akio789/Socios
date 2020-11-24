@@ -22,6 +22,8 @@ class ContainerZoneProductsResultsViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     let db = Firestore.firestore()
     var user = Auth.auth().currentUser
+    var userLat : Double = 0.0
+    var userLon : Double = 0.0
 
     
     private func getNearByLandmarks(){
@@ -67,10 +69,9 @@ class ContainerZoneProductsResultsViewController: UIViewController {
         if let location = locationManager.location?.coordinate {
             let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
             mapa.setRegion(region, animated: true)
-//            let marker = MKPointAnnotation()
-//            marker.coordinate = location
-//            marker.title = "Yo"
-//            mapa.addAnnotation(marker)
+            userLat = location.latitude
+            userLon = location.longitude
+            
         }
     }
     
