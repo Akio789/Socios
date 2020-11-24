@@ -50,7 +50,11 @@ class ShoppingCartPaymentViewController: UIViewController {
 //                }
                 doc.document(cartId).updateData(["products": products, "total": 0])
                 self.totalLabel.text = "$0.0"
-                self.performSegue(withIdentifier: "ConfirmedPurchase", sender: self)
+                var alert = UIAlertController(title: "¡Compra exitosa!", message: "Gracias por confiar en Socios.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: { (action: UIAlertAction!) in
+                                                self.performSegue(withIdentifier: "backToCart", sender: self)                        }))
+                        present(alert, animated: true, completion: nil)
+                
             }else {
                 print("Error")
                 return

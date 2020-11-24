@@ -155,38 +155,6 @@
             </objects>
             <point key="canvasLocation" x="-2697.1014492753625" y="-327.45535714285711"/>
         </scene>
-        <!--Success Purchase View Controller-->
-        <scene sceneID="2bS-e5-rVY">
-            <objects>
-                <viewController id="8dN-di-4AA" customClass="SuccessPurchaseViewController" customModule="Socios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zuS-Il-aPz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ULt-YR-Z6q">
-                                <rect key="frame" x="0.0" y="67" width="414" height="829"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LW6-tv-d0S">
-                                <rect key="frame" x="283" y="479" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="RvF-e7-Wjy" kind="show" id="qUq-eE-Gwg"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="drR-Ko-IEp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="MjD-xb-0oB"/>
-                    <connections>
-                        <outlet property="screen" destination="ULt-YR-Z6q" id="gpJ-xm-6ug"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HcE-tF-dFA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-871.01449275362324" y="-309.375"/>
-        </scene>
         <!--Shopping Cart Payment View Controller-->
         <scene sceneID="3Cj-x3-qKx">
             <objects>
@@ -251,7 +219,7 @@
                     <navigationItem key="navigationItem" id="DwQ-aH-NGN"/>
                     <connections>
                         <outlet property="totalLabel" destination="bdK-Wr-hPE" id="RzI-k6-lDm"/>
-                        <segue destination="8dN-di-4AA" kind="show" identifier="ConfirmedPurchase" id="G6J-1m-XSD"/>
+                        <segue destination="RvF-e7-Wjy" kind="show" identifier="backToCart" id="QvZ-up-nE2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glb-KU-TQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -346,7 +314,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qUq-eE-Gwg"/>
+        <segue reference="QvZ-up-nE2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CartIcon" width="32" height="32"/>
